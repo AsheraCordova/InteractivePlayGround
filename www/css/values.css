@@ -1,0 +1,72 @@
+
+            .error_banner {
+					layout_alignParentBottom:"true";
+			layout_alignParentEnd:"true";
+			layout_alignParentRight:"true";
+			layout_alignParentLeft:"true";
+			layout_alignParentStart:"true";
+			padding:"5dp";
+			textStyle:"bold";
+			gravity:"center";
+			background:"@color/color_red_300";
+			textColor:"@color/color_white";
+			text:"@string/error_text";
+			layout_height:"wrap_content";
+			layout_width:"match_parent";
+			zIndex:"1";
+				
+                 }
+        
+            .drawer_view {
+					background:"@color/color_black";
+			
+                 }
+        
+            .drawer_border {
+					borderColor:"@color/color_gray_900";
+				borderBottomWidth:"1dp";
+				
+                 }
+        
+            .blackBg {
+					background:"@color/color_black";
+			textColor:"@color/color_white";
+			gravity:"center";
+			padding:"10dp";
+			textSize:"@dimen/font_normal";
+			
+                 }
+        
+            .button_style {
+					background:"@drawable/common_9_button";
+			textSize:"14sp";
+			textColor:"@color/color_red";
+			textStyle:"bold";
+			backgroundCapInsetsLeft-swt:"30dp";
+				backgroundCapInsetsRight-swt:"30dp";
+				backgroundCapInsetsLeft-web:"30dp";
+				backgroundCapInsetsRight-web:"30dp";
+				backgroundCapInsetsLeft-ios:"30dp";
+				backgroundCapInsetsRight-ios:"30dp";
+				
+                 }
+        
+            .errorStyle {
+					textColor:"#f00";
+			textSize:"@dimen/font_small";
+			
+                 }
+        
+            .h2_white_bold {
+					textSize:"@dimen/font_normal";
+			textColor:"#fff";
+			textStyle:"bold";
+			
+                 }
+        
+            .h2_white {
+					textSize:"@dimen/font_normal";
+			textColor:"@color/color_white";
+			
+                 }
+        

@@ -1,0 +1,96 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:ignore="MissingPrefix">
+
+        <EditText
+            modelPojoToUi="text = emailIntent from testObj->view"
+            modelSyncEvents="onTextChange"
+            modelUiToPojo="emailIntent = text into testObj->view"
+            onTextChange=""
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></EditText>
+
+        <CheckBox
+            modelSyncEvents="onCheckedChange"
+            modelUiToPojo="terms = checked into testObj->view"
+            onCheckedChange=""
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></CheckBox>
+
+
+        <RadioGroup
+            modelSyncEvents="onCheckedChange"
+            modelUiToPojo="gender = checkedButton into testObj->view"
+            onCheckedChange=""
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/radio0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Male"></RadioButton>
+
+            <RadioButton
+                android:id="@+id/radio1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Female"></RadioButton>
+        </RadioGroup>
+
+        <Switch
+            android:id="@+id/checked1"
+            modelSyncEvents="onCheckedChange"
+            modelUiToPojo="notification = checked into testObj->view"
+            onCheckedChange=""
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"></Switch>
+
+        <com.ashera.datetime.DatePicker
+            modelPojoToUi="text = date from testObj->view"
+            modelSyncEvents="onTextChange"
+            modelUiToPojo="date = text into testObj->view"
+            onTextChange=''
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Spinner
+            modelFor="let item in looptest.textlayout from testObj->view into loopvar as pathmap"
+            modelIdPath="id"
+            modelOptionTextPath="a from item->loopvar"
+            modelPojoToUi="selectedValue = spinner from testObj->view"
+            modelSyncEvents="onItemSelected"
+            modelUiToPojo="spinner = selectedValue into testObj->view"
+            onItemSelected=''
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <com.ashera.layout.MultiSelectionSpinner
+            android:id="@+id/modelOptionTextPath0"
+            modelFor="let item in looptest.textlayout from testObj->view into loopvar as pathmap"
+            modelIdPath="id"
+            modelOptionTextPath="a from item->loopvar"
+            modelPojoToUi="selectedValues = multispinner from testObj->view"
+            modelSyncEvents="onItemSelected"
+            modelUiToPojo="multispinner = selectedValues into testObj->view"
+            onItemSelected=""
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="login(model=. from testObj->view)"
+            android:text="Login"
+            tools:ignore="OnClick"></Button>
+    </LinearLayout>
+</ScrollView>

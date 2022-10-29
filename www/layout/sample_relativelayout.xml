@@ -1,0 +1,103 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:ignore="MissingPrefix">
+
+    <RelativeLayout
+        borderColor="red"
+        borderWidth="1dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="4dp">
+
+        <TextView
+            android:id="@+id/x1"
+            style="@style/blackBg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="X1"></TextView>
+
+        <TextView
+            style="@style/blackBg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:text="X2"></TextView>
+
+        <TextView
+            style="@style/blackBg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:text="X3"></TextView>
+
+        <TextView
+            style="@style/blackBg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:text="X4"></TextView>
+
+        <TextView
+            android:id="@+id/x5"
+            style="@style/blackBg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="X5"></TextView>
+
+        <TextView
+            style="@style/blackBg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="X6"></TextView>
+
+        <TextView
+            style="@style/blackBg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="X7"></TextView>
+
+        <TextView
+            style="@style/blackBg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_toEndOf="@+id/x1"
+            android:layout_toRightOf="@+id/x1"
+            android:text="X8"></TextView>
+
+        <TextView
+            style="@style/blackBg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_toStartOf="@+id/x5"
+            android:layout_toLeftOf="@+id/x5"
+            android:text="X9"></TextView>
+
+        <TextView
+            style="@style/blackBg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/x5"
+            android:layout_alignStart="@+id/x5"
+            android:layout_alignLeft="@+id/x5"
+            android:layout_marginBottom="10dp"
+            android:text="X10"></TextView>
+
+    </RelativeLayout>
+
+</LinearLayout>
+

@@ -1,0 +1,59 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:ignore="MissingPrefix">
+
+    <TextView
+        style="@style/h2_white_bold"
+        android:id="@+id/textView"
+        modelPojoToUi="text = mydata.title from sections->loopvar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Header" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/add_button"
+            onClick="addSong(id = mydata.title from sections->loopvar)"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="Add"
+            android:textColor="#89000000"
+            tools:ignore="OnClick" />
+        <Button
+            android:id="@+id/clear_button"
+            onClick="clearSongs(id = mydata.title from sections->loopvar)"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="Clear"
+            android:textColor="#89000000"
+            tools:ignore="OnClick" />
+
+        <Button
+            android:id="@+id/remove_button"
+            onClick="deleteSongById(id = mydata.title from sections->loopvar)"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="Delete"
+            android:textColor="#89000000"
+            tools:ignore="OnClick" />
+        <Button
+            android:id="@+id/update_button"
+            onClick="updateSong(id = mydata.title from sections->loopvar)"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="Update"
+            android:textColor="#89000000"
+            tools:ignore="OnClick" />
+    </LinearLayout>
+</LinearLayout>

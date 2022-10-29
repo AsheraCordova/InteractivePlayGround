@@ -1,0 +1,39 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:ignore="MissingPrefix">
+
+    <EditText
+        android:id="@+id/editText"
+        invalidateOnFrameChange="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingEnd="35dp"
+        android:singleLine="true" />
+
+    <ImageView
+        android:id="@+id/clearButton"
+        zIndex="1"
+        android:layout_width="30dp"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/editText"
+        android:layout_alignBottom="@+id/editText"
+        android:layout_toLeftOf="@+id/imageButton"
+        android:scaleType="center"
+        android:src="@drawable/icon_clear"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/imageButton"
+        zIndex="1"
+        android:layout_width="30dp"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/editText"
+        android:layout_alignBottom="@+id/editText"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="1dp"
+        android:scaleType="center"
+        android:src="@drawable/icon_calendar" />
+
+</RelativeLayout>

@@ -1,0 +1,46 @@
+{
+  "name": "typescript-webpack-babel-boilerplate",
+  "version": "1.0.0",
+  "description": "Boilerplate for a typescript project using webpack and babel",
+  "browserslist": "> 0.25%, not dead",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --mode=development --watch",
+    "dev-server": "webpack-dev-server --history-api-fallback --host 0.0.0.0",
+    "lint": "tslint --project ."
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.2.1",
+    "html-webpack-plugin": "^3.2.0",
+    "ts-loader": "^9.3.1",
+    "tslint": "^5.9.1",
+    "typescript": "^4.4.4",
+    "webpack": "^5.4.0",
+    "webpack-cli": "^4.2.0",
+    "webpack-dev-server": "^3.1.5"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ]
+  },
+  "keywords": [
+    "typescript",
+    "webpack",
+    "babel",
+    "boilerplate",
+    "js",
+    "javascript"
+  ],
+  "author": "Maniae",
+  "license": "ISC",
+  "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "class-transformer": "^0.5.1",
+    "reflect-metadata": "^0.1.12",
+    "ts-mixer": "^5.3.0"
+  }
+}

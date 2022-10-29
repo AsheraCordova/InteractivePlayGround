@@ -1,0 +1,149 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#e5db54">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/blackBg"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:text="Simple Grid Layout Example"></TextView>
+    </LinearLayout>
+
+    <androidx.gridlayout.widget.GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        app:columnCount="4">
+
+        <TextView
+            style="@style/h2_white_bold"
+            android:text="[0,0]"
+            app:layout_columnWeight="1"
+            app:layout_gravity="center"
+            app:layout_rowWeight="1"></TextView>
+
+        <TextView
+            style="@style/h2_white_bold"
+            app:layout_rowWeight="1"
+            app:layout_columnWeight="1"
+            android:text="[0,1]"></TextView>
+
+        <TextView
+            style="@style/h2_white_bold"
+            app:layout_rowWeight="1"
+            app:layout_columnWeight="1"
+            android:text="[0,2]"></TextView>
+
+        <TextView
+            style="@style/h2_white_bold"
+            app:layout_rowWeight="1"
+            app:layout_columnWeight="1"
+            android:text="[0,3]"></TextView>
+
+        <TextView
+            style="@style/h2_white_bold"
+            app:layout_rowWeight="1"
+            app:layout_columnWeight="1"
+            android:text="[1,0]"></TextView>
+
+        <TextView
+            style="@style/h2_white_bold"
+            app:layout_rowWeight="1"
+            app:layout_columnWeight="1"
+            android:text="[1,1]"></TextView>
+
+        <TextView
+            style="@style/h2_white_bold"
+            app:layout_rowWeight="1"
+            app:layout_columnWeight="1"
+            android:text="[1,2]"></TextView>
+
+        <TextView
+            style="@style/h2_white_bold"
+            app:layout_rowWeight="1"
+            app:layout_columnWeight="1"
+            android:text="[1,3]"></TextView>
+    </androidx.gridlayout.widget.GridLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/blackBg"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:text="Simple Grid With Border"></TextView>
+    </LinearLayout>
+
+    <androidx.gridlayout.widget.GridLayout
+        borderColor="red"
+        borderRadius="10dp"
+        borderWidth="1dp"
+        android:background="@null"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        app:columnCount="4">
+
+        <TextView
+            style="@style/h2_white_bold"
+            android:text="[0,0]"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1"></TextView>
+
+        <TextView
+            style="@style/h2_white_bold"
+            android:text="[0,1]"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1"></TextView>
+
+        <TextView
+            style="@style/h2_white_bold"
+            android:text="[0,2]"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1"></TextView>
+
+        <TextView
+            style="@style/h2_white_bold"
+            android:text="[0,3]"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1"></TextView>
+
+        <TextView
+            style="@style/h2_white_bold"
+            android:text="[1,0]"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1"></TextView>
+
+        <TextView
+            style="@style/h2_white_bold"
+            android:text="[1,1]"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1"></TextView>
+
+        <TextView
+            style="@style/h2_white_bold"
+            android:text="[1,2]"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1"></TextView>
+
+        <TextView
+            style="@style/h2_white_bold"
+            android:text="[1,3]"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1"></TextView>
+    </androidx.gridlayout.widget.GridLayout>
+</LinearLayout>

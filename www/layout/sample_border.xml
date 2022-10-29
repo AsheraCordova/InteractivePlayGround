@@ -1,0 +1,59 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#e5db54"
+    android:orientation="vertical"
+    tools:ignore="MissingPrefix">
+
+    <TextView
+        style="@style/h2_white_bold"
+        borderBottomColor="#ff0"
+        borderLeftColor="#f00"
+        borderRadius="30dp"
+        borderRightColor="#0f0"
+        borderTopColor="#00f"
+        borderWidth="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_margin="10dp"
+        android:background="@null"
+        android:gravity="center"
+        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit."></TextView>
+
+    <TextView
+        style="@style/h2_white_bold"
+        borderBottomColor="#ff0"
+        borderBottomWidth="8dp"
+        borderLeftColor="#f00"
+        borderLeftWidth="6dp"
+        borderRightColor="#0f0"
+        borderRightWidth="10dp"
+        borderTopColor="#00f"
+        borderTopWidth="4dp"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit."></TextView>
+
+    <TextView
+        style="@style/h2_white_bold"
+        borderBottomColor="#ff0"
+        borderBottomWidth="8dp"
+        borderDashSpacing="2dp"
+        borderDashWidth="10dp"
+        borderLeftColor="#f00"
+        borderLeftWidth="6dp"
+        borderRightColor="#0f0"
+        borderRightWidth="10dp"
+        borderStyle="dashed"
+        borderTopColor="#00f"
+        borderTopWidth="4dp"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit."></TextView>
+</LinearLayout>

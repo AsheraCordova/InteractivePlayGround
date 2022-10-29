@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MissingPrefix">
+
+    <data></data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#e5db54"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.Toolbar
+                onMenuItemClick="onMenuItemClick"
+                onNavigationIconClick="openDrawer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#000"
+                app:title="@string/play_ground"
+                app:titleTextColor="@color/color_white"></androidx.appcompat.widget.Toolbar>
+
+            <LinearLayout
+                android:id="@+id/panel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:background="@color/color_white"
+                    android:hint="@string/android_xml_url"
+                    android:textColorHint="#aaa"
+                    android:textSize="14sp"
+                    onTextChange="showAlert"></EditText>
+
+                <EditText
+
+                    android:id="@+id/androidxmlurl"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/color_white"
+                    android:hint="@string/js_url"
+                    android:textColorHint="#aaa"
+                    android:textSize="14sp"></EditText>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="10">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4">
+
+                    <EditText
+                        android:id="@+id/xml"
+                        modelPojoToUi="text = . from xml->view"
+                        modelSyncEvents="onTextChange"
+                        modelUiToPojo=". = text into xml->view"
+                        onTextChange="preview(xml = . from xml->view)"
+                        swtTextStyle="multi|v_scroll|h_scroll"
+                        widget-override-ios="UITextView"
+                        widget-override-web="TextArea"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/color_white"
+                        android:inputType="textMultiLine"
+                        android:singleLine="false"></EditText>
+                </FrameLayout>
+
+                <FrameLayout
+                    android:id="@+id/preview"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="6">
+
+                </FrameLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</layout>

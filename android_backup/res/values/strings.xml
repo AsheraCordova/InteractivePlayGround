@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">HelloCordova</string>
+    <string name="launcher_name">@string/app_name</string>
+    <string name="activity_name">@string/launcher_name</string>
+    <string name="error_text">There were errors on the page. Click here to view the same.</string>
+    <string name="required_error_message">Should not be empty.</string>
+    <string name="max_length_error_message">Maximum number of characters allowed is %d.</string>
+    <string name="min_length_error_message">Minimum number of characters required is %d.</string>
+    <string name="max_value_error_message">Max value allowed is %d.</string>
+    <string name="min_value_error_message">Min value required is %d.</string>
+    <string name="pattern_error_message">Invalid format specified.</string>
+    <string name="url_error_message">Please enter valid url.</string>
+    <string name="alphabets_error_message">Please enter only Alphabets.</string>
+    <string name="alphanumeric_error_message">Please enter only alphanumeric characters.</string>
+    <string name="date_error_message">Invalid date format.</string>
+    <string name="inrange_error_message">Number must be between %d and %d.</string>
+    <string name="email_error_message">Invalid email address.</string>
+    <string name="mobile_error_message">Invalid Mobile number.</string>
+    <string name="number_error_message">Must be number.</string>
+    <string name="positivenumber_error_message">Should be positive integer.</string>
+    <string name="pincode_error_message">Must be valid pincode.</string>
+    <string name="length_between_error_message">Number length must be between %d and %d.</string>
+    <string name="length_atmost_error_message">Number should be atmost %d.</string>
+    <string name="length_atleast_error_message">Number should be atleast %d.</string>
+    <string name="strongpassword_error_message">Password should contains atleast 8 characters, one uppercase letter, number and special character.</string>
+    <string name="default_textOff">OFF</string>
+    <string name="default_textOn">ON</string>
+    <string name="play_ground">Play Ground</string>
+    <string name="choose_sample">Choose Sample</string>
+    <string name="choose_an_option_from_the_above">Choose an option from the above</string>
+    <string name="android_xml_url">Android XML Url</string>
+    <string name="js_url">JS Url</string>
+
+    <array name="samples">
+        <item></item>
+        <item>Constraint layout</item>
+        <item>Constraint layout (Barrier)</item>
+        <item>Constraint layout (Circularflow)</item>
+        <item>Constraint layout (Flow)</item>
+        <item>Constraint layout (Group)</item>
+        <item>Constraint layout (Guideline)</item>
+        <item>Constraint layout (Placeholder)</item>
+        <item>Dialog</item>
+        <item>Drawer layout</item>
+        <item>Frame layout</item>
+        <item>Grid layout</item>
+        <item>Linear layout</item>
+        <item>Relative layout</item>
+        <item>Recyclerview</item>
+        <item>Recyclerview (Groupie)</item>
+        <item>Table layout</item>
+        <item>Toolbar layout</item>
+        <item>Webview</item>
+        <item>Widgets</item>
+        <item>Validations</item>
+        <item>Border</item>
+        <item>CapInsets</item>
+        <item>Model</item>
+        <item>Camera</item>
+        <item>QRCode</item>
+    </array>
+    <array name="samples_values" separator="~">
+        <item>www/layout/sample_start.xml</item>
+        <item>www/layout/sample_constraintlayout.xml</item>
+        <item>www/layout/sample_constraintlayout_barrier.xml</item>
+        <item>www/layout/sample_constraintlayout_circularflow.xml</item>
+        <item>www/layout/sample_constraintlayout_flow.xml</item>
+        <item>www/layout/sample_constraintlayout_group.xml</item>
+        <item>www/layout/sample_constraintlayout_guideline.xml</item>
+        <item>www/layout/sample_constraintlayout_placeholder.xml</item>
+        <item>www/layout/sample_dialog.xml</item>
+        <item>www/layout/sample_drawerlayout.xml</item>
+        <item>www/layout/sample_framelayout.xml</item>
+        <item>www/layout/sample_gridlayout.xml</item>
+        <item>www/layout/sample_linearlayout.xml</item>
+        <item>www/layout/sample_relativelayout.xml</item>
+        <item>www/layout/sample_recyclerview.xml</item>
+        <item>www/layout/sample_recycleview_groupieadapter.xml</item>
+        <item>www/layout/sample_tablelayout.xml</item>
+        <item>www/layout/sample_toolbar.xml</item>
+        <item>www/layout/sample_webview.xml</item>
+        <item>www/layout/sample_formwidgets.xml</item>
+        <item>www/layout/sample_validations.xml</item>
+        <item>www/layout/sample_border.xml</item>
+        <item>www/layout/sample_capinsets.xml</item>
+        <item>www/layout/sample_model.xml</item>
+        <item>www/layout/sample_camera.xml</item>
+        <item>www/layout/sample_qrcode.xml</item>
+    </array>
+</resources>

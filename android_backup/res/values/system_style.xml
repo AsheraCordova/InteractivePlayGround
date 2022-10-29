@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+ 
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="editTextStyle">@style/EditText</item>
+        <item name="checkboxStyle">@style/CheckBox</item>
+        <item name="buttonStyle">@style/Button</item>
+        <item name="radioButtonStyle">@style/RadioButton</item>
+        <item name="imageButtonStyle">@style/ImageButton</item>
+        <item name="android:spinnerItemStyle">@style/Spinner</item>
+        <item name="colorPrimaryDark">#000</item>
+    </style>
+
+    <!-- form widgets -->
+    <style name="TextView">
+        <item name="android:typeface">sans</item>
+    </style>
+    <style name="EditText" parent="@android:style/Widget.EditText" constructor_attrs="swtTextStyle:single" attrs="swtUseTabForNavigation:true;borderBottomWidth:1dp;borderColor:@color/border_material_color;onFocusChange:">
+        <item name="android:textColor">#000</item>
+        <item name="android:textColorHint">#fff</item>
+        <item name="android:padding">10dp</item>
+        <item name="singleLine">true</item>
+        <item name="android:inputType" android="true">text</item>
+        <item name="android:typeface">sans</item>
+    </style>
+    <style name="CheckBox" parent="Widget.AppCompat.CompoundButton.CheckBox" attrs="button-ios:@drawable/checkbox_selector;onCheckedChange-ios:">
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:paddingLeft">5dp</item>
+        <item name="android:textSize">@dimen/font_normal</item>
+    </style>
+    <style name="Button" parent="Widget.AppCompat.Button" attrs="minimumHeight-ios:48dp;padding-ios:10dp;padding-web:3dp;gravity-web:center">
+        <item name="android:typeface">sans</item>
+        <item name="android:background">#ff0</item>
+        <item name="android:minHeight">48dp</item>
+        <item name="android:textSize">@dimen/font_normal</item>
+    </style>
+    <style name="ToggleButton" parent="Widget.AppCompat.Button" attrs="padding-web:3dp;">
+        <item name="android:gravity">center</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:background">#ff0</item>
+        <item name="android:textSize">@dimen/font_normal</item>
+    </style>
+    <style name="ImageButton" parent="Widget.AppCompat.ImageButton">
+        <item name="android:background">#ff0</item>
+    </style>
+    <style name="RadioButton" parent="Widget.AppCompat.CompoundButton.RadioButton" attrs="button-ios:@drawable/radio_selector;onCheckedChange-ios:">
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:textSize">@dimen/font_normal</item>
+    </style>
+    <style name="Spinner" parent="android:Widget.TextView.SpinnerItem" attrs="">
+        <item name="android:textColor">#000</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:typeface">sans</item>
+    </style>
+
+    <!-- Theme for tool related widget - simulated theme for swt, ios, web -->
+    <style name="androidx.appcompat.widget.Toolbar" parent="AppTheme">
+        <item name="android:minHeight">56dp</item>
+        <item name="titleMargin">4dp</item>
+        <item name="contentInsetStart">16dp</item>
+        <item name="contentInsetStartWithNavigation">72dp</item>
+        <item name="android:paddingLeft">0dp</item>
+        <item name="android:paddingRight">0dp</item>
+    </style>
+    <style name="Toolbar_overFlowButton" parent="AppTheme">
+        <item name="android:minHeight">48dp</item>
+        <item name="android:minWidth">40dp</item>
+        <item name="android:scaleType">center</item>
+    </style>
+    <style name="Toolbar_actionMenuView" parent="AppTheme">
+        <item name="android:gravity">center_vertical</item>
+    </style>
+    <style name="Toolbar_itemView" parent="AppTheme">
+        <item name="android:paddingTop">4dp</item>
+        <item name="android:paddingLeft">12dp</item>
+        <item name="android:paddingBottom">4dp</item>
+        <item name="android:paddingRight">12dp</item>
+        <item name="android:minHeight">48dp</item>
+        <item name="android:minWidth">48dp</item>
+        <item name="android:maxLines">2</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textColor">@color/color_white</item>
+    </style>
+    <style name="Toolbar_subtitleView" parent="AppTheme" constructor_attrs="swtTextStyle:none" >
+        <item name="android:singleLine">true</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:typeface">sans</item>
+    </style>
+    <style name="Toolbar_titleView" parent="AppTheme" constructor_attrs="swtTextStyle:none" >
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:typeface">sans</item>
+    </style>
+    <style name="Toolbar_logoView" parent="AppTheme">
+        <item name="android:adjustViewBounds">true</item>
+    </style>
+    <style name="Toolbar_navigationIcon" parent="AppTheme">
+        <item name="android:minWidth">56dp</item>
+        <item name="android:scaleType">centerInside</item>
+    </style>
+
+    <!-- drawer layout -->
+    <style name="androidx.drawerlayout.widget.DrawerLayout" parent="AppTheme" attrs="edgeSize-web:20dp;edgeSize-swt:20dp;edgeSize-ios:20dp;scrimColor-ios:#AA000000;scrimColor-web:#AA000000;">
+    </style>
+
+    <!-- dialog styles -->
+    <style name="MyDialogStyle" parent="android:Theme.Dialog" attrs="">
+        <item name="android:windowCloseOnTouchOutside">false</item>
+    </style>
+    <style name="MyDialogStyleCloseOnTouchOutside" parent="android:Theme.Dialog" attrs="">
+        <item name="android:windowCloseOnTouchOutside">true</item>
+    </style>
+
+    <style name="MyDialogStyleCustomBackDrop" parent="android:Theme.Dialog" attrs="backdropColor:#E6ff0000">
+        <item name="android:windowCloseOnTouchOutside">true</item>
+    </style>
+    <style name="MyDialogBackgroundDimDisabledStyle" parent="android:Theme.Dialog" attrs="">
+        <item name="android:windowCloseOnTouchOutside">false</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+    <style name="MyDialogFullScreenStyle" parent="Theme.AppCompat.Dialog" attrs="marginPercent:1;">
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowNoTitle" android="true">true</item>
+        <item name="android:statusBarColor" android="true">#fff</item>
+        <item name="android:windowIsFloating" android="true">false</item>
+        <item name="android:windowBackground" android="true">@android:color/white</item>
+        <item name="android:windowCloseOnTouchOutside">false</item>
+    </style>
+</resources>

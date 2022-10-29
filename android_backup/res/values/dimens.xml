@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <!-- h4 -->
+    <dimen name="font_very_small">10sp</dimen>
+    <!-- h3 -->
+    <dimen name="font_small">12sp</dimen>
+    <!-- h2 -->
+    <dimen name="font_normal">15sp</dimen>
+    <!-- h1 -->
+    <dimen name="font_big">16sp</dimen>
+    <dimen name="font_page_title">20sp</dimen>
+    <!-- h1_big -->
+    <dimen name="font_extra_big">28sp</dimen>
+    <dimen name="toolbar_padding">10dp</dimen>
+</resources>

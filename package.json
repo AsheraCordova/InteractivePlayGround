@@ -1,0 +1,68 @@
+{
+  "name": "com.ashera.interactiveplayground",
+  "displayName": "HelloCordova",
+  "version": "1.0.0",
+  "description": "A sample Apache Cordova application that responds to the deviceready event.",
+  "main": "index.js",
+  "scripts": {
+    "swt-run": "cd platforms/swt/app && gradle run",
+    "browser-run": "cd platforms/browser/app && gradle execute && cd src/main/assets/www && http-server",
+    "generate-platform-res": "cd platforms/android/app/src/main/gentool && npm install && npm run resize && npm run start",
+    "generate-platform-js": "cd platforms/android/app/src/main/tsc && npm install && npm run build",
+    "generate-platform-drawable": "cd platforms/android/app/src/main/gentool && npm run resize",
+    "fix-ios-symLinks": "cd platforms/android/app/src/main/gentool && npm run fixIosSymLinks",
+    "update-ios-plist": "cd platforms/android/app/src/main/gentool && npm run plist",
+    "backup-android": "cd platforms/android/app/src/main/gentool && npm run backup",
+    "restore-android": "cd platforms/android/app/src/main/gentool && npm run restore",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ecosystem:cordova"
+  ],
+  "author": "Apache Cordova Team",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "browser": "git+https://github.com/AsheraCordova/cordova-web.git",
+    "com.ashera.capinsets": "git+https://github.com/AsheraCordova/CapInsets.git",
+    "com.ashera.constraintlayout": "git+https://github.com/AsheraCordova/ConstraintLayout.git",
+    "com.ashera.core": "git+https://github.com/AsheraCordova/Core.git",
+    "com.ashera.cssborder": "git+https://github.com/AsheraCordova/CSSBorder.git",
+    "com.ashera.datetime": "git+https://github.com/AsheraCordova/DateTime.git",
+    "com.ashera.drawerlayout": "git+https://github.com/AsheraCordova/Drawer.git",
+    "com.ashera.glide": "git+https://github.com/AsheraCordova/Glide.git",
+    "com.ashera.gridlayout": "git+https://github.com/AsheraCordova/GridLayout.git",
+    "com.ashera.iqkeyboardmanager.ios": "git+https://github.com/AsheraCordova/IQkeyboardManager.git",
+    "com.ashera.recycleview": "git+https://github.com/AsheraCordova/RecycleView.git",
+    "com.ashera.sdwebimage.ios": "git+https://github.com/AsheraCordova/SDWebImagePlugin.git",
+    "com.ashera.shutterbug": "git+https://github.com/AsheraCordova/ShutterBug.git",
+    "com.ashera.toolbar": "git+https://github.com/AsheraCordova/Toolbar.git",
+    "com.filfatstudios.spinnerdialog": "git+https://github.com/AsheraCordova/Dialog.git",
+    "cordova-android": "^10.1.2",
+    "cordova-ios": "^6.2.0",
+    "swt": "git+https://github.com/AsheraCordova/cordova-swt.git"
+  },
+  "cordova": {
+    "platforms": [
+      "android",
+      "ios",
+      "swt",
+      "browser"
+    ],
+    "plugins": {
+      "com.ashera.core": {},
+      "com.ashera.capinsets": {},
+      "com.ashera.constraintlayout": {},
+      "com.ashera.cssborder": {},
+      "com.ashera.datetime": {},
+      "com.ashera.drawerlayout": {},
+      "com.ashera.gridlayout": {},
+      "com.ashera.recycleview": {},
+      "com.ashera.toolbar": {},
+      "com.ashera.iqkeyboardmanager.ios": {},
+      "com.ashera.shutterbug": {},
+      "com.ashera.glide": {},
+      "com.ashera.sdwebimage.ios": {},
+      "com.filfatstudios.spinnerdialog": {}
+    }
+  }
+}

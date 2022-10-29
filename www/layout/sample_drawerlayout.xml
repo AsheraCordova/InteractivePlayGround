@@ -1,0 +1,50 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:ignore="MissingPrefix">
+
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            swtAttachEventBubbler="mousedown,mouseup,mousemove"
+            zIndex="0"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <Button
+                android:onClick="openDrawer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Open Drawer"></Button>
+        </LinearLayout>
+
+        <View
+            android:id="@+id/blurredView"
+            zIndex="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="invisible" />
+
+        <LinearLayout
+            android:id="@+id/drawerlayoutstart"
+            style="@style/drawer_view"
+            zIndex="2"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="start">
+            <TextView
+                style="@style/h2_white_bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Test"></TextView>
+
+        </LinearLayout>
+    </androidx.drawerlayout.widget.DrawerLayout>
+</LinearLayout>

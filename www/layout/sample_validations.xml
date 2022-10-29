@@ -1,0 +1,287 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    borderColor="red"
+    borderWidth="2dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:ignore="MissingPrefix">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/blackBg"
+            android:gravity="center"
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Validation test"></TextView>
+
+        <EditText
+            android:id="@+id/minmaxTest"
+            formGroupId="loginForm"
+            v_max="10"
+            v_min="2"
+            validationErrorDisplayType="popup|label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></EditText>
+
+        <TextView
+            style="@style/errorStyle"
+            android:id="@+id/minmaxTestError"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></TextView>
+
+        <EditText
+            android:id="@+id/minmaxLengthTest"
+            formGroupId="loginForm"
+            v_maxlength="10"
+            v_minlength="2"
+            validationErrorDisplayType="popup|label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></EditText>
+
+        <TextView
+            style="@style/errorStyle"
+            android:id="@+id/minmaxLengthTestError"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></TextView>
+
+        <EditText
+            android:id="@+id/patternTest"
+            formGroupId="loginForm"
+            v_pattern="[a-z]*"
+            validationErrorDisplayType="popup|label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></EditText>
+
+        <TextView
+            style="@style/errorStyle"
+            android:id="@+id/patternTestError"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></TextView>
+
+        <EditText
+            android:id="@+id/requiredTest"
+            formGroupId="loginForm"
+            v_required=""
+            validationErrorDisplayType="popup|label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableEnd="@drawable/icon_clear"></EditText>
+
+        <TextView
+            style="@style/errorStyle"
+            android:id="@+id/requiredTestError"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></TextView>
+
+        <EditText
+            android:id="@+id/urlTest"
+            formGroupId="loginForm"
+            v_type="url"
+            validationErrorDisplayType="popup|label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></EditText>
+
+        <TextView
+            style="@style/errorStyle"
+            android:id="@+id/urlTestError"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></TextView>
+
+        <EditText
+            android:id="@+id/emailTest"
+            formGroupId="loginForm"
+            v_type="email"
+            validationErrorDisplayType="popup|label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></EditText>
+
+        <TextView
+            style="@style/errorStyle"
+            android:id="@+id/emailTestError"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></TextView>
+
+        <EditText
+            android:id="@+id/telTest"
+            formGroupId="loginForm"
+            v_type="tel"
+            validationErrorDisplayType="popup|label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></EditText>
+
+        <TextView
+            style="@style/errorStyle"
+            android:id="@+id/telTestError"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></TextView>
+
+        <EditText
+            android:id="@+id/dateTest"
+            formGroupId="loginForm"
+            v_type="date"
+            validationErrorDisplayType="popup|label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></EditText>
+
+        <TextView
+            style="@style/errorStyle"
+            android:id="@+id/dateTestError"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></TextView>
+
+        <EditText
+            android:id="@+id/timeTest"
+            formGroupId="loginForm"
+            v_type="time"
+            validationErrorDisplayType="popup|label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></EditText>
+
+        <TextView
+            style="@style/errorStyle"
+            android:id="@+id/timeTestError"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></TextView>
+
+        <EditText
+            android:id="@+id/test1"
+            customErrorMessageKeys="required"
+            customErrorMessageValues="sample text"
+            errorStyle="@style/errorStyle"
+            formGroupId="loginForm"
+            v_required=""
+            validationErrorDisplayType="label|style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></EditText>
+
+        <TextView
+            style="@style/errorStyle"
+            android:id="@+id/test1Error"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></TextView>
+
+        <CheckBox
+            android:id="@+id/formCheckbox"
+            formGroupId="loginForm"
+            v_required=""
+            validationErrorDisplayType="popup|label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="test123"
+
+            ></CheckBox>
+
+        <TextView
+            style="@style/errorStyle"
+            android:id="@+id/formCheckboxError"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></TextView>
+
+        <RadioButton
+            android:id="@+id/formRadioButton"
+            formGroupId="loginForm"
+            v_required=""
+            validationErrorDisplayType="popup|label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="test123"
+
+            ></RadioButton>
+
+        <TextView
+            style="@style/errorStyle"
+            android:id="@+id/formRadioButtonError"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></TextView>
+
+        <RadioGroup
+
+            android:id="@+id/formRadioGroup"
+            formGroupId="loginForm"
+            v_required=""
+            validationErrorDisplayType="label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/radioButtonVal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Yes"></RadioButton>
+            <RadioButton
+                android:id="@+id/radioButtonVal1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="No"></RadioButton>
+
+        </RadioGroup>
+
+
+        <TextView
+            style="@style/errorStyle"
+            android:id="@+id/formRadioGroupError"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></TextView>
+
+        <Spinner
+            android:id="@+id/formSpinner"
+            entries="Please Select,1,2,3"
+            formGroupId="loginForm"
+            v_required=""
+            validationErrorDisplayType="label"
+            values=",1,2,3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></Spinner>
+
+        <TextView
+            style="@style/errorStyle"
+            android:id="@+id/formSpinnerError"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></TextView>
+
+        <com.ashera.layout.MultiSelectionSpinner
+            android:id="@+id/formMultiSelectionSpinner"
+            entries="1,2,3"
+            formGroupId="loginForm"
+            v_required=""
+            validationErrorDisplayType="label"
+            values="1,2,3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Please select"></com.ashera.layout.MultiSelectionSpinner>
+
+        <TextView
+            style="@style/errorStyle"
+            android:id="@+id/formMultiSelectionSpinnerError"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></TextView>
+
+        <com.ashera.datetime.DatePicker
+            android:id="@+id/datePicker"
+            formGroupId="loginForm"
+            v_required=""
+            validationErrorDisplayType="popup|label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            style="@style/errorStyle"
+            android:id="@+id/datePickerError"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></TextView>
+
+        <Button
+            android:id="@+id/validateButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="validateMyForm"
+            android:text="Validate"></Button>
+
+    </LinearLayout>
+</ScrollView>

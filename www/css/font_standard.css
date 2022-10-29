@@ -1,0 +1,85 @@
+
+            @font-face {
+  				font-family: 'Roboto';
+  				font-style: normal;
+  				font-weight: 400;
+  				src: url(../res/font/robotoregular.ttf)
+			}
+        
+            @font-face {
+  				font-family: 'Roboto';
+  				font-style: italic;
+  				font-weight: 400;
+  				src: url(../res/font/robotoitalic.ttf)
+			}
+        
+            @font-face {
+  				font-family: 'Roboto';
+  				font-style: italic;
+  				font-weight: 700;
+  				src: url(../res/font/robotobolditalic.ttf)
+			}
+        
+            @font-face {
+  				font-family: 'Roboto';
+  				font-style: normal;
+  				font-weight: 700;
+  				src: url(../res/font/robotobold.ttf)
+			}
+
+ 			@font-face {
+  				font-family: 'Noto Serif';
+  				font-style: normal;
+  				font-weight: 400;
+  				src: url(../res/font/notoserifregular.ttf)
+			}
+        
+            @font-face {
+  				font-family: 'Noto Serif';
+  				font-style: italic;
+  				font-weight: 400;
+  				src: url(../res/font/notoserifregular.ttf)
+			}
+        
+            @font-face {
+  				font-family: 'Noto Serif';
+  				font-style: italic;
+  				font-weight: 700;
+  				src: url(../res/font/notoserifregular.ttf)
+			}
+        
+            @font-face {
+  				font-family: 'Noto Serif';
+  				font-style: normal;
+  				font-weight: 700;
+  				src: url(../res/font/notoserifregular.ttf)
+			}
+			
+			@font-face {
+  				font-family: 'Droid Sans Mono';
+  				font-style: normal;
+  				font-weight: 400;
+  				src: url(../res/font/droidsansmono.ttf)
+			}
+        
+            @font-face {
+  				font-family: 'Droid Sans Mono';
+  				font-style: italic;
+  				font-weight: 400;
+  				src: url(../res/font/droidsansmono.ttf)
+			}
+        
+            @font-face {
+  				font-family: 'Droid Sans Mono';
+  				font-style: italic;
+  				font-weight: 700;
+  				src: url(../res/font/droidsansmono.ttf)
+			}
+        
+            @font-face {
+  				font-family: 'Droid Sans Mono';
+  				font-style: normal;
+  				font-weight: 700;
+  				src: url(../res/font/droidsansmono.ttf)
+			}
+                                

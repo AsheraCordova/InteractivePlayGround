@@ -1,0 +1,183 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data></data>
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#e5db54"
+        tools:ignore="MissingPrefix">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="closeDialog"
+                android:text="Close"></Button>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="openDialog"
+                android:text="Child Dialog Match Parent"></Button>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="openDialogFullScreen"
+                android:text="Child Dialog Full Screen"></Button>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="openDialogWrapContent"
+                android:text="Child Dialog wrap Content"></Button>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="openDialogCustom"
+                android:text="Child Dialog Custom Backdrop"></Button>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="openDialogCancelOnTouch"
+                android:text="Child Dialog CancelOnTouch"></Button>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="openDialogDimDisabled"
+                android:text="Child Dialog Dim Disabled"></Button>
+
+            <TextView
+                style="@style/blackBg"
+                modelParam="let testObj = testObj from testObj->view into session as map"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Model Attributes on view test"></TextView>
+
+            <EditText
+                modelPojoToUi="text = email from x->view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="email"
+                android:imeOptions="actionNext"
+                android:inputType="text"
+                android:maxLines="1"
+                android:nextFocusDown="@+id/childAttr"
+                android:nextFocusForward="@+id/childAttr"></EditText>
+
+            <EditText
+                modelSyncEvents="onKey"
+                modelUiToPojo="password = text into testObj->session"
+                onKey=""
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="password"
+                android:imeOptions="actionNext"
+                android:inputType="text"
+                android:maxLines="1"></EditText>
+
+            <EditText
+                android:id="@+id/childAttr"
+                modelRef="loginForm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="childAttr"
+                android:imeOptions="actionNext"
+                android:inputType="text"
+                android:maxLines="1"></EditText>
+
+            <EditText
+                modelPojoToUi="text = emailIntent from testObj->session"
+                modelSyncEvents="onKey"
+                modelUiToPojo="emailIntent = text into testObj->session"
+                onKey=""
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"></EditText>
+
+            <CheckBox
+                modelSyncEvents="onCheckedChange"
+                modelUiToPojo="terms = checked into testObj->view"
+                onCheckedChange=""
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"></CheckBox>
+
+
+            <RadioGroup
+                modelSyncEvents="onCheckedChange"
+                modelUiToPojo="gender = checkedButton into testObj->view"
+                onCheckedChange=""
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/radio0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Male"></RadioButton>
+
+                <RadioButton
+                    android:id="@+id/radio1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Female"></RadioButton>
+            </RadioGroup>
+
+            <Switch
+                android:id="@+id/checked1"
+                modelSyncEvents="onCheckedChange"
+                modelUiToPojo="notification = checked into testObj->view"
+                onCheckedChange=""
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"></Switch>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="login(model=. from testObj->view)"
+                android:text="Login"></Button>
+
+            <TextView
+                style="@style/blackBg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer blandit aliquam libero, vel volutpat nisl pulvinar at. Nullam vel diam neque. Curabitur non nibh arcu. Proin vel congue neque. Etiam lobortis mi diam, in feugiat ante iaculis quis. Aliquam semper vitae turpis ac consectetur. Duis condimentum lectus non dictum porta. Ut elementum accumsan ex at feugiat. Fusce efficitur, erat sit amet rhoncus mollis, nunc dui luctus metus, eget mattis nibh leo a tortor. Pellentesque ac congue justo. Aliquam vehicula ut leo nec consequat. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam non purus aliquam, rutrum turpis nec, vestibulum libero. Nullam posuere nulla tortor."></TextView>
+
+            <TextView
+                style="@style/blackBg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="1"></TextView>
+
+            <TextView
+                style="@style/blackBg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="1"></TextView>
+
+            <TextView
+                style="@style/blackBg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="1"></TextView>
+
+            <TextView
+                style="@style/blackBg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="1"></TextView>
+
+        </LinearLayout>
+    </ScrollView>
+</layout>
