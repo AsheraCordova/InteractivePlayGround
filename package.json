@@ -14,6 +14,7 @@
     "update-ios-plist": "cd platforms/android/app/src/main/gentool && npm run plist",
     "backup-android": "cd platforms/android/app/src/main/gentool && npm run backup",
     "restore-android": "cd platforms/android/app/src/main/gentool && npm run restore",
+	"clean-start-windows": "rmdir /s /q platforms node_modules plugins && cordova prepare && cd platforms/android/app/src/main/gentool && npm install && npm run fixIosSymLinks && npm run restore && npm run resize && cd ../tsc && npm install && cd ../gentool && npm run start skip_watch && cd ../tsc && npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [

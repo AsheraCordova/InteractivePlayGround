@@ -1,9 +1,11 @@
 import { EditText } from './android/widget/EditTextImpl';
 import { FrameLayout } from './android/widget/FrameLayoutImpl';
 import { Fragment, Inject } from './app/Fragment';
-import { preview, xml } from './R/Index';
+import { currentUrl, preview, xml } from './R/Index';
 import { InjectController, NavController } from './navigation/NavController';
+import { TextView } from './android/widget/TextViewImpl';
 
+declare var window:any;
 export default class Index extends Fragment {
     @InjectController({})
     navController!: NavController;
@@ -14,19 +16,23 @@ export default class Index extends Fragment {
     @Inject({ id: xml })
     private xmlEditText: EditText;
 
+    @Inject({ id: currentUrl })
+    private currentUrl: TextView;
     constructor() {
         super();
     }
 
     public async onCreate(obj: any) {
-        // let response = await fetch('https://raw.githubusercontent.com/AsheraCordova/HelloWorld/main/android_backup/res/layout/index.xml', {
-        //     method: 'GET',
-        //     mode: 'cors',
-        //     cache: 'default',
-        //   });
-        // let xml = await response.text();
-        this.xmlEditText.setText(`<TextView text="Hello"/>`);
-        this.executeCommand(this.xmlEditText);
+        let response = await fetch(window.currentUrl, {
+            method: 'GET',
+            mode: 'cors',
+            cache: 'default',
+          });
+        let xml = await response.text();
+        this.xmlEditText.setText(xml);
+        this.currentUrl.setText(window.currentUrl);
+        this.executeCommand(this.xmlEditText, this.currentUrl);
+        
     }
 
 

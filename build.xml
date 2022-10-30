@@ -1,0 +1,7 @@
+<project default="copy_todoc">
+    <target name="copy_todoc">
+			<copy todir="../Documentation/interactivesamples" overwrite="true">  
+  				<fileset dir="platforms/browser/app/src/main/assets/www" includes="**" excludes=""/>  
+			</copy>
+    </target>
+</project>

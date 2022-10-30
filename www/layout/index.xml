@@ -33,25 +33,15 @@
                 android:orientation="vertical"
                 android:padding="10dp">
 
-                <EditText
+                <TextView
+                    android:padding="5dp"
+                    android:id="@+id/currentUrl"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
                     android:background="@color/color_white"
-                    android:hint="@string/android_xml_url"
                     android:textColorHint="#aaa"
-                    android:textSize="14sp"
-                    onTextChange="showAlert"></EditText>
-
-                <EditText
-
-                    android:id="@+id/androidxmlurl"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@color/color_white"
-                    android:hint="@string/js_url"
-                    android:textColorHint="#aaa"
-                    android:textSize="14sp"></EditText>
+                    android:textSize="14sp"></TextView>
             </LinearLayout>
 
             <LinearLayout
