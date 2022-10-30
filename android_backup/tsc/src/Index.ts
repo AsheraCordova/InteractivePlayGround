@@ -5,7 +5,6 @@ import { currentUrl, preview, xml } from './R/Index';
 import { InjectController, NavController } from './navigation/NavController';
 import { TextView } from './android/widget/TextViewImpl';
 
-declare var window:any;
 export default class Index extends Fragment {
     @InjectController({})
     navController!: NavController;
@@ -22,15 +21,30 @@ export default class Index extends Fragment {
         super();
     }
 
+    getQueryParams(qs: any) {
+        qs = qs.split('+').join(' ');
+    
+        var params: any = {},
+            tokens,
+            re = /[?&]?([^=]+)=([^&]*)/g;
+    
+        while (tokens = re.exec(qs)) {
+            params[decodeURIComponent(tokens[1])] = decodeURIComponent(tokens[2]);
+        }
+    
+        return params;
+    }
+
     public async onCreate(obj: any) {
-        let response = await fetch(window.currentUrl, {
+        let url = this.getQueryParams(document.location.search)["url"];
+        let response = await fetch(url, {
             method: 'GET',
             mode: 'cors',
             cache: 'default',
           });
         let xml = await response.text();
         this.xmlEditText.setText(xml);
-        this.currentUrl.setText(window.currentUrl);
+        this.currentUrl.setText(url);
         this.executeCommand(this.xmlEditText, this.currentUrl);
         
     }
