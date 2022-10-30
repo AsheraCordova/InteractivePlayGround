@@ -510,7 +510,7 @@ var Index = /** @class */function (_super) {
             return [4 /*yield*/, fetch(url, {
               method: 'GET',
               mode: 'cors',
-              cache: 'default'
+              cache: 'no-cache'
             })];
           case 1:
             response = _a.sent();

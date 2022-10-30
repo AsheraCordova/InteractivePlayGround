@@ -11,11 +11,15 @@
         android:orientation="vertical">
 
         <TextView
+            android:textColor="#000"
+            android:textSize="14sp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Some text" />
 
         <TextView
+            android:textColor="#000"
+            android:textSize="14sp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Some more text" />
@@ -26,6 +30,8 @@
             android:layout_height="200dp" />
 
         <EditText
+            android:textColor="#000"
+            android:textSize="14sp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="You can type in me" />

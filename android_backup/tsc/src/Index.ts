@@ -40,7 +40,7 @@ export default class Index extends Fragment {
         let response = await fetch(url, {
             method: 'GET',
             mode: 'cors',
-            cache: 'default',
+            cache: 'no-cache',
           });
         let xml = await response.text();
         this.xmlEditText.setText(xml);
