@@ -752,10 +752,10 @@ var Index = /** @class */function (_super) {
     });
   };
 
-  Index.prototype.callInlineFunction = function () {
+  Index.prototype.callInlineFunction = function (obj) {
     return __awaiter(this, void 0, void 0, function () {
       return __generator(this, function (_a) {
-        window.showAlert();
+        window.inlineFunction(obj);
         return [2 /*return*/];
       });
     });

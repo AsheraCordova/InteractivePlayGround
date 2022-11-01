@@ -74,8 +74,8 @@ export default class Index extends Fragment {
         alert("test");
      }
 
-     async callInlineFunction() {
-        window.showAlert();
+     async callInlineFunction(obj: any) {
+        window.inlineFunction(obj);
      }
 
 }
