@@ -711,6 +711,9 @@ var Index = /** @class */function (_super) {
         switch (_a.label) {
           case 0:
             url = this.getQueryParams(document.location.search)["url"];
+            if (url == null) {
+              url = 'https://raw.githubusercontent.com/AsheraCordova/InteractivePlayGround/main/android_backup/res/layout/custom_component.xml';
+            }
             return [4 /*yield*/, fetch(url, {
               method: 'GET',
               mode: 'cors',
@@ -744,6 +747,15 @@ var Index = /** @class */function (_super) {
     return __awaiter(this, void 0, void 0, function () {
       return __generator(this, function (_a) {
         alert("test");
+        return [2 /*return*/];
+      });
+    });
+  };
+
+  Index.prototype.callInlineFunction = function () {
+    return __awaiter(this, void 0, void 0, function () {
+      return __generator(this, function (_a) {
+        window.showAlert();
         return [2 /*return*/];
       });
     });

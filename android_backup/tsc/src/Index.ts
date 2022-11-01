@@ -5,6 +5,8 @@ import { currentUrl, preview, xml } from './R/Index';
 import { InjectController, NavController } from './navigation/NavController';
 import { TextView } from './android/widget/TextViewImpl';
 
+declare var window: any;
+
 export default class Index extends Fragment {
     @InjectController({})
     navController!: NavController;
@@ -38,6 +40,10 @@ export default class Index extends Fragment {
     public async onCreate(obj: any) {
         let url = this.getQueryParams(document.location.search)["url"];
 
+        if (url == null) {
+            url = 'https://raw.githubusercontent.com/AsheraCordova/InteractivePlayGround/main/android_backup/res/layout/custom_component.xml';
+        }
+
         let response = await fetch(url, {
             method: 'GET',
             mode: 'cors',
@@ -66,6 +72,10 @@ export default class Index extends Fragment {
 
    async showAlert() {
         alert("test");
+     }
+
+     async callInlineFunction() {
+        window.showAlert();
      }
 
 }
