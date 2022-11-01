@@ -24683,9 +24683,14 @@ var App = /** @class */function () {
   App.prototype.nativeEvent = function (obj) {
     var currentView = this.getCurrentView(obj);
     console.log(obj.event + " " + obj.actionUrl + obj.fragmentId);
-    currentView[obj.event](obj);
+    if (currentView[obj.event]) {
+      currentView[obj.event](obj);
+    }
     if (obj.event == 'onDetach') {
       this.currentViewMap.delete(obj.fragmentId);
+    }
+    if (obj.javascript) {
+      eval(obj.javascript);
     }
   };
   return App;
