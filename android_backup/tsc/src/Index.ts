@@ -37,6 +37,7 @@ export default class Index extends Fragment {
 
     public async onCreate(obj: any) {
         let url = this.getQueryParams(document.location.search)["url"];
+
         let response = await fetch(url, {
             method: 'GET',
             mode: 'cors',
