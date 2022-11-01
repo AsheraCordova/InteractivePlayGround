@@ -1,0 +1,30 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:ignore="MissingPrefix">
+    <View android:layout_width="0dp"
+        widget-override="Inline"
+        name="@layout/cat_hello_textview"
+        type="resource"
+        android:layout_height="0dp"
+        tools:ignore="ExtraText">
+        <![CDATA[
+            <TextView
+                android:id="@+id/cat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="I am also a cat!"></TextView>
+        ]]>
+    </View>
+    <LinearLayout
+        android:padding="3dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <include layout="@layout/cat_hello_textview" />
+        <include layout="@layout/cat_hello_textview" />
+        <include layout="@layout/cat_hello_textview" />
+    </LinearLayout>
+</ScrollView>

@@ -32,4 +32,9 @@
         android:label="Error Detail"
         tools:layout="@layout/error_detail"></fragment>
 
+    <fragment
+        android:id="@+id/cat_hello"
+        android:name="com.ashera.core.GenericFragment"
+        android:label="Cat Hello"
+        tools:layout="@layout/cat_hello"></fragment>
 </navigation>

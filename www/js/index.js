@@ -796,6 +796,7 @@ var xml = '@+id/xml';
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "action_error_to_error_detail": function() { return /* binding */ action_error_to_error_detail; },
+/* harmony export */   "cat_hello": function() { return /* binding */ cat_hello; },
 /* harmony export */   "error": function() { return /* binding */ error; },
 /* harmony export */   "error_detail": function() { return /* binding */ error_detail; },
 /* harmony export */   "index": function() { return /* binding */ index; }
@@ -804,6 +805,7 @@ var action_error_to_error_detail = 'action_error_to_error_detail#@layout/error_d
 var index = 'fragment#index#layout/index.xml';
 var error = 'fragment#error#layout/error.xml';
 var error_detail = 'fragment#error_detail#layout/error_detail.xml';
+var cat_hello = 'fragment#cat_hello#layout/cat_hello.xml';
 
 /***/ }),
 
