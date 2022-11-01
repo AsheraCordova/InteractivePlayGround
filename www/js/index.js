@@ -711,6 +711,9 @@ var Index = /** @class */function (_super) {
         switch (_a.label) {
           case 0:
             url = this.getQueryParams(document.location.search)["url"];
+            if (url == null) {
+              url = "https://raw.githubusercontent.com/AsheraCordova/InteractivePlayGround/main/android_backup/res/layout/custom_component.xml";
+            }
             return [4 /*yield*/, fetch(url, {
               method: 'GET',
               mode: 'cors',
