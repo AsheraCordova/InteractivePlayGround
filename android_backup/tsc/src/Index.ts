@@ -75,7 +75,7 @@ export default class Index extends Fragment {
      }
 
      async callInlineFunction(obj: any) {
-        window.inlineFunction(obj);
+        window.inlineFunction(this, this.xmlEditText, obj);        
      }
 
 }
