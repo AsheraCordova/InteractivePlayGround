@@ -712,7 +712,7 @@ var Index = /** @class */function (_super) {
           case 0:
             url = this.getQueryParams(document.location.search)["url"];
             if (url == null) {
-              url = 'https://raw.githubusercontent.com/AsheraCordova/InteractivePlayGround/main/android_backup/res/layout/custom_component.xml';
+              url = 'https://raw.githubusercontent.com/AsheraCordova/InteractivePlayGround/main/android_backup/res/layout/event_handler.xml';
             }
             return [4 /*yield*/, fetch(url, {
               method: 'GET',
@@ -11019,6 +11019,7 @@ var Fragment = /** @class */function () {
   Fragment.prototype.findViewById = function (id, type) {
     return new type(id, undefined, undefined);
   };
+  Fragment.prototype.onCreateView = function (obj) {};
   Fragment.prototype.onAttach = function (obj) {};
   Fragment.prototype.onCreate = function (obj) {};
   Fragment.prototype.onResume = function (obj) {};

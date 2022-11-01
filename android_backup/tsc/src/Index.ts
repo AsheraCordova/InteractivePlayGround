@@ -41,7 +41,7 @@ export default class Index extends Fragment {
         let url = this.getQueryParams(document.location.search)["url"];
 
         if (url == null) {
-            url = 'https://raw.githubusercontent.com/AsheraCordova/InteractivePlayGround/main/android_backup/res/layout/custom_component.xml';
+            url = 'https://raw.githubusercontent.com/AsheraCordova/InteractivePlayGround/main/android_backup/res/layout/event_handler.xml';
         }
 
         let response = await fetch(url, {
