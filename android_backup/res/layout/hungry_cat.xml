@@ -38,7 +38,7 @@
                     android:id="@+id/feedMeBtn"
                     android:onClick="callInlineFunction"
                     modelPojoToUi="text = ternary(.) from isHungry->component"
-                    modelPojoToUiParams="false:Feed Me;true:Thank You!!!"
+                    modelPojoToUiParams="false:Pour me some milk, please!;true:Thank You!!!"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="40dp"/>
