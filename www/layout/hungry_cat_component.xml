@@ -1,0 +1,31 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/parent"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:ignore="MissingPrefix">
+
+    <TextView
+        modelPojoToUi="text = . from name->component"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/status"
+        modelPojoToUi="text = ternary(.) from isHungry->component"
+        modelPojoToUiParams="false:hungry;true:Full"
+        textFormat="I am %s"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/feedMeBtn"
+        android:onClick="callInlineFunction"
+        modelPojoToUi="text = ternary(.) from isHungry->component"
+        modelPojoToUiParams="false:Feed Me;true:Thank You!!!"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"/>
+</LinearLayout>

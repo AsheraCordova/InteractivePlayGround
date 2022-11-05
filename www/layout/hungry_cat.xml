@@ -1,0 +1,88 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:ignore="MissingPrefix">
+
+    <View
+        name="@layout/hungry_cat_component"
+        type="resource"
+        widget-override="Inline"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        tools:ignore="ExtraText">
+        <![CDATA[
+            <LinearLayout
+                android:id="@+id/parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                tools:ignore="MissingPrefix">
+
+                <TextView
+                    modelPojoToUi="text = . from name->component"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/status"
+                    modelPojoToUi="text = ternary(.) from isHungry->component"
+                    modelPojoToUiParams="false:hungry;true:Full"
+                    textFormat="I am %s"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <Button
+                    android:id="@+id/feedMeBtn"
+                    android:onClick="callInlineFunction"
+                    modelPojoToUi="text = ternary(.) from isHungry->component"
+                    modelPojoToUiParams="false:Feed Me;true:Thank You!!!"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="40dp"/>
+            </LinearLayout>
+        ]]>
+    </View>
+
+    <View
+        name="@layout/cat_hello_textview"
+        type="javascript"
+        widget-override="Inline"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        tools:ignore="ExtraText">
+        <![CDATA[
+                window.inlineFunction = function(fragment, command, obj) {
+                    command.updateModelData(obj.componentId + "#" + "isHungry->component as bool", true).refreshUiFromModel(
+			            obj.componentId + "#status," + obj.componentId + "#feedMeBtn");
+		            fragment.executeCommand(tcommand);
+                }
+            ]]>
+    </View>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <include
+            name="Munkustrap"
+            componentId="test"
+            isHungry="false"
+            isHungry_type="bool"
+            layout="@layout/hungry_cat_component" />
+
+        <include
+            name="Spot"
+            componentId="test1"
+            isHungry="false"
+            isHungry_type="bool"
+            layout="@layout/hungry_cat_component" />
+
+
+    </LinearLayout>
+
+</LinearLayout>
