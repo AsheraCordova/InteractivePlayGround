@@ -8,6 +8,7 @@
     tools:ignore="MissingPrefix">
 
     <TextView
+        textFormat="I am %s."
         modelPojoToUi="text = . from name->component"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />

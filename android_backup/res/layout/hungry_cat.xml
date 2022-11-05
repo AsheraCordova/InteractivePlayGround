@@ -22,6 +22,7 @@
 
                 <TextView
                     modelPojoToUi="text = . from name->component"
+                    textFormat="I am %s."
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
 
