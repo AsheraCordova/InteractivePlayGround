@@ -56,7 +56,7 @@
                 window.inlineFunction = function(fragment, command, obj) {
                     command.updateModelData(obj.componentId + "#" + "isHungry->component as bool", true).refreshUiFromModel(
 			            obj.componentId + "#status," + obj.componentId + "#feedMeBtn");
-		            fragment.executeCommand(tcommand);
+		            fragment.executeCommand(command);
                 }
             ]]>
     </View>

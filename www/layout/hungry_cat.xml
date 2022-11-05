@@ -18,8 +18,7 @@
                 android:id="@+id/parent"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                tools:ignore="MissingPrefix">
+                android:orientation="vertical">
 
                 <TextView
                     modelPojoToUi="text = . from name->component"
