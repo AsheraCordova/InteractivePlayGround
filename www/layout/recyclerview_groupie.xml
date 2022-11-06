@@ -34,16 +34,8 @@
         tools:ignore="ExtraText">
         <![CDATA[
                 var data =  [
-                    {name: 'Devin'},
-                    {name: 'Dan'},
-                    {name: 'Dominic'},
-                    {name: 'Jackson'},
-                    {name: 'James'},
-                    {name: 'Joel'},
-                    {name: 'John'},
-                    {name: 'Jillian'},
-                    {name: 'Jimmy'},
-                    {name: 'Julie'}
+                    {name: 'D', subitems: [{name:'Devin'}, {name:'Dan'}, {name:'Dominic'}]},
+                    {name: 'J', subitems: [{name:'Jackson'}, {name:'James'}, {name:'Jillian'}, {name:'Jimmy'}, {name:'Joel'}, {name:'John'}, {name:'Julie'}]}
                 ];
                 window.inlineFunction = function(fragment, command, obj) {
                     command.updateModelData("testObj->view as list", data).notifyDataSetChanged(true);
@@ -65,7 +57,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-        app:spanCount="12"
-        tools:listitem="@layout/recyclerview_text"></androidx.recyclerview.widget.RecyclerView>
+        app:spanCount="12"></androidx.recyclerview.widget.RecyclerView>
 
 </LinearLayout>
