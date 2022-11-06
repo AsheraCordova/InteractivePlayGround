@@ -1,0 +1,71 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:ignore="MissingPrefix">
+
+    <View
+        name="@layout/recyclerview_text"
+        type="resource"
+        widget-override="Inline"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        tools:ignore="ExtraText">
+        <![CDATA[
+            <TextView
+                android:padding="10dp"
+                android:textSize="18sp"
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                modelPojoToUi="text = name from item->loopvar"
+                android:text="Name"
+                tools:ignore="MissingPrefix"></TextView>
+        ]]>
+    </View>
+
+    <View
+        type="javascript"
+        widget-override="Inline"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        tools:ignore="ExtraText">
+        <![CDATA[
+                var data =  [
+                    {name: 'Devin'},
+                    {name: 'Dan'},
+                    {name: 'Dominic'},
+                    {name: 'Jackson'},
+                    {name: 'James'},
+                    {name: 'Joel'},
+                    {name: 'John'},
+                    {name: 'Jillian'},
+                    {name: 'Jimmy'},
+                    {name: 'Julie'}
+                ];
+                window.inlineFunction = function(fragment, command, obj) {
+                    command.updateModelData("testObj->view as list", data).notifyDataSetChanged(true);
+		            fragment.executeCommand(command);
+                }
+            ]]>
+    </View>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:onClick="callInlineFunctionForRecyclerView"
+        android:text="Fill Recyclerview" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview"
+        modelFor="let item in . from testObj->view into loopvar as map"
+        viewHolderIds="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/recyclerview_text"></androidx.recyclerview.widget.RecyclerView>
+
+</LinearLayout>

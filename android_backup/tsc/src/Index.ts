@@ -4,6 +4,7 @@ import { Fragment, Inject } from './app/Fragment';
 import { currentUrl, preview, xml } from './R/Index';
 import { InjectController, NavController } from './navigation/NavController';
 import { TextView } from './android/widget/TextViewImpl';
+import { RecyclerView } from './android/widget/RecyclerViewImpl';
 
 declare var window: any;
 
@@ -41,7 +42,7 @@ export default class Index extends Fragment {
         let url = this.getQueryParams(document.location.search)["url"];
 
         if (url == null) {
-            url = 'https://raw.githubusercontent.com/AsheraCordova/InteractivePlayGround/main/android_backup/res/layout/hungry_cat.xml';
+            url = 'https://raw.githubusercontent.com/AsheraCordova/InteractivePlayGround/main/android_backup/res/layout/recyclerview.xml';
         }
 
         let response = await fetch(url, {
@@ -70,12 +71,19 @@ export default class Index extends Fragment {
         // this.executeCommand(this.xmlEditText);
     }
 
-   async showAlert() {
+    async showAlert() {
         alert("test");
      }
 
      async callInlineFunction(obj: any) {
         window.inlineFunction(this, this.xmlEditText, obj);        
+     }
+
+     @Inject({ id: xml })
+     private recyclerView: RecyclerView;
+ 
+     async callInlineFunctionForRecyclerView(obj: any) {
+        window.inlineFunction(this, this.recyclerView, obj);        
      }
 
 }

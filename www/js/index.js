@@ -531,6 +531,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _R_Index__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./R/Index */ "./src/R/Index.ts");
 /* harmony import */ var _navigation_NavController__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./navigation/NavController */ "./src/navigation/NavController.ts");
 /* harmony import */ var _android_widget_TextViewImpl__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./android/widget/TextViewImpl */ "./src/android/widget/TextViewImpl.ts");
+/* harmony import */ var _android_widget_RecyclerViewImpl__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./android/widget/RecyclerViewImpl */ "./src/android/widget/RecyclerViewImpl.ts");
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 var __extends = undefined && undefined.__extends || function () {
   var _extendStatics = function extendStatics(d, b) {
@@ -689,6 +690,7 @@ var __generator = undefined && undefined.__generator || function (thisArg, body)
 
 
 
+
 var Index = /** @class */function (_super) {
   __extends(Index, _super);
   function Index() {
@@ -712,7 +714,7 @@ var Index = /** @class */function (_super) {
           case 0:
             url = this.getQueryParams(document.location.search)["url"];
             if (url == null) {
-              url = 'https://raw.githubusercontent.com/AsheraCordova/InteractivePlayGround/main/android_backup/res/layout/hungry_cat.xml';
+              url = 'https://raw.githubusercontent.com/AsheraCordova/InteractivePlayGround/main/android_backup/res/layout/recyclerview.xml';
             }
             return [4 /*yield*/, fetch(url, {
               method: 'GET',
@@ -761,6 +763,15 @@ var Index = /** @class */function (_super) {
     });
   };
 
+  Index.prototype.callInlineFunctionForRecyclerView = function (obj) {
+    return __awaiter(this, void 0, void 0, function () {
+      return __generator(this, function (_a) {
+        window.inlineFunction(this, this.recyclerView, obj);
+        return [2 /*return*/];
+      });
+    });
+  };
+
   __decorate([(0,_navigation_NavController__WEBPACK_IMPORTED_MODULE_4__.InjectController)({}), __metadata("design:type", _navigation_NavController__WEBPACK_IMPORTED_MODULE_4__.NavController)], Index.prototype, "navController", void 0);
   __decorate([(0,_app_Fragment__WEBPACK_IMPORTED_MODULE_2__.Inject)({
     id: _R_Index__WEBPACK_IMPORTED_MODULE_3__.preview
@@ -771,6 +782,9 @@ var Index = /** @class */function (_super) {
   __decorate([(0,_app_Fragment__WEBPACK_IMPORTED_MODULE_2__.Inject)({
     id: _R_Index__WEBPACK_IMPORTED_MODULE_3__.currentUrl
   }), __metadata("design:type", _android_widget_TextViewImpl__WEBPACK_IMPORTED_MODULE_5__.TextView)], Index.prototype, "currentUrl", void 0);
+  __decorate([(0,_app_Fragment__WEBPACK_IMPORTED_MODULE_2__.Inject)({
+    id: _R_Index__WEBPACK_IMPORTED_MODULE_3__.xml
+  }), __metadata("design:type", _android_widget_RecyclerViewImpl__WEBPACK_IMPORTED_MODULE_6__.RecyclerView)], Index.prototype, "recyclerView", void 0);
   return Index;
 }(_app_Fragment__WEBPACK_IMPORTED_MODULE_2__.Fragment);
 /* harmony default export */ __webpack_exports__["default"] = (Index);
@@ -3490,6 +3504,530 @@ var FrameLayout = /** @class */function (_super) {
 }(FrameLayoutImpl);
 
 FrameLayoutImpl.initialize();
+//end - staticinit
+
+/***/ }),
+
+/***/ "./src/android/widget/RecyclerViewImpl.ts":
+/*!************************************************!*\
+  !*** ./src/android/widget/RecyclerViewImpl.ts ***!
+  \************************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "RecyclerView": function() { return /* binding */ RecyclerView; },
+/* harmony export */   "RecyclerViewImpl": function() { return /* binding */ RecyclerViewImpl; },
+/* harmony export */   "RecyclerViewImpl_addSectionItem": function() { return /* binding */ RecyclerViewImpl_addSectionItem; },
+/* harmony export */   "RecyclerViewImpl_removeAllItems": function() { return /* binding */ RecyclerViewImpl_removeAllItems; },
+/* harmony export */   "RecyclerViewImpl_removeSectionItem": function() { return /* binding */ RecyclerViewImpl_removeSectionItem; },
+/* harmony export */   "RecyclerViewImpl_updateSectionItem": function() { return /* binding */ RecyclerViewImpl_updateSectionItem; }
+/* harmony export */ });
+/* harmony import */ var _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../widget/CommandAttr */ "./src/widget/CommandAttr.ts");
+/* harmony import */ var class_transformer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! class-transformer */ "./node_modules/class-transformer/esm5/decorators/expose.decorator.js");
+/* harmony import */ var class_transformer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! class-transformer */ "./node_modules/class-transformer/esm5/decorators/type.decorator.js");
+/* harmony import */ var class_transformer__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! class-transformer */ "./node_modules/class-transformer/esm5/decorators/exclude.decorator.js");
+/* harmony import */ var babel_polyfill__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! babel-polyfill */ "./node_modules/babel-polyfill/lib/index.js");
+/* harmony import */ var babel_polyfill__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(babel_polyfill__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _ViewGroupImpl__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./ViewGroupImpl */ "./src/android/widget/ViewGroupImpl.ts");
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+// start - imports
+var __extends = undefined && undefined.__extends || function () {
+  var _extendStatics = function extendStatics(d, b) {
+    _extendStatics = Object.setPrototypeOf || {
+      __proto__: []
+    } instanceof Array && function (d, b) {
+      d.__proto__ = b;
+    } || function (d, b) {
+      for (var p in b) {
+        if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p];
+      }
+    };
+    return _extendStatics(d, b);
+  };
+  return function (d, b) {
+    if (typeof b !== "function" && b !== null) throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+    _extendStatics(d, b);
+    function __() {
+      this.constructor = d;
+    }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+  };
+}();
+var __decorate = undefined && undefined.__decorate || function (decorators, target, key, desc) {
+  var c = arguments.length,
+    r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc,
+    d;
+  if ((typeof Reflect === "undefined" ? "undefined" : _typeof(Reflect)) === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);else for (var i = decorators.length - 1; i >= 0; i--) {
+    if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+  }
+  return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = undefined && undefined.__metadata || function (k, v) {
+  if ((typeof Reflect === "undefined" ? "undefined" : _typeof(Reflect)) === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var RecyclerViewImpl_addSectionItem = /** @class */function () {
+  function RecyclerViewImpl_addSectionItem() {}
+  __decorate([(0,class_transformer__WEBPACK_IMPORTED_MODULE_2__.Expose)({
+    name: "sectionId"
+  }), __metadata("design:type", String)], RecyclerViewImpl_addSectionItem.prototype, "sectionId", void 0);
+  __decorate([(0,class_transformer__WEBPACK_IMPORTED_MODULE_2__.Expose)({
+    name: "itemConfigId"
+  }), __metadata("design:type", String)], RecyclerViewImpl_addSectionItem.prototype, "itemConfigId", void 0);
+  __decorate([(0,class_transformer__WEBPACK_IMPORTED_MODULE_2__.Expose)({
+    name: "item"
+  }), __metadata("design:type", Object)], RecyclerViewImpl_addSectionItem.prototype, "item", void 0);
+  return RecyclerViewImpl_addSectionItem;
+}();
+
+var RecyclerViewImpl_removeSectionItem = /** @class */function () {
+  function RecyclerViewImpl_removeSectionItem() {}
+  __decorate([(0,class_transformer__WEBPACK_IMPORTED_MODULE_2__.Expose)({
+    name: "sectionId"
+  }), __metadata("design:type", String)], RecyclerViewImpl_removeSectionItem.prototype, "sectionId", void 0);
+  __decorate([(0,class_transformer__WEBPACK_IMPORTED_MODULE_2__.Expose)({
+    name: "itemConfigId"
+  }), __metadata("design:type", String)], RecyclerViewImpl_removeSectionItem.prototype, "itemConfigId", void 0);
+  __decorate([(0,class_transformer__WEBPACK_IMPORTED_MODULE_2__.Expose)({
+    name: "itemId"
+  }), __metadata("design:type", String)], RecyclerViewImpl_removeSectionItem.prototype, "itemId", void 0);
+  return RecyclerViewImpl_removeSectionItem;
+}();
+
+var RecyclerViewImpl_removeAllItems = /** @class */function () {
+  function RecyclerViewImpl_removeAllItems() {}
+  __decorate([(0,class_transformer__WEBPACK_IMPORTED_MODULE_2__.Expose)({
+    name: "sectionId"
+  }), __metadata("design:type", String)], RecyclerViewImpl_removeAllItems.prototype, "sectionId", void 0);
+  return RecyclerViewImpl_removeAllItems;
+}();
+
+var RecyclerViewImpl_updateSectionItem = /** @class */function () {
+  function RecyclerViewImpl_updateSectionItem() {}
+  __decorate([(0,class_transformer__WEBPACK_IMPORTED_MODULE_2__.Expose)({
+    name: "sectionId"
+  }), __metadata("design:type", String)], RecyclerViewImpl_updateSectionItem.prototype, "sectionId", void 0);
+  __decorate([(0,class_transformer__WEBPACK_IMPORTED_MODULE_2__.Expose)({
+    name: "itemConfigId"
+  }), __metadata("design:type", String)], RecyclerViewImpl_updateSectionItem.prototype, "itemConfigId", void 0);
+  __decorate([(0,class_transformer__WEBPACK_IMPORTED_MODULE_2__.Expose)({
+    name: "itemId"
+  }), __metadata("design:type", String)], RecyclerViewImpl_updateSectionItem.prototype, "itemId", void 0);
+  __decorate([(0,class_transformer__WEBPACK_IMPORTED_MODULE_2__.Expose)({
+    name: "item"
+  }), __metadata("design:type", Object)], RecyclerViewImpl_updateSectionItem.prototype, "item", void 0);
+  return RecyclerViewImpl_updateSectionItem;
+}();
+
+// end - imports
+
+var RecyclerViewImpl = /** @class */function (_super) {
+  __extends(RecyclerViewImpl, _super);
+  function RecyclerViewImpl(id, path, event) {
+    var _this = _super.call(this, id, path, event) || this;
+    _this.thisPointer = _this.getThisPointer();
+    return _this;
+  }
+  //start - body
+  RecyclerViewImpl.initialize = function () {};
+  RecyclerViewImpl.prototype.reset = function () {
+    _super.prototype.reset.call(this);
+    this.onFling = undefined;
+    this.onScrollStateChange = undefined;
+    this.onScrolled = undefined;
+    this.layoutManager = undefined;
+    this.viewHolderIds = undefined;
+    this.spanCount = undefined;
+    this.layout = undefined;
+    this.orientation = undefined;
+    this.addSectionItem_ = undefined;
+    this.removeSectionItem_ = undefined;
+    this.removeAllItems_ = undefined;
+    this.updateSectionItem_ = undefined;
+    this.stackFromEnd = undefined;
+    this.reverseLayout = undefined;
+    this.scrollToEnd_ = undefined;
+    this.scrollToTop_ = undefined;
+    this.scrollToPosition_ = undefined;
+    this.headerDisabled = undefined;
+    this.footerDisabled = undefined;
+    return this.thisPointer;
+  };
+  RecyclerViewImpl.prototype.setOnFling = function (value) {
+    this.resetIfRequired();
+    if (this.onFling == null || this.onFling == undefined) {
+      this.onFling = new _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__["default"]();
+    }
+    this.onFling.setSetter(true);
+    this.onFling.setValue(value);
+    this.orderSet++;
+    this.onFling.setOrderSet(this.orderSet);
+    return this.thisPointer;
+  };
+  RecyclerViewImpl.prototype.setOnScrollStateChange = function (value) {
+    this.resetIfRequired();
+    if (this.onScrollStateChange == null || this.onScrollStateChange == undefined) {
+      this.onScrollStateChange = new _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__["default"]();
+    }
+    this.onScrollStateChange.setSetter(true);
+    this.onScrollStateChange.setValue(value);
+    this.orderSet++;
+    this.onScrollStateChange.setOrderSet(this.orderSet);
+    return this.thisPointer;
+  };
+  RecyclerViewImpl.prototype.setOnScrolled = function (value) {
+    this.resetIfRequired();
+    if (this.onScrolled == null || this.onScrolled == undefined) {
+      this.onScrolled = new _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__["default"]();
+    }
+    this.onScrolled.setSetter(true);
+    this.onScrolled.setValue(value);
+    this.orderSet++;
+    this.onScrolled.setOrderSet(this.orderSet);
+    return this.thisPointer;
+  };
+  RecyclerViewImpl.prototype.setLayoutManager = function (value) {
+    this.resetIfRequired();
+    if (this.layoutManager == null || this.layoutManager == undefined) {
+      this.layoutManager = new _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__["default"]();
+    }
+    this.layoutManager.setSetter(true);
+    this.layoutManager.setValue(value);
+    this.orderSet++;
+    this.layoutManager.setOrderSet(this.orderSet);
+    return this.thisPointer;
+  };
+  RecyclerViewImpl.prototype.setViewHolderIds = function (value) {
+    this.resetIfRequired();
+    if (this.viewHolderIds == null || this.viewHolderIds == undefined) {
+      this.viewHolderIds = new _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__["default"]();
+    }
+    this.viewHolderIds.setSetter(true);
+    this.viewHolderIds.setValue(value);
+    this.orderSet++;
+    this.viewHolderIds.setOrderSet(this.orderSet);
+    return this.thisPointer;
+  };
+  RecyclerViewImpl.prototype.setSpanCount = function (value) {
+    this.resetIfRequired();
+    if (this.spanCount == null || this.spanCount == undefined) {
+      this.spanCount = new _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__["default"]();
+    }
+    this.spanCount.setSetter(true);
+    this.spanCount.setValue(value);
+    this.orderSet++;
+    this.spanCount.setOrderSet(this.orderSet);
+    return this.thisPointer;
+  };
+  RecyclerViewImpl.prototype.setLayout = function (value) {
+    this.resetIfRequired();
+    if (this.layout == null || this.layout == undefined) {
+      this.layout = new _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__["default"]();
+    }
+    this.layout.setSetter(true);
+    this.layout.setValue(value);
+    this.orderSet++;
+    this.layout.setOrderSet(this.orderSet);
+    return this.thisPointer;
+  };
+  RecyclerViewImpl.prototype.tryGetOrientation = function () {
+    this.resetIfRequired();
+    if (this.orientation == null || this.orientation == undefined) {
+      this.orientation = new _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__["default"]();
+    }
+    this.orientation.setGetter(true);
+    this.orderGet++;
+    this.orientation.setOrderGet(this.orderGet);
+    return this.thisPointer;
+  };
+  RecyclerViewImpl.prototype.getOrientation = function () {
+    if (this.orientation == null || this.orientation == undefined) {
+      this.orientation = new _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__["default"]();
+    }
+    return this.orientation.getCommandReturnValue();
+  };
+  RecyclerViewImpl.prototype.setOrientation = function (value) {
+    this.resetIfRequired();
+    if (this.orientation == null || this.orientation == undefined) {
+      this.orientation = new _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__["default"]();
+    }
+    this.orientation.setSetter(true);
+    this.orientation.setValue(value);
+    this.orderSet++;
+    this.orientation.setOrderSet(this.orderSet);
+    return this.thisPointer;
+  };
+  RecyclerViewImpl.prototype.addSectionItem = function (sectionId, itemConfigId, item) {
+    this.resetIfRequired();
+    if (this.addSectionItem_ == null || this.addSectionItem_ == undefined) {
+      this.addSectionItem_ = new _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__["default"]();
+    }
+    var wrapper = new RecyclerViewImpl_addSectionItem();
+    wrapper.sectionId = sectionId;
+    wrapper.itemConfigId = itemConfigId;
+    wrapper.item = item;
+    this.addSectionItem_.setSetter(true);
+    this.addSectionItem_.setValue(wrapper);
+    this.orderSet++;
+    this.addSectionItem_.setOrderSet(this.orderSet);
+    return this.thisPointer;
+  };
+  RecyclerViewImpl.prototype.removeSectionItem = function (sectionId, itemConfigId, itemId) {
+    this.resetIfRequired();
+    if (this.removeSectionItem_ == null || this.removeSectionItem_ == undefined) {
+      this.removeSectionItem_ = new _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__["default"]();
+    }
+    var wrapper = new RecyclerViewImpl_removeSectionItem();
+    wrapper.sectionId = sectionId;
+    wrapper.itemConfigId = itemConfigId;
+    wrapper.itemId = itemId;
+    this.removeSectionItem_.setSetter(true);
+    this.removeSectionItem_.setValue(wrapper);
+    this.orderSet++;
+    this.removeSectionItem_.setOrderSet(this.orderSet);
+    return this.thisPointer;
+  };
+  RecyclerViewImpl.prototype.removeAllItems = function (sectionId) {
+    this.resetIfRequired();
+    if (this.removeAllItems_ == null || this.removeAllItems_ == undefined) {
+      this.removeAllItems_ = new _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__["default"]();
+    }
+    var wrapper = new RecyclerViewImpl_removeAllItems();
+    wrapper.sectionId = sectionId;
+    this.removeAllItems_.setSetter(true);
+    this.removeAllItems_.setValue(wrapper);
+    this.orderSet++;
+    this.removeAllItems_.setOrderSet(this.orderSet);
+    return this.thisPointer;
+  };
+  RecyclerViewImpl.prototype.updateSectionItem = function (sectionId, itemConfigId, itemId, item) {
+    this.resetIfRequired();
+    if (this.updateSectionItem_ == null || this.updateSectionItem_ == undefined) {
+      this.updateSectionItem_ = new _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__["default"]();
+    }
+    var wrapper = new RecyclerViewImpl_updateSectionItem();
+    wrapper.sectionId = sectionId;
+    wrapper.itemConfigId = itemConfigId;
+    wrapper.itemId = itemId;
+    wrapper.item = item;
+    this.updateSectionItem_.setSetter(true);
+    this.updateSectionItem_.setValue(wrapper);
+    this.orderSet++;
+    this.updateSectionItem_.setOrderSet(this.orderSet);
+    return this.thisPointer;
+  };
+  RecyclerViewImpl.prototype.setStackFromEnd = function (value) {
+    this.resetIfRequired();
+    if (this.stackFromEnd == null || this.stackFromEnd == undefined) {
+      this.stackFromEnd = new _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__["default"]();
+    }
+    this.stackFromEnd.setSetter(true);
+    this.stackFromEnd.setValue(value);
+    this.orderSet++;
+    this.stackFromEnd.setOrderSet(this.orderSet);
+    return this.thisPointer;
+  };
+  RecyclerViewImpl.prototype.tryGetReverseLayout = function () {
+    this.resetIfRequired();
+    if (this.reverseLayout == null || this.reverseLayout == undefined) {
+      this.reverseLayout = new _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__["default"]();
+    }
+    this.reverseLayout.setGetter(true);
+    this.orderGet++;
+    this.reverseLayout.setOrderGet(this.orderGet);
+    return this.thisPointer;
+  };
+  RecyclerViewImpl.prototype.isReverseLayout = function () {
+    if (this.reverseLayout == null || this.reverseLayout == undefined) {
+      this.reverseLayout = new _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__["default"]();
+    }
+    return this.reverseLayout.getCommandReturnValue();
+  };
+  RecyclerViewImpl.prototype.setReverseLayout = function (value) {
+    this.resetIfRequired();
+    if (this.reverseLayout == null || this.reverseLayout == undefined) {
+      this.reverseLayout = new _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__["default"]();
+    }
+    this.reverseLayout.setSetter(true);
+    this.reverseLayout.setValue(value);
+    this.orderSet++;
+    this.reverseLayout.setOrderSet(this.orderSet);
+    return this.thisPointer;
+  };
+  RecyclerViewImpl.prototype.scrollToEnd = function (value) {
+    this.resetIfRequired();
+    if (this.scrollToEnd_ == null || this.scrollToEnd_ == undefined) {
+      this.scrollToEnd_ = new _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__["default"]();
+    }
+    this.scrollToEnd_.setSetter(true);
+    this.scrollToEnd_.setValue(value);
+    this.orderSet++;
+    this.scrollToEnd_.setOrderSet(this.orderSet);
+    return this.thisPointer;
+  };
+  RecyclerViewImpl.prototype.scrollToTop = function (value) {
+    this.resetIfRequired();
+    if (this.scrollToTop_ == null || this.scrollToTop_ == undefined) {
+      this.scrollToTop_ = new _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__["default"]();
+    }
+    this.scrollToTop_.setSetter(true);
+    this.scrollToTop_.setValue(value);
+    this.orderSet++;
+    this.scrollToTop_.setOrderSet(this.orderSet);
+    return this.thisPointer;
+  };
+  RecyclerViewImpl.prototype.scrollToPosition = function (value) {
+    this.resetIfRequired();
+    if (this.scrollToPosition_ == null || this.scrollToPosition_ == undefined) {
+      this.scrollToPosition_ = new _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__["default"]();
+    }
+    this.scrollToPosition_.setSetter(true);
+    this.scrollToPosition_.setValue(value);
+    this.orderSet++;
+    this.scrollToPosition_.setOrderSet(this.orderSet);
+    return this.thisPointer;
+  };
+  RecyclerViewImpl.prototype.setHeaderDisabled = function (value) {
+    this.resetIfRequired();
+    if (this.headerDisabled == null || this.headerDisabled == undefined) {
+      this.headerDisabled = new _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__["default"]();
+    }
+    this.headerDisabled.setSetter(true);
+    this.headerDisabled.setValue(value);
+    this.orderSet++;
+    this.headerDisabled.setOrderSet(this.orderSet);
+    return this.thisPointer;
+  };
+  RecyclerViewImpl.prototype.setFooterDisabled = function (value) {
+    this.resetIfRequired();
+    if (this.footerDisabled == null || this.footerDisabled == undefined) {
+      this.footerDisabled = new _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__["default"]();
+    }
+    this.footerDisabled.setSetter(true);
+    this.footerDisabled.setValue(value);
+    this.orderSet++;
+    this.footerDisabled.setOrderSet(this.orderSet);
+    return this.thisPointer;
+  };
+  __decorate([(0,class_transformer__WEBPACK_IMPORTED_MODULE_4__.Type)(function () {
+    return _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__["default"];
+  }), (0,class_transformer__WEBPACK_IMPORTED_MODULE_2__.Expose)({
+    name: "onFling"
+  }), __metadata("design:type", Object)], RecyclerViewImpl.prototype, "onFling", void 0);
+  __decorate([(0,class_transformer__WEBPACK_IMPORTED_MODULE_4__.Type)(function () {
+    return _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__["default"];
+  }), (0,class_transformer__WEBPACK_IMPORTED_MODULE_2__.Expose)({
+    name: "onScrollStateChange"
+  }), __metadata("design:type", Object)], RecyclerViewImpl.prototype, "onScrollStateChange", void 0);
+  __decorate([(0,class_transformer__WEBPACK_IMPORTED_MODULE_4__.Type)(function () {
+    return _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__["default"];
+  }), (0,class_transformer__WEBPACK_IMPORTED_MODULE_2__.Expose)({
+    name: "onScrolled"
+  }), __metadata("design:type", Object)], RecyclerViewImpl.prototype, "onScrolled", void 0);
+  __decorate([(0,class_transformer__WEBPACK_IMPORTED_MODULE_4__.Type)(function () {
+    return _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__["default"];
+  }), (0,class_transformer__WEBPACK_IMPORTED_MODULE_2__.Expose)({
+    name: "layoutManager"
+  }), __metadata("design:type", Object)], RecyclerViewImpl.prototype, "layoutManager", void 0);
+  __decorate([(0,class_transformer__WEBPACK_IMPORTED_MODULE_4__.Type)(function () {
+    return _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__["default"];
+  }), (0,class_transformer__WEBPACK_IMPORTED_MODULE_2__.Expose)({
+    name: "viewHolderIds"
+  }), __metadata("design:type", Object)], RecyclerViewImpl.prototype, "viewHolderIds", void 0);
+  __decorate([(0,class_transformer__WEBPACK_IMPORTED_MODULE_4__.Type)(function () {
+    return _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__["default"];
+  }), (0,class_transformer__WEBPACK_IMPORTED_MODULE_2__.Expose)({
+    name: "spanCount"
+  }), __metadata("design:type", Object)], RecyclerViewImpl.prototype, "spanCount", void 0);
+  __decorate([(0,class_transformer__WEBPACK_IMPORTED_MODULE_4__.Type)(function () {
+    return _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__["default"];
+  }), (0,class_transformer__WEBPACK_IMPORTED_MODULE_2__.Expose)({
+    name: "layout"
+  }), __metadata("design:type", Object)], RecyclerViewImpl.prototype, "layout", void 0);
+  __decorate([(0,class_transformer__WEBPACK_IMPORTED_MODULE_4__.Type)(function () {
+    return _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__["default"];
+  }), (0,class_transformer__WEBPACK_IMPORTED_MODULE_2__.Expose)({
+    name: "orientation"
+  }), __metadata("design:type", Object)], RecyclerViewImpl.prototype, "orientation", void 0);
+  __decorate([(0,class_transformer__WEBPACK_IMPORTED_MODULE_4__.Type)(function () {
+    return _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__["default"];
+  }), (0,class_transformer__WEBPACK_IMPORTED_MODULE_2__.Expose)({
+    name: "addSectionItem"
+  }), __metadata("design:type", Object)], RecyclerViewImpl.prototype, "addSectionItem_", void 0);
+  __decorate([(0,class_transformer__WEBPACK_IMPORTED_MODULE_4__.Type)(function () {
+    return _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__["default"];
+  }), (0,class_transformer__WEBPACK_IMPORTED_MODULE_2__.Expose)({
+    name: "removeSectionItem"
+  }), __metadata("design:type", Object)], RecyclerViewImpl.prototype, "removeSectionItem_", void 0);
+  __decorate([(0,class_transformer__WEBPACK_IMPORTED_MODULE_4__.Type)(function () {
+    return _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__["default"];
+  }), (0,class_transformer__WEBPACK_IMPORTED_MODULE_2__.Expose)({
+    name: "removeAllItems"
+  }), __metadata("design:type", Object)], RecyclerViewImpl.prototype, "removeAllItems_", void 0);
+  __decorate([(0,class_transformer__WEBPACK_IMPORTED_MODULE_4__.Type)(function () {
+    return _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__["default"];
+  }), (0,class_transformer__WEBPACK_IMPORTED_MODULE_2__.Expose)({
+    name: "updateSectionItem"
+  }), __metadata("design:type", Object)], RecyclerViewImpl.prototype, "updateSectionItem_", void 0);
+  __decorate([(0,class_transformer__WEBPACK_IMPORTED_MODULE_4__.Type)(function () {
+    return _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__["default"];
+  }), (0,class_transformer__WEBPACK_IMPORTED_MODULE_2__.Expose)({
+    name: "stackFromEnd"
+  }), __metadata("design:type", Object)], RecyclerViewImpl.prototype, "stackFromEnd", void 0);
+  __decorate([(0,class_transformer__WEBPACK_IMPORTED_MODULE_4__.Type)(function () {
+    return _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__["default"];
+  }), (0,class_transformer__WEBPACK_IMPORTED_MODULE_2__.Expose)({
+    name: "reverseLayout"
+  }), __metadata("design:type", Object)], RecyclerViewImpl.prototype, "reverseLayout", void 0);
+  __decorate([(0,class_transformer__WEBPACK_IMPORTED_MODULE_4__.Type)(function () {
+    return _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__["default"];
+  }), (0,class_transformer__WEBPACK_IMPORTED_MODULE_2__.Expose)({
+    name: "scrollToEnd"
+  }), __metadata("design:type", Object)], RecyclerViewImpl.prototype, "scrollToEnd_", void 0);
+  __decorate([(0,class_transformer__WEBPACK_IMPORTED_MODULE_4__.Type)(function () {
+    return _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__["default"];
+  }), (0,class_transformer__WEBPACK_IMPORTED_MODULE_2__.Expose)({
+    name: "scrollToTop"
+  }), __metadata("design:type", Object)], RecyclerViewImpl.prototype, "scrollToTop_", void 0);
+  __decorate([(0,class_transformer__WEBPACK_IMPORTED_MODULE_4__.Type)(function () {
+    return _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__["default"];
+  }), (0,class_transformer__WEBPACK_IMPORTED_MODULE_2__.Expose)({
+    name: "scrollToPosition"
+  }), __metadata("design:type", Object)], RecyclerViewImpl.prototype, "scrollToPosition_", void 0);
+  __decorate([(0,class_transformer__WEBPACK_IMPORTED_MODULE_4__.Type)(function () {
+    return _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__["default"];
+  }), (0,class_transformer__WEBPACK_IMPORTED_MODULE_2__.Expose)({
+    name: "headerDisabled"
+  }), __metadata("design:type", Object)], RecyclerViewImpl.prototype, "headerDisabled", void 0);
+  __decorate([(0,class_transformer__WEBPACK_IMPORTED_MODULE_4__.Type)(function () {
+    return _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__["default"];
+  }), (0,class_transformer__WEBPACK_IMPORTED_MODULE_2__.Expose)({
+    name: "footerDisabled"
+  }), __metadata("design:type", Object)], RecyclerViewImpl.prototype, "footerDisabled", void 0);
+  __decorate([(0,class_transformer__WEBPACK_IMPORTED_MODULE_5__.Exclude)(), __metadata("design:type", Object)], RecyclerViewImpl.prototype, "thisPointer", void 0);
+  return RecyclerViewImpl;
+}(_ViewGroupImpl__WEBPACK_IMPORTED_MODULE_3__.ViewGroupImpl);
+
+//start - staticinit
+var RecyclerView = /** @class */function (_super) {
+  __extends(RecyclerView, _super);
+  function RecyclerView(id, path, event) {
+    return _super.call(this, id, path, event) || this;
+  }
+  RecyclerView.prototype.getThisPointer = function () {
+    return this;
+  };
+  RecyclerView.prototype.getClass = function () {
+    return RecyclerView;
+  };
+  return RecyclerView;
+}(RecyclerViewImpl);
+
+RecyclerViewImpl.initialize();
 //end - staticinit
 
 /***/ }),
