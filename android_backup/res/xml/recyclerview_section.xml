@@ -1,16 +1,13 @@
 <layout xmlns:app="http://schemas.android.com/apk/res-auto"
     adapter="groupie">
-    <section id="test1">
-        <section
-            id="test2"
-            modelFor="let item in . from testObj->view into loopvar as map">
-            <header
-                layout="@layout/recyclerview_text"
-                viewHolderIds="@+id/name"></header>
-            <item
-                layout="@layout/recyclerview_text"
-                modelFor="let item in subitems from item->loopvar into loopvar as map"
-                viewHolderIds="@+id/name" />
-        </section>
+    <section id="test1"
+        modelFor="let item in . from testObj->view into loopvar as map">
+        <header
+            layout="@layout/recyclerview_text"
+            viewHolderIds="@+id/name"></header>
+        <item
+            layout="@layout/recyclerview_text"
+            modelFor="let item in subitems from item->loopvar into loopvar as map"
+            viewHolderIds="@+id/name" />
     </section>
 </layout>
