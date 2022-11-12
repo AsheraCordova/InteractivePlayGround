@@ -532,6 +532,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _navigation_NavController__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./navigation/NavController */ "./src/navigation/NavController.ts");
 /* harmony import */ var _android_widget_TextViewImpl__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./android/widget/TextViewImpl */ "./src/android/widget/TextViewImpl.ts");
 /* harmony import */ var _android_widget_RecyclerViewImpl__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./android/widget/RecyclerViewImpl */ "./src/android/widget/RecyclerViewImpl.ts");
+/* harmony import */ var _R_NavGraph__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./R/NavGraph */ "./src/R/NavGraph.ts");
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 var __extends = undefined && undefined.__extends || function () {
   var _extendStatics = function extendStatics(d, b) {
@@ -691,6 +692,7 @@ var __generator = undefined && undefined.__generator || function (thisArg, body)
 
 
 
+
 var Index = /** @class */function (_super) {
   __extends(Index, _super);
   function Index() {
@@ -757,7 +759,10 @@ var Index = /** @class */function (_super) {
   Index.prototype.callInlineFunction = function (obj) {
     return __awaiter(this, void 0, void 0, function () {
       return __generator(this, function (_a) {
-        window.inlineFunction(this, this.xmlEditText, obj);
+        obj["constants"] = {
+          login: _R_NavGraph__WEBPACK_IMPORTED_MODULE_7__.login
+        };
+        window.inlineFunction(this, this.xmlEditText, obj, this.navController);
         return [2 /*return*/];
       });
     });
@@ -825,12 +830,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "cat_hello": function() { return /* binding */ cat_hello; },
 /* harmony export */   "error": function() { return /* binding */ error; },
 /* harmony export */   "error_detail": function() { return /* binding */ error_detail; },
-/* harmony export */   "index": function() { return /* binding */ index; }
+/* harmony export */   "index": function() { return /* binding */ index; },
+/* harmony export */   "login": function() { return /* binding */ login; }
 /* harmony export */ });
 var action_error_to_error_detail = 'action_error_to_error_detail#@layout/error_detail';
 var index = 'fragment#index#layout/index.xml';
 var error = 'fragment#error#layout/error.xml';
 var error_detail = 'fragment#error_detail#layout/error_detail.xml';
+var login = 'fragment#login#layout/login.xml';
 var cat_hello = 'fragment#cat_hello#layout/cat_hello.xml';
 
 /***/ }),

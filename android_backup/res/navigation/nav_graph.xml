@@ -33,6 +33,12 @@
         tools:layout="@layout/error_detail"></fragment>
 
     <fragment
+        android:id="@+id/login"
+        android:name="com.ashera.core.GenericFragment"
+        android:label="Login"
+        tools:layout="@layout/login"></fragment>
+
+    <fragment
         android:id="@+id/cat_hello"
         android:name="com.ashera.core.GenericFragment"
         android:label="Cat Hello"

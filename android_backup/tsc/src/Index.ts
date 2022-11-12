@@ -5,6 +5,7 @@ import { currentUrl, preview, xml } from './R/Index';
 import { InjectController, NavController } from './navigation/NavController';
 import { TextView } from './android/widget/TextViewImpl';
 import { RecyclerView } from './android/widget/RecyclerViewImpl';
+import { login } from './R/NavGraph';
 
 declare var window: any;
 
@@ -76,7 +77,8 @@ export default class Index extends Fragment {
      }
 
      async callInlineFunction(obj: any) {
-        window.inlineFunction(this, this.xmlEditText, obj);        
+        obj["constants"] = {login : login};
+        window.inlineFunction(this, this.xmlEditText, obj, this.navController);        
      }
 
      @Inject({ id: xml })
