@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="color_ashera">#e5db54</color>
     <color name="color_white">#fff</color>
     <color name="color_black">#000</color>
     <color name="color_red">#f00</color>

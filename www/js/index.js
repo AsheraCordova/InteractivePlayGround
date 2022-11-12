@@ -498,9 +498,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ErrorDetailFragment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ErrorDetailFragment */ "./src/ErrorDetailFragment.ts");
 /* harmony import */ var _CatHello__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./CatHello */ "./src/CatHello.ts");
 /* harmony import */ var _Index__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Index */ "./src/Index.ts");
+/* harmony import */ var _Login__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Login */ "./src/Login.ts");
 
 
 //start - import
+
 
 
 //end - import
@@ -511,7 +513,8 @@ var fragmentMapper = {
   'layout/dialog_child.xml': _Index__WEBPACK_IMPORTED_MODULE_3__["default"],
   //start - body
   'layout/cat_hello.xml': _CatHello__WEBPACK_IMPORTED_MODULE_2__["default"],
-  'layout/index.xml': _Index__WEBPACK_IMPORTED_MODULE_3__["default"]
+  'layout/index.xml': _Index__WEBPACK_IMPORTED_MODULE_3__["default"],
+  'layout/login.xml': _Login__WEBPACK_IMPORTED_MODULE_4__["default"]
   //end - body
 };
 
@@ -793,6 +796,220 @@ var Index = /** @class */function (_super) {
   return Index;
 }(_app_Fragment__WEBPACK_IMPORTED_MODULE_2__.Fragment);
 /* harmony default export */ __webpack_exports__["default"] = (Index);
+
+/***/ }),
+
+/***/ "./src/Login.ts":
+/*!**********************!*\
+  !*** ./src/Login.ts ***!
+  \**********************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _app_Fragment__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./app/Fragment */ "./src/app/Fragment.ts");
+/* harmony import */ var _navigation_NavController__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./navigation/NavController */ "./src/navigation/NavController.ts");
+/* harmony import */ var _app_ScopedObject__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./app/ScopedObject */ "./src/app/ScopedObject.ts");
+/* harmony import */ var _android_widget_LinearLayoutImpl__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./android/widget/LinearLayoutImpl */ "./src/android/widget/LinearLayoutImpl.ts");
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+var __extends = undefined && undefined.__extends || function () {
+  var _extendStatics = function extendStatics(d, b) {
+    _extendStatics = Object.setPrototypeOf || {
+      __proto__: []
+    } instanceof Array && function (d, b) {
+      d.__proto__ = b;
+    } || function (d, b) {
+      for (var p in b) {
+        if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p];
+      }
+    };
+    return _extendStatics(d, b);
+  };
+  return function (d, b) {
+    if (typeof b !== "function" && b !== null) throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+    _extendStatics(d, b);
+    function __() {
+      this.constructor = d;
+    }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+  };
+}();
+var __decorate = undefined && undefined.__decorate || function (decorators, target, key, desc) {
+  var c = arguments.length,
+    r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc,
+    d;
+  if ((typeof Reflect === "undefined" ? "undefined" : _typeof(Reflect)) === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);else for (var i = decorators.length - 1; i >= 0; i--) {
+    if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+  }
+  return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = undefined && undefined.__metadata || function (k, v) {
+  if ((typeof Reflect === "undefined" ? "undefined" : _typeof(Reflect)) === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __awaiter = undefined && undefined.__awaiter || function (thisArg, _arguments, P, generator) {
+  function adopt(value) {
+    return value instanceof P ? value : new P(function (resolve) {
+      resolve(value);
+    });
+  }
+  return new (P || (P = Promise))(function (resolve, reject) {
+    function fulfilled(value) {
+      try {
+        step(generator.next(value));
+      } catch (e) {
+        reject(e);
+      }
+    }
+    function rejected(value) {
+      try {
+        step(generator["throw"](value));
+      } catch (e) {
+        reject(e);
+      }
+    }
+    function step(result) {
+      result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected);
+    }
+    step((generator = generator.apply(thisArg, _arguments || [])).next());
+  });
+};
+var __generator = undefined && undefined.__generator || function (thisArg, body) {
+  var _ = {
+      label: 0,
+      sent: function sent() {
+        if (t[0] & 1) throw t[1];
+        return t[1];
+      },
+      trys: [],
+      ops: []
+    },
+    f,
+    y,
+    t,
+    g;
+  return g = {
+    next: verb(0),
+    "throw": verb(1),
+    "return": verb(2)
+  }, typeof Symbol === "function" && (g[Symbol.iterator] = function () {
+    return this;
+  }), g;
+  function verb(n) {
+    return function (v) {
+      return step([n, v]);
+    };
+  }
+  function step(op) {
+    if (f) throw new TypeError("Generator is already executing.");
+    while (_) {
+      try {
+        if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+        if (y = 0, t) op = [op[0] & 2, t.value];
+        switch (op[0]) {
+          case 0:
+          case 1:
+            t = op;
+            break;
+          case 4:
+            _.label++;
+            return {
+              value: op[1],
+              done: false
+            };
+          case 5:
+            _.label++;
+            y = op[1];
+            op = [0];
+            continue;
+          case 7:
+            op = _.ops.pop();
+            _.trys.pop();
+            continue;
+          default:
+            if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) {
+              _ = 0;
+              continue;
+            }
+            if (op[0] === 3 && (!t || op[1] > t[0] && op[1] < t[3])) {
+              _.label = op[1];
+              break;
+            }
+            if (op[0] === 6 && _.label < t[1]) {
+              _.label = t[1];
+              t = op;
+              break;
+            }
+            if (t && _.label < t[2]) {
+              _.label = t[2];
+              _.ops.push(op);
+              break;
+            }
+            if (t[2]) _.ops.pop();
+            _.trys.pop();
+            continue;
+        }
+        op = body.call(thisArg, _);
+      } catch (e) {
+        op = [6, e];
+        y = 0;
+      } finally {
+        f = t = 0;
+      }
+    }
+    if (op[0] & 5) throw op[1];
+    return {
+      value: op[0] ? op[1] : void 0,
+      done: true
+    };
+  }
+};
+//start - import
+
+
+
+
+//end - import
+//start - className
+var Login = /** @class */function (_super) {
+  __extends(Login, _super);
+  function Login() {
+    return _super !== null && _super.apply(this, arguments) || this;
+  }
+  Login.prototype.goToPreviousScreen = function () {
+    return __awaiter(this, void 0, void 0, function () {
+      return __generator(this, function (_a) {
+        switch (_a.label) {
+          case 0:
+            return [4 /*yield*/, this.navController.reset().popBackStack().executeCommand()];
+          case 1:
+            _a.sent();
+            return [2 /*return*/];
+        }
+      });
+    });
+  };
+  //end - body
+  Login.prototype.showAlert = function () {
+    alert("Hi there!!!");
+  };
+  Login.prototype.showLoginTs = function () {
+    this.tab.updateModelDataWithScopedObject(new _app_ScopedObject__WEBPACK_IMPORTED_MODULE_2__.ScopedObject("tab1->view as bool", false), new _app_ScopedObject__WEBPACK_IMPORTED_MODULE_2__.ScopedObject("tab2->view as bool", true)).refreshUiFromModel("tab1,tab2");
+    this.executeCommand(this.tab);
+  };
+  Login.prototype.showLoginXml = function () {
+    this.tab.updateModelDataWithScopedObject(new _app_ScopedObject__WEBPACK_IMPORTED_MODULE_2__.ScopedObject("tab1->view as bool", true), new _app_ScopedObject__WEBPACK_IMPORTED_MODULE_2__.ScopedObject("tab2->view as bool", false)).refreshUiFromModel("tab1,tab2");
+    this.executeCommand(this.tab);
+  };
+  __decorate([(0,_navigation_NavController__WEBPACK_IMPORTED_MODULE_1__.InjectController)({}), __metadata("design:type", _navigation_NavController__WEBPACK_IMPORTED_MODULE_1__.NavController)], Login.prototype, "navController", void 0);
+  __decorate([(0,_app_Fragment__WEBPACK_IMPORTED_MODULE_0__.Inject)({
+    id: "@+id/tab"
+  }), __metadata("design:type", _android_widget_LinearLayoutImpl__WEBPACK_IMPORTED_MODULE_3__.LinearLayout)], Login.prototype, "tab", void 0);
+  return Login;
+}(_app_Fragment__WEBPACK_IMPORTED_MODULE_0__.Fragment
+//end - className
+);
+
+/* harmony default export */ __webpack_exports__["default"] = (Login);
 
 /***/ }),
 
@@ -3511,6 +3728,544 @@ var FrameLayout = /** @class */function (_super) {
 }(FrameLayoutImpl);
 
 FrameLayoutImpl.initialize();
+//end - staticinit
+
+/***/ }),
+
+/***/ "./src/android/widget/LinearLayoutImpl.ts":
+/*!************************************************!*\
+  !*** ./src/android/widget/LinearLayoutImpl.ts ***!
+  \************************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "DividerTransformer": function() { return /* binding */ DividerTransformer; },
+/* harmony export */   "LinearLayout": function() { return /* binding */ LinearLayout; },
+/* harmony export */   "LinearLayoutImpl": function() { return /* binding */ LinearLayoutImpl; },
+/* harmony export */   "LinearLayoutImpl_LayoutParams": function() { return /* binding */ LinearLayoutImpl_LayoutParams; },
+/* harmony export */   "LinearLayout_LayoutParams": function() { return /* binding */ LinearLayout_LayoutParams; }
+/* harmony export */ });
+/* harmony import */ var _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../widget/CommandAttr */ "./src/widget/CommandAttr.ts");
+/* harmony import */ var class_transformer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! class-transformer */ "./node_modules/class-transformer/esm5/decorators/type.decorator.js");
+/* harmony import */ var class_transformer__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! class-transformer */ "./node_modules/class-transformer/esm5/decorators/expose.decorator.js");
+/* harmony import */ var class_transformer__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! class-transformer */ "./node_modules/class-transformer/esm5/decorators/exclude.decorator.js");
+/* harmony import */ var babel_polyfill__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! babel-polyfill */ "./node_modules/babel-polyfill/lib/index.js");
+/* harmony import */ var babel_polyfill__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(babel_polyfill__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _widget_TransformerFactory__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../widget/TransformerFactory */ "./src/widget/TransformerFactory.ts");
+/* harmony import */ var _ViewGroupImpl__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./ViewGroupImpl */ "./src/android/widget/ViewGroupImpl.ts");
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+// start - imports
+var __extends = undefined && undefined.__extends || function () {
+  var _extendStatics = function extendStatics(d, b) {
+    _extendStatics = Object.setPrototypeOf || {
+      __proto__: []
+    } instanceof Array && function (d, b) {
+      d.__proto__ = b;
+    } || function (d, b) {
+      for (var p in b) {
+        if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p];
+      }
+    };
+    return _extendStatics(d, b);
+  };
+  return function (d, b) {
+    if (typeof b !== "function" && b !== null) throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+    _extendStatics(d, b);
+    function __() {
+      this.constructor = d;
+    }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+  };
+}();
+var __decorate = undefined && undefined.__decorate || function (decorators, target, key, desc) {
+  var c = arguments.length,
+    r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc,
+    d;
+  if ((typeof Reflect === "undefined" ? "undefined" : _typeof(Reflect)) === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);else for (var i = decorators.length - 1; i >= 0; i--) {
+    if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+  }
+  return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = undefined && undefined.__metadata || function (k, v) {
+  if ((typeof Reflect === "undefined" ? "undefined" : _typeof(Reflect)) === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var DividerTransformer = /** @class */function () {
+  function DividerTransformer() {}
+  DividerTransformer.prototype.transform = function (value, obj, type) {
+    if (type == 1) {
+      return value.toString().replace(",", "|");
+    } else {
+      var strArray = value.toString().split("|");
+      var valueArr = new Array();
+      for (var i = 0; i < strArray.length; i++) {
+        switch (strArray[i]) {
+          case "none":
+            valueArr.push("none" /* Divider.none */);
+            break;
+          case "beginning":
+            valueArr.push("beginning" /* Divider.beginning */);
+            break;
+          case "end":
+            valueArr.push("end" /* Divider.end */);
+            break;
+          case "middle":
+            valueArr.push("middle" /* Divider.middle */);
+            break;
+        }
+      }
+      return valueArr;
+    }
+  };
+  return DividerTransformer;
+}();
+
+
+// end - imports
+
+var LinearLayoutImpl = /** @class */function (_super) {
+  __extends(LinearLayoutImpl, _super);
+  function LinearLayoutImpl(id, path, event) {
+    var _this = _super.call(this, id, path, event) || this;
+    _this.thisPointer = _this.getThisPointer();
+    return _this;
+  }
+  //start - body
+  LinearLayoutImpl.initialize = function () {
+    _widget_TransformerFactory__WEBPACK_IMPORTED_MODULE_2__.TransformerFactory.getInstance().register("divider", new DividerTransformer());
+  };
+  LinearLayoutImpl.prototype.reset = function () {
+    _super.prototype.reset.call(this);
+    this.baselineAligned = undefined;
+    this.baselineAlignedChildIndex = undefined;
+    this.divider = undefined;
+    this.gravity = undefined;
+    this.measureWithLargestChild = undefined;
+    this.orientation = undefined;
+    this.weightSum = undefined;
+    this.showDividers = undefined;
+    this.dividerPadding = undefined;
+    return this.thisPointer;
+  };
+  LinearLayoutImpl.prototype.tryGetBaselineAligned = function () {
+    this.resetIfRequired();
+    if (this.baselineAligned == null || this.baselineAligned == undefined) {
+      this.baselineAligned = new _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__["default"]();
+    }
+    this.baselineAligned.setGetter(true);
+    this.orderGet++;
+    this.baselineAligned.setOrderGet(this.orderGet);
+    return this.thisPointer;
+  };
+  LinearLayoutImpl.prototype.isBaselineAligned = function () {
+    if (this.baselineAligned == null || this.baselineAligned == undefined) {
+      this.baselineAligned = new _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__["default"]();
+    }
+    return this.baselineAligned.getCommandReturnValue();
+  };
+  LinearLayoutImpl.prototype.setBaselineAligned = function (value) {
+    this.resetIfRequired();
+    if (this.baselineAligned == null || this.baselineAligned == undefined) {
+      this.baselineAligned = new _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__["default"]();
+    }
+    this.baselineAligned.setSetter(true);
+    this.baselineAligned.setValue(value);
+    this.orderSet++;
+    this.baselineAligned.setOrderSet(this.orderSet);
+    return this.thisPointer;
+  };
+  LinearLayoutImpl.prototype.tryGetBaselineAlignedChildIndex = function () {
+    this.resetIfRequired();
+    if (this.baselineAlignedChildIndex == null || this.baselineAlignedChildIndex == undefined) {
+      this.baselineAlignedChildIndex = new _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__["default"]();
+    }
+    this.baselineAlignedChildIndex.setGetter(true);
+    this.orderGet++;
+    this.baselineAlignedChildIndex.setOrderGet(this.orderGet);
+    return this.thisPointer;
+  };
+  LinearLayoutImpl.prototype.getBaselineAlignedChildIndex = function () {
+    if (this.baselineAlignedChildIndex == null || this.baselineAlignedChildIndex == undefined) {
+      this.baselineAlignedChildIndex = new _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__["default"]();
+    }
+    return this.baselineAlignedChildIndex.getCommandReturnValue();
+  };
+  LinearLayoutImpl.prototype.setBaselineAlignedChildIndex = function (value) {
+    this.resetIfRequired();
+    if (this.baselineAlignedChildIndex == null || this.baselineAlignedChildIndex == undefined) {
+      this.baselineAlignedChildIndex = new _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__["default"]();
+    }
+    this.baselineAlignedChildIndex.setSetter(true);
+    this.baselineAlignedChildIndex.setValue(value);
+    this.orderSet++;
+    this.baselineAlignedChildIndex.setOrderSet(this.orderSet);
+    return this.thisPointer;
+  };
+  LinearLayoutImpl.prototype.tryGetDivider = function () {
+    this.resetIfRequired();
+    if (this.divider == null || this.divider == undefined) {
+      this.divider = new _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__["default"]();
+    }
+    this.divider.setGetter(true);
+    this.orderGet++;
+    this.divider.setOrderGet(this.orderGet);
+    return this.thisPointer;
+  };
+  LinearLayoutImpl.prototype.getDivider = function () {
+    if (this.divider == null || this.divider == undefined) {
+      this.divider = new _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__["default"]();
+    }
+    return this.divider.getCommandReturnValue();
+  };
+  LinearLayoutImpl.prototype.setDivider = function (value) {
+    this.resetIfRequired();
+    if (this.divider == null || this.divider == undefined) {
+      this.divider = new _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__["default"]();
+    }
+    this.divider.setSetter(true);
+    this.divider.setValue(value);
+    this.orderSet++;
+    this.divider.setOrderSet(this.orderSet);
+    return this.thisPointer;
+  };
+  LinearLayoutImpl.prototype.tryGetGravity = function () {
+    this.resetIfRequired();
+    if (this.gravity == null || this.gravity == undefined) {
+      this.gravity = new _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__["default"]();
+    }
+    this.gravity.setGetter(true);
+    this.orderGet++;
+    this.gravity.setOrderGet(this.orderGet);
+    return this.thisPointer;
+  };
+  LinearLayoutImpl.prototype.getGravity = function () {
+    if (this.gravity == null || this.gravity == undefined) {
+      this.gravity = new _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__["default"]();
+    }
+    this.gravity.setTransformer('gravity');
+    return this.gravity.getCommandReturnValue();
+  };
+  LinearLayoutImpl.prototype.setGravity = function () {
+    var value = [];
+    for (var _i = 0; _i < arguments.length; _i++) {
+      value[_i] = arguments[_i];
+    }
+    this.resetIfRequired();
+    if (this.gravity == null || this.gravity == undefined) {
+      this.gravity = new _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__["default"]();
+    }
+    this.gravity.setSetter(true);
+    this.gravity.setValue(value);
+    this.orderSet++;
+    this.gravity.setOrderSet(this.orderSet);
+    this.gravity.setTransformer('gravity');
+    return this.thisPointer;
+  };
+  LinearLayoutImpl.prototype.tryGetMeasureWithLargestChild = function () {
+    this.resetIfRequired();
+    if (this.measureWithLargestChild == null || this.measureWithLargestChild == undefined) {
+      this.measureWithLargestChild = new _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__["default"]();
+    }
+    this.measureWithLargestChild.setGetter(true);
+    this.orderGet++;
+    this.measureWithLargestChild.setOrderGet(this.orderGet);
+    return this.thisPointer;
+  };
+  LinearLayoutImpl.prototype.isMeasureWithLargestChild = function () {
+    if (this.measureWithLargestChild == null || this.measureWithLargestChild == undefined) {
+      this.measureWithLargestChild = new _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__["default"]();
+    }
+    return this.measureWithLargestChild.getCommandReturnValue();
+  };
+  LinearLayoutImpl.prototype.setMeasureWithLargestChild = function (value) {
+    this.resetIfRequired();
+    if (this.measureWithLargestChild == null || this.measureWithLargestChild == undefined) {
+      this.measureWithLargestChild = new _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__["default"]();
+    }
+    this.measureWithLargestChild.setSetter(true);
+    this.measureWithLargestChild.setValue(value);
+    this.orderSet++;
+    this.measureWithLargestChild.setOrderSet(this.orderSet);
+    return this.thisPointer;
+  };
+  LinearLayoutImpl.prototype.tryGetOrientation = function () {
+    this.resetIfRequired();
+    if (this.orientation == null || this.orientation == undefined) {
+      this.orientation = new _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__["default"]();
+    }
+    this.orientation.setGetter(true);
+    this.orderGet++;
+    this.orientation.setOrderGet(this.orderGet);
+    return this.thisPointer;
+  };
+  LinearLayoutImpl.prototype.getOrientation = function () {
+    if (this.orientation == null || this.orientation == undefined) {
+      this.orientation = new _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__["default"]();
+    }
+    return this.orientation.getCommandReturnValue();
+  };
+  LinearLayoutImpl.prototype.setOrientation = function (value) {
+    this.resetIfRequired();
+    if (this.orientation == null || this.orientation == undefined) {
+      this.orientation = new _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__["default"]();
+    }
+    this.orientation.setSetter(true);
+    this.orientation.setValue(value);
+    this.orderSet++;
+    this.orientation.setOrderSet(this.orderSet);
+    return this.thisPointer;
+  };
+  LinearLayoutImpl.prototype.tryGetWeightSum = function () {
+    this.resetIfRequired();
+    if (this.weightSum == null || this.weightSum == undefined) {
+      this.weightSum = new _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__["default"]();
+    }
+    this.weightSum.setGetter(true);
+    this.orderGet++;
+    this.weightSum.setOrderGet(this.orderGet);
+    return this.thisPointer;
+  };
+  LinearLayoutImpl.prototype.getWeightSum = function () {
+    if (this.weightSum == null || this.weightSum == undefined) {
+      this.weightSum = new _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__["default"]();
+    }
+    return this.weightSum.getCommandReturnValue();
+  };
+  LinearLayoutImpl.prototype.setWeightSum = function (value) {
+    this.resetIfRequired();
+    if (this.weightSum == null || this.weightSum == undefined) {
+      this.weightSum = new _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__["default"]();
+    }
+    this.weightSum.setSetter(true);
+    this.weightSum.setValue(value);
+    this.orderSet++;
+    this.weightSum.setOrderSet(this.orderSet);
+    return this.thisPointer;
+  };
+  LinearLayoutImpl.prototype.tryGetShowDividers = function () {
+    this.resetIfRequired();
+    if (this.showDividers == null || this.showDividers == undefined) {
+      this.showDividers = new _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__["default"]();
+    }
+    this.showDividers.setGetter(true);
+    this.orderGet++;
+    this.showDividers.setOrderGet(this.orderGet);
+    return this.thisPointer;
+  };
+  LinearLayoutImpl.prototype.getShowDividers = function () {
+    if (this.showDividers == null || this.showDividers == undefined) {
+      this.showDividers = new _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__["default"]();
+    }
+    this.showDividers.setTransformer('divider');
+    return this.showDividers.getCommandReturnValue();
+  };
+  LinearLayoutImpl.prototype.setShowDividers = function () {
+    var value = [];
+    for (var _i = 0; _i < arguments.length; _i++) {
+      value[_i] = arguments[_i];
+    }
+    this.resetIfRequired();
+    if (this.showDividers == null || this.showDividers == undefined) {
+      this.showDividers = new _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__["default"]();
+    }
+    this.showDividers.setSetter(true);
+    this.showDividers.setValue(value);
+    this.orderSet++;
+    this.showDividers.setOrderSet(this.orderSet);
+    this.showDividers.setTransformer('divider');
+    return this.thisPointer;
+  };
+  LinearLayoutImpl.prototype.tryGetDividerPadding = function () {
+    this.resetIfRequired();
+    if (this.dividerPadding == null || this.dividerPadding == undefined) {
+      this.dividerPadding = new _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__["default"]();
+    }
+    this.dividerPadding.setGetter(true);
+    this.orderGet++;
+    this.dividerPadding.setOrderGet(this.orderGet);
+    return this.thisPointer;
+  };
+  LinearLayoutImpl.prototype.getDividerPadding = function () {
+    if (this.dividerPadding == null || this.dividerPadding == undefined) {
+      this.dividerPadding = new _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__["default"]();
+    }
+    return this.dividerPadding.getCommandReturnValue();
+  };
+  LinearLayoutImpl.prototype.setDividerPadding = function (value) {
+    this.resetIfRequired();
+    if (this.dividerPadding == null || this.dividerPadding == undefined) {
+      this.dividerPadding = new _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__["default"]();
+    }
+    this.dividerPadding.setSetter(true);
+    this.dividerPadding.setValue(value);
+    this.orderSet++;
+    this.dividerPadding.setOrderSet(this.orderSet);
+    return this.thisPointer;
+  };
+  __decorate([(0,class_transformer__WEBPACK_IMPORTED_MODULE_4__.Type)(function () {
+    return _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__["default"];
+  }), (0,class_transformer__WEBPACK_IMPORTED_MODULE_5__.Expose)({
+    name: "baselineAligned"
+  }), __metadata("design:type", Object)], LinearLayoutImpl.prototype, "baselineAligned", void 0);
+  __decorate([(0,class_transformer__WEBPACK_IMPORTED_MODULE_4__.Type)(function () {
+    return _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__["default"];
+  }), (0,class_transformer__WEBPACK_IMPORTED_MODULE_5__.Expose)({
+    name: "baselineAlignedChildIndex"
+  }), __metadata("design:type", Object)], LinearLayoutImpl.prototype, "baselineAlignedChildIndex", void 0);
+  __decorate([(0,class_transformer__WEBPACK_IMPORTED_MODULE_4__.Type)(function () {
+    return _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__["default"];
+  }), (0,class_transformer__WEBPACK_IMPORTED_MODULE_5__.Expose)({
+    name: "divider"
+  }), __metadata("design:type", Object)], LinearLayoutImpl.prototype, "divider", void 0);
+  __decorate([(0,class_transformer__WEBPACK_IMPORTED_MODULE_4__.Type)(function () {
+    return _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__["default"];
+  }), (0,class_transformer__WEBPACK_IMPORTED_MODULE_5__.Expose)({
+    name: "gravity"
+  }), __metadata("design:type", Object)], LinearLayoutImpl.prototype, "gravity", void 0);
+  __decorate([(0,class_transformer__WEBPACK_IMPORTED_MODULE_4__.Type)(function () {
+    return _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__["default"];
+  }), (0,class_transformer__WEBPACK_IMPORTED_MODULE_5__.Expose)({
+    name: "measureWithLargestChild"
+  }), __metadata("design:type", Object)], LinearLayoutImpl.prototype, "measureWithLargestChild", void 0);
+  __decorate([(0,class_transformer__WEBPACK_IMPORTED_MODULE_4__.Type)(function () {
+    return _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__["default"];
+  }), (0,class_transformer__WEBPACK_IMPORTED_MODULE_5__.Expose)({
+    name: "orientation"
+  }), __metadata("design:type", Object)], LinearLayoutImpl.prototype, "orientation", void 0);
+  __decorate([(0,class_transformer__WEBPACK_IMPORTED_MODULE_4__.Type)(function () {
+    return _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__["default"];
+  }), (0,class_transformer__WEBPACK_IMPORTED_MODULE_5__.Expose)({
+    name: "weightSum"
+  }), __metadata("design:type", Object)], LinearLayoutImpl.prototype, "weightSum", void 0);
+  __decorate([(0,class_transformer__WEBPACK_IMPORTED_MODULE_4__.Type)(function () {
+    return _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__["default"];
+  }), (0,class_transformer__WEBPACK_IMPORTED_MODULE_5__.Expose)({
+    name: "showDividers"
+  }), __metadata("design:type", Object)], LinearLayoutImpl.prototype, "showDividers", void 0);
+  __decorate([(0,class_transformer__WEBPACK_IMPORTED_MODULE_4__.Type)(function () {
+    return _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__["default"];
+  }), (0,class_transformer__WEBPACK_IMPORTED_MODULE_5__.Expose)({
+    name: "dividerPadding"
+  }), __metadata("design:type", Object)], LinearLayoutImpl.prototype, "dividerPadding", void 0);
+  __decorate([(0,class_transformer__WEBPACK_IMPORTED_MODULE_6__.Exclude)(), __metadata("design:type", Object)], LinearLayoutImpl.prototype, "thisPointer", void 0);
+  return LinearLayoutImpl;
+}(_ViewGroupImpl__WEBPACK_IMPORTED_MODULE_3__.ViewGroupImpl);
+
+//start - staticinit
+var LinearLayoutImpl_LayoutParams = /** @class */function (_super) {
+  __extends(LinearLayoutImpl_LayoutParams, _super);
+  function LinearLayoutImpl_LayoutParams() {
+    var _this = _super.call(this) || this;
+    _this.thisPointer = _this.getThisPointer();
+    return _this;
+  }
+  LinearLayoutImpl_LayoutParams.prototype.reset = function () {
+    _super.prototype.reset.call(this);
+    this.layout_gravity = undefined;
+    this.layout_weight = undefined;
+    return this.thisPointer;
+  };
+  LinearLayoutImpl_LayoutParams.prototype.tryGetLayoutGravity = function () {
+    if (this.layout_gravity == null || this.layout_gravity == undefined) {
+      this.layout_gravity = new _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__["default"]();
+    }
+    this.layout_gravity.setGetter(true);
+    this.orderGet++;
+    this.layout_gravity.setOrderGet(this.orderGet);
+    return this.thisPointer;
+  };
+  LinearLayoutImpl_LayoutParams.prototype.getLayoutGravity = function () {
+    if (this.layout_gravity == null || this.layout_gravity == undefined) {
+      this.layout_gravity = new _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__["default"]();
+    }
+    this.layout_gravity.setTransformer('gravity');
+    return this.layout_gravity.getCommandReturnValue();
+  };
+  LinearLayoutImpl_LayoutParams.prototype.setLayoutGravity = function () {
+    var value = [];
+    for (var _i = 0; _i < arguments.length; _i++) {
+      value[_i] = arguments[_i];
+    }
+    if (this.layout_gravity == null || this.layout_gravity == undefined) {
+      this.layout_gravity = new _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__["default"]();
+    }
+    this.layout_gravity.setSetter(true);
+    this.layout_gravity.setValue(value);
+    this.orderSet++;
+    this.layout_gravity.setOrderSet(this.orderSet);
+    this.layout_gravity.setTransformer('gravity');
+    return this.thisPointer;
+  };
+  LinearLayoutImpl_LayoutParams.prototype.tryGetLayoutWeight = function () {
+    if (this.layout_weight == null || this.layout_weight == undefined) {
+      this.layout_weight = new _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__["default"]();
+    }
+    this.layout_weight.setGetter(true);
+    this.orderGet++;
+    this.layout_weight.setOrderGet(this.orderGet);
+    return this.thisPointer;
+  };
+  LinearLayoutImpl_LayoutParams.prototype.getLayoutWeight = function () {
+    if (this.layout_weight == null || this.layout_weight == undefined) {
+      this.layout_weight = new _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__["default"]();
+    }
+    return this.layout_weight.getCommandReturnValue();
+  };
+  LinearLayoutImpl_LayoutParams.prototype.setLayoutWeight = function (value) {
+    if (this.layout_weight == null || this.layout_weight == undefined) {
+      this.layout_weight = new _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__["default"]();
+    }
+    this.layout_weight.setSetter(true);
+    this.layout_weight.setValue(value);
+    this.orderSet++;
+    this.layout_weight.setOrderSet(this.orderSet);
+    return this.thisPointer;
+  };
+  __decorate([(0,class_transformer__WEBPACK_IMPORTED_MODULE_4__.Type)(function () {
+    return _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__["default"];
+  }), (0,class_transformer__WEBPACK_IMPORTED_MODULE_5__.Expose)({
+    name: "layout_gravity"
+  }), __metadata("design:type", Object)], LinearLayoutImpl_LayoutParams.prototype, "layout_gravity", void 0);
+  __decorate([(0,class_transformer__WEBPACK_IMPORTED_MODULE_4__.Type)(function () {
+    return _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__["default"];
+  }), (0,class_transformer__WEBPACK_IMPORTED_MODULE_5__.Expose)({
+    name: "layout_weight"
+  }), __metadata("design:type", Object)], LinearLayoutImpl_LayoutParams.prototype, "layout_weight", void 0);
+  __decorate([(0,class_transformer__WEBPACK_IMPORTED_MODULE_6__.Exclude)(), __metadata("design:type", Object)], LinearLayoutImpl_LayoutParams.prototype, "thisPointer", void 0);
+  return LinearLayoutImpl_LayoutParams;
+}(_ViewGroupImpl__WEBPACK_IMPORTED_MODULE_3__.ViewGroupImpl_LayoutParams);
+
+var LinearLayout_LayoutParams = /** @class */function (_super) {
+  __extends(LinearLayout_LayoutParams, _super);
+  function LinearLayout_LayoutParams() {
+    return _super.call(this) || this;
+  }
+  LinearLayout_LayoutParams.prototype.getThisPointer = function () {
+    return this;
+  };
+  return LinearLayout_LayoutParams;
+}(LinearLayoutImpl_LayoutParams);
+
+var LinearLayout = /** @class */function (_super) {
+  __extends(LinearLayout, _super);
+  function LinearLayout(id, path, event) {
+    return _super.call(this, id, path, event) || this;
+  }
+  LinearLayout.prototype.getThisPointer = function () {
+    return this;
+  };
+  LinearLayout.prototype.getClass = function () {
+    return LinearLayout;
+  };
+  return LinearLayout;
+}(LinearLayoutImpl);
+
+LinearLayoutImpl.initialize();
 //end - staticinit
 
 /***/ }),

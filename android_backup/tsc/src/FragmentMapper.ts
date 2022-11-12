@@ -6,6 +6,8 @@ import CatHello from './CatHello';
 
 import Index from './Index';
 
+import Login from './Login';
+
 //end - import
 
 export const fragmentMapper : any = {
@@ -18,6 +20,8 @@ export const fragmentMapper : any = {
      'layout/cat_hello.xml': CatHello,
     
      'layout/index.xml': Index,
+    
+     'layout/login.xml': Login,
     
      //end - body
 };

@@ -4,135 +4,195 @@
 
     <data></data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
+        fragment="Login"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#e5db54"
-        tools:ignore="MissingPrefix">
+        android:orientation="horizontal"
+        android:weightSum="10">
 
-        <ImageView
-            android:id="@+id/loginLogo"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:adjustViewBounds="true"
-            android:src="@drawable/ashera_logo_no_resize"
-            app:layout_constraintBottom_toTopOf="@+id/loginWelcomeText"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHeight_percent=".14"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintWidth_percent=".4" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="4"
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/loginWelcomeText"
-            style="@style/h2_white_bold"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:gravity="center"
-            android:text="Welcome to Ashera"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHeight_percent=".27"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/loginLogo" />
+            <LinearLayout
+                android:id="@+id/tab"
+                autoInject="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    modelPojoToUi="selected = . from tab1->view"
+                    android:id="@+id/tab1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/tab_bg_selector"
+                    android:padding="10dp"
+                    android:text="login.xml"
+                    android:onClick="showLoginXml"
+                    android:textColor="@color/color_black"
+                    android:textSize="14sp"></TextView>
+
+                <TextView
+                    modelPojoToUi="selected = . from tab2->view"
+                    android:id="@+id/tab2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/tab_bg_selector"
+                    android:onClick="showLoginTs"
+                    android:padding="10dp"
+                    android:text="Login.ts"
+                    android:textColor="@color/color_black"
+                    android:textSize="14sp"></TextView>
+
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/xml"
+                modelPojoToUi="text = getFileAsset(.) from login_path->strings"
+                widget-override-ios="UITextView"
+                widget-override-web="TextArea"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/color_white"
+                android:enabled="false"
+                android:singleLine="false"></EditText>
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="6"
+            tools:ignore="MissingPrefix">
+
+            <ImageView
+                android:id="@+id/loginLogo"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:adjustViewBounds="true"
+                android:src="@drawable/ashera_logo_no_resize"
+                app:layout_constraintBottom_toTopOf="@+id/loginWelcomeText"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_percent=".14"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent=".4" />
+
+            <TextView
+                android:id="@+id/loginWelcomeText"
+                style="@style/h2_white_bold"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:gravity="center"
+                android:text="Welcome to Ashera"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_percent=".27"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/loginLogo" />
 
 
-        <ImageView
-            android:id="@+id/loginEmailDelete"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_margin="10dp"
-            android:adjustViewBounds="true"
-            android:src="@drawable/icon_clear"
-            app:layout_constraintBottom_toTopOf="@+id/loginEmail"
-            app:layout_constraintEnd_toEndOf="@+id/loginEmail"
-            app:layout_constraintTop_toBottomOf="@+id/loginEmail"
-            app:layout_constraintVertical_bias="0.481" />
+            <ImageView
+                android:id="@+id/loginEmailDelete"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_margin="10dp"
+                android:adjustViewBounds="true"
+                android:src="@drawable/icon_clear"
+                app:layout_constraintBottom_toTopOf="@+id/loginEmail"
+                app:layout_constraintEnd_toEndOf="@+id/loginEmail"
+                app:layout_constraintTop_toBottomOf="@+id/loginEmail"
+                app:layout_constraintVertical_bias="0.481" />
 
-        <EditText
-            android:id="@+id/loginEmail"
-            formGroupId="test"
-            v_required=""
-            v_type="email"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:hint="Username"
-            android:inputType="textEmailAddress"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            app:layout_constraintBottom_toTopOf="@+id/loginPassword"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHeight_percent=".088"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/loginWelcomeText"
-            app:layout_constraintWidth_percent=".89" />
+            <EditText
+                android:id="@+id/loginEmail"
+                formGroupId="test"
+                v_required=""
+                v_type="email"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:hint="Username"
+                android:inputType="textEmailAddress"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                app:layout_constraintBottom_toTopOf="@+id/loginPassword"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_percent=".088"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/loginWelcomeText"
+                app:layout_constraintWidth_percent=".89" />
 
 
-        <ImageView
-            android:id="@+id/loginPasswordDelete"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_margin="10dp"
-            android:adjustViewBounds="true"
-            android:src="@drawable/icon_clear"
-            android:visibility="visible"
-            app:layout_constraintBottom_toTopOf="@+id/loginPassword"
-            app:layout_constraintEnd_toEndOf="@+id/loginPassword"
-            app:layout_constraintTop_toBottomOf="@+id/loginPassword" />
+            <ImageView
+                android:id="@+id/loginPasswordDelete"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_margin="10dp"
+                android:adjustViewBounds="true"
+                android:src="@drawable/icon_clear"
+                android:visibility="visible"
+                app:layout_constraintBottom_toTopOf="@+id/loginPassword"
+                app:layout_constraintEnd_toEndOf="@+id/loginPassword"
+                app:layout_constraintTop_toBottomOf="@+id/loginPassword" />
 
-        <EditText
-            android:id="@+id/loginPassword"
-            create-attr-0="android:password"
-            create-attr-count="1"
-            formGroupId="test"
-            validation="required,length(2-10)"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:hint="Password"
-            android:inputType="textPassword"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:password="true"
-            android:visibility="visible"
-            app:layout_constraintBottom_toTopOf="@+id/loginSignUp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHeight_percent=".088"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/loginEmail"
-            app:layout_constraintWidth_percent=".89" />
+            <EditText
+                android:id="@+id/loginPassword"
+                create-attr-0="android:password"
+                create-attr-count="1"
+                formGroupId="test"
+                validation="required,length(2-10)"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:password="true"
+                android:visibility="visible"
+                app:layout_constraintBottom_toTopOf="@+id/loginSignUp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_percent=".088"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/loginEmail"
+                app:layout_constraintWidth_percent=".89" />
 
-        <TextView
-            android:id="@+id/loginSignUp"
-            style="@style/h2_white_bold"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:gravity="center"
-            android:padding="10dp"
-            android:text="please send a mail to adminsistrator"
-            app:layout_constraintBottom_toTopOf="@+id/loginButton"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHeight_percent="0.2"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/loginPassword"
-            app:layout_constraintWidth_percent=".8" />
+            <TextView
+                android:id="@+id/loginSignUp"
+                style="@style/h2_white_bold"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="please send a mail to adminsistrator"
+                app:layout_constraintBottom_toTopOf="@+id/loginButton"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_percent="0.2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/loginPassword"
+                app:layout_constraintWidth_percent=".8" />
 
-        <Button
-            android:id="@+id/loginButton"
-            onClick="callInlineFunction"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginBottom="5dp"
-            android:text="Login"
-            android:textColor="#000"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHeight_percent="0.082"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintWidth_percent=".87" />
+            <Button
+                android:id="@+id/loginButton"
+                onClick="showAlert"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginBottom="5dp"
+                android:text="Login"
+                android:textColor="#000"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_percent="0.082"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintWidth_percent=".87" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
 </layout>
