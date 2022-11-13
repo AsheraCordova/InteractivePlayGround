@@ -24,11 +24,11 @@ export default class Login extends BaseFragment {
         }        
         //end - body
     showAlert() {
-        alert("Hi there!!!");
+        alert("Login Button clicked!!!");
     }
 
     tab(): string[] {
-        return ["res/layout/login.xml", "tsc/src/Login.ts"];
+        return ["res/layout/login_component.xml", "tsc/src/Login.ts", "res/navigation/nav_graph.xml", "tsc/src/FragmentMapper.ts"];
     }
 
     getEditText(): EditText {

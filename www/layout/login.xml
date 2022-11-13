@@ -48,6 +48,30 @@
                     android:textColor="@color/color_black"
                     android:textSize="14sp"></TextView>
 
+                <TextView
+                    android:id="@+id/tab3"
+                    modelPojoToUi="selected = . from tab3->view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/tab_bg_selector"
+                    android:onClick="showTab3"
+                    android:padding="10dp"
+                    android:text="nav_graph.xml"
+                    android:textColor="@color/color_black"
+                    android:textSize="14sp"></TextView>
+
+                <TextView
+                    android:id="@+id/tab4"
+                    modelPojoToUi="selected = . from tab4->view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/tab_bg_selector"
+                    android:onClick="showTab4"
+                    android:padding="10dp"
+                    android:text="FragmentMapper.ts"
+                    android:textColor="@color/color_black"
+                    android:textSize="14sp"></TextView>
+
             </LinearLayout>
 
             <EditText

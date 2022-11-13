@@ -1,6 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
-    <string name="login_path">www/layout/login.xml</string>
+    <string name="login_path">www/layout/login_component.xml</string>
+    <string name="loading">Fetaching Data</string>
     <string name="app_name">HelloCordova</string>
     <string name="launcher_name">@string/app_name</string>
     <string name="activity_name">@string/launcher_name</string>
