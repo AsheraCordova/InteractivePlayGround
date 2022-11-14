@@ -15,7 +15,7 @@
     <style name="TextView">
         <item name="android:typeface">sans</item>
     </style>
-    <style name="EditText" parent="@android:style/Widget.EditText" constructor_attrs="swtTextStyle:single" attrs="swtUseTabForNavigation:true;borderBottomWidth:1dp;borderColor:@color/border_material_color;onFocusChange:">
+    <style name="EditText" parent="@android:style/Widget.EditText" constructor_attrs="swtTextStyle:single" attrs="swtUseTabForNavigation:true;borderBottomWidth:1dp;borderBottomColor:@color/border_material_color;onFocusChange:">
         <item name="android:textColor">#000</item>
         <item name="android:textColorHint">#fff</item>
         <item name="android:padding">10dp</item>

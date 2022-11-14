@@ -49,7 +49,7 @@
     <style name="errorEditText" attrs="borderLeftWidth:3dp;borderLeftColor:#f00">
     </style>
 
-    <style name="normalEdiText" attrs="borderLeftWidth:0dp;borderLeftColor:#f00">
+    <style name="normalEditText" attrs="borderLeftWidth:0dp;borderLeftColor:#000">
     </style>
 
     <style name="h2_white">
