@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_weight="6"
-    tools:ignore="MissingPrefix"
-    tools:showIn="@layout/login">
+    tools:ignore="MissingPrefix">
 
     <ImageView
         android:id="@+id/loginLogo"
+        imageFromUrl="https://raw.githubusercontent.com/AsheraCordova/InteractivePlayGround/main/android_backup/res/drawable-xxxhdpi/ashera_logo_no_resize.png"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:adjustViewBounds="true"
         android:scaleType="fitCenter"
-        imageFromUrl="https://raw.githubusercontent.com/AsheraCordova/InteractivePlayGround/main/android_backup/res/drawable-xxxhdpi/ashera_logo_no_resize.png"
         app:layout_constraintBottom_toTopOf="@+id/loginWelcomeText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_percent=".14"
@@ -53,7 +52,9 @@
 
     <EditText
         android:id="@+id/loginEmail"
-        formGroupId="test"
+        formGroupId="loginForm"
+        v_required=""
+        v_type="email"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:hint="Username"
@@ -83,6 +84,8 @@
 
     <EditText
         android:id="@+id/loginPassword"
+        formGroupId="loginForm"
+        validation="required,length(2-10)"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:hint="Password"
@@ -116,7 +119,7 @@
 
     <Button
         android:id="@+id/loginButton"
-        onClick="showAlert"
+        onClick="validateLoginForm"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginBottom="5dp"

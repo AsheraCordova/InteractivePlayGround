@@ -43,7 +43,7 @@ export default class Index extends Fragment {
         let url = this.getQueryParams(document.location.search)["url"];
 
         if (url == null) {
-            url = 'https://raw.githubusercontent.com/AsheraCordova/InteractivePlayGround/main/android_backup/res/layout/login_host.xml';
+            url = 'https://raw.githubusercontent.com/AsheraCordova/InteractivePlayGround/main/android_backup/res/layout/login_component_with_validation.xml';
         }
 
         let response = await fetch(url, {
@@ -63,15 +63,6 @@ export default class Index extends Fragment {
         this.previewPane.setChildXml(obj.xml);
         this.executeCommand(this.previewPane);
     }
-
-    setXml(obj: any) {
-  
-        // this.xmlEditText.setText(obj.xml).updateModelDataWithScopedObject(
-        //     new ScopedObject("testObj->view as pathmap", { looptest: { textlayout: data } }),
-        //     new ScopedObject("sectionInfo->view as list", groupiedata));
-        // this.executeCommand(this.xmlEditText);
-    }
-
     async showAlert() {
         alert("test");
      }

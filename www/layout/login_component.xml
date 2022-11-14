@@ -54,8 +54,6 @@
     <EditText
         android:id="@+id/loginEmail"
         formGroupId="test"
-        v_required=""
-        v_type="email"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:hint="Username"
@@ -87,8 +85,6 @@
         android:id="@+id/loginPassword"
         create-attr-0="android:password"
         create-attr-count="1"
-        formGroupId="test"
-        validation="required,length(2-10)"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:hint="Password"
