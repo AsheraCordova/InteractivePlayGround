@@ -52,12 +52,12 @@
 
     <EditText
         android:id="@+id/loginEmail"
+        style="@style/normalEditText"
+        errorStyle="@style/errorEditText"
         formGroupId="loginForm"
         v_required=""
         v_type="email"
-        validationErrorDisplayType="style"
-        style="@style/normalEditText"
-        errorStyle="@style/errorEditText"
+        validationErrorDisplayType="label|style"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:hint="Username"
@@ -72,6 +72,15 @@
         app:layout_constraintTop_toBottomOf="@+id/loginWelcomeText"
         app:layout_constraintWidth_percent=".89" />
 
+    <TextView
+        android:id="@+id/loginEmailError"
+        style="@style/errorStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/loginEmail"
+        app:layout_constraintWidth_percent=".89" />
 
     <ImageView
         android:id="@+id/loginPasswordDelete"
@@ -87,11 +96,11 @@
 
     <EditText
         android:id="@+id/loginPassword"
-        formGroupId="loginForm"
-        validationErrorDisplayType="style"
         style="@style/normalEditText"
         errorStyle="@style/errorEditText"
+        formGroupId="loginForm"
         validation="required,length(2-10)"
+        validationErrorDisplayType="label|style"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:hint="Password"
@@ -106,6 +115,16 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/loginEmail"
+        app:layout_constraintWidth_percent=".89" />
+
+    <TextView
+        android:id="@+id/loginPasswordError"
+        style="@style/errorStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/loginPassword"
         app:layout_constraintWidth_percent=".89" />
 
     <TextView
