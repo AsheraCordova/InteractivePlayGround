@@ -46,6 +46,12 @@
         <item name="android:textStyle">bold</item>
     </style>
 
+    <style name="errorEditText" attrs="borderLeftWidth:3dp;borderLeftColor:#f00">
+    </style>
+
+    <style name="normalEdiText" attrs="borderLeftWidth:0dp;borderLeftColor:#f00">
+    </style>
+
     <style name="h2_white">
         <item name="android:textSize">@dimen/font_normal</item>
         <item name="android:textColor">@color/color_white</item>

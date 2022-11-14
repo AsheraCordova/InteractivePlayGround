@@ -83,8 +83,6 @@
 
     <EditText
         android:id="@+id/loginPassword"
-        create-attr-0="android:password"
-        create-attr-count="1"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:hint="Password"

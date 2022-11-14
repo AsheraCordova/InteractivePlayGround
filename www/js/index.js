@@ -1017,6 +1017,22 @@ var Index = /** @class */function (_super) {
     });
   };
 
+  Index.prototype.validateLoginForm = function () {
+    return __awaiter(this, void 0, void 0, function () {
+      return __generator(this, function (_a) {
+        switch (_a.label) {
+          case 0:
+            return [4 /*yield*/, this.validateForm("loginForm", this.validateButton)];
+          case 1:
+            if (_a.sent()) {
+              alert("validation success");
+            }
+            return [2 /*return*/];
+        }
+      });
+    });
+  };
+
   __decorate([(0,_navigation_NavController__WEBPACK_IMPORTED_MODULE_4__.InjectController)({}), __metadata("design:type", _navigation_NavController__WEBPACK_IMPORTED_MODULE_4__.NavController)], Index.prototype, "navController", void 0);
   __decorate([(0,_app_Fragment__WEBPACK_IMPORTED_MODULE_2__.Inject)({
     id: _R_Index__WEBPACK_IMPORTED_MODULE_3__.preview
@@ -1030,6 +1046,9 @@ var Index = /** @class */function (_super) {
   __decorate([(0,_app_Fragment__WEBPACK_IMPORTED_MODULE_2__.Inject)({
     id: _R_Index__WEBPACK_IMPORTED_MODULE_3__.xml
   }), __metadata("design:type", _android_widget_RecyclerViewImpl__WEBPACK_IMPORTED_MODULE_6__.RecyclerView)], Index.prototype, "recyclerView", void 0);
+  __decorate([(0,_app_Fragment__WEBPACK_IMPORTED_MODULE_2__.Inject)({
+    id: "@+id/loginButton"
+  }), __metadata("design:type", _android_widget_EditTextImpl__WEBPACK_IMPORTED_MODULE_0__.EditText)], Index.prototype, "validateButton", void 0);
   return Index;
 }(_app_Fragment__WEBPACK_IMPORTED_MODULE_2__.Fragment);
 /* harmony default export */ __webpack_exports__["default"] = (Index);
@@ -1234,29 +1253,10 @@ var Login = /** @class */function (_super) {
   Login.prototype.getEditText = function () {
     return this.xml;
   };
-  Login.prototype.validateLoginForm = function () {
-    return __awaiter(this, void 0, void 0, function () {
-      return __generator(this, function (_a) {
-        switch (_a.label) {
-          case 0:
-            return [4 /*yield*/, this.validateForm("loginForm", this.validateButton)];
-          case 1:
-            if (_a.sent()) {
-              alert("validation success");
-            }
-            return [2 /*return*/];
-        }
-      });
-    });
-  };
-
   __decorate([(0,_navigation_NavController__WEBPACK_IMPORTED_MODULE_1__.InjectController)({}), __metadata("design:type", _navigation_NavController__WEBPACK_IMPORTED_MODULE_1__.NavController)], Login.prototype, "navController", void 0);
   __decorate([(0,_app_Fragment__WEBPACK_IMPORTED_MODULE_0__.Inject)({
     id: "@+id/xml"
   }), __metadata("design:type", _android_widget_EditTextImpl__WEBPACK_IMPORTED_MODULE_2__.EditText)], Login.prototype, "xml", void 0);
-  __decorate([(0,_app_Fragment__WEBPACK_IMPORTED_MODULE_0__.Inject)({
-    id: "@+id/loginButton"
-  }), __metadata("design:type", _android_widget_EditTextImpl__WEBPACK_IMPORTED_MODULE_2__.EditText)], Login.prototype, "validateButton", void 0);
   return Login;
 }(_BaseFragment__WEBPACK_IMPORTED_MODULE_3__["default"]);
 /* harmony default export */ __webpack_exports__["default"] = (Login);

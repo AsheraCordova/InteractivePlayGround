@@ -34,13 +34,5 @@ export default class Login extends BaseFragment {
     getEditText(): EditText {
         return this.xml;
     }
-    @Inject({ id: "@+id/loginButton" })
-    private validateButton!:EditText;
-    
-    async validateLoginForm() {
-        if (await this.validateForm("loginForm", this.validateButton)) {
-            alert("validation success");
-        }
-    }
 }
         

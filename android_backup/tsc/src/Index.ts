@@ -79,4 +79,12 @@ export default class Index extends Fragment {
         window.inlineFunction(this, this.recyclerView, obj);        
      }
 
+     @Inject({ id: "@+id/loginButton" })
+     private validateButton!:EditText;
+     
+     async validateLoginForm() {
+         if (await this.validateForm("loginForm", this.validateButton)) {
+             alert("validation success");
+         }
+     }
 }
