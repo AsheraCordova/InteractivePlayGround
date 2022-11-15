@@ -779,6 +779,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _android_widget_TextViewImpl__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./android/widget/TextViewImpl */ "./src/android/widget/TextViewImpl.ts");
 /* harmony import */ var _android_widget_RecyclerViewImpl__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./android/widget/RecyclerViewImpl */ "./src/android/widget/RecyclerViewImpl.ts");
 /* harmony import */ var _R_NavGraph__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./R/NavGraph */ "./src/R/NavGraph.ts");
+/* harmony import */ var _app_ScopedObject__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./app/ScopedObject */ "./src/app/ScopedObject.ts");
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 var __extends = undefined && undefined.__extends || function () {
   var _extendStatics = function extendStatics(d, b) {
@@ -939,6 +940,7 @@ var __generator = undefined && undefined.__generator || function (thisArg, body)
 
 
 
+
 var Index = /** @class */function (_super) {
   __extends(Index, _super);
   function Index() {
@@ -977,8 +979,7 @@ var Index = /** @class */function (_super) {
           case 2:
             xml = _a.sent();
             this.xmlEditText.setText(xml);
-            this.currentUrl.setText(url).updateModelData("login->view as map", {}).updateModelData("items->view as list", []);
-            ;
+            this.currentUrl.setText(url).updateModelDataWithScopedObject(new _app_ScopedObject__WEBPACK_IMPORTED_MODULE_8__.ScopedObject("login->view as map", {}), new _app_ScopedObject__WEBPACK_IMPORTED_MODULE_8__.ScopedObject("items->view as list", []));
             this.executeCommand(this.xmlEditText, this.currentUrl);
             return [2 /*return*/];
         }

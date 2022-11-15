@@ -6,6 +6,7 @@ import { InjectController, NavController } from './navigation/NavController';
 import { TextView } from './android/widget/TextViewImpl';
 import { RecyclerView } from './android/widget/RecyclerViewImpl';
 import { login } from './R/NavGraph';
+import { ScopedObject } from './app/ScopedObject';
 
 declare var window: any;
 
@@ -53,7 +54,8 @@ export default class Index extends Fragment {
           });
         let xml = await response.text();
         this.xmlEditText.setText(xml);
-        this.currentUrl.setText(url).updateModelData("login->view as map", {}).updateModelData("items->view as list", []);;
+        this.currentUrl.setText(url).updateModelDataWithScopedObject(new ScopedObject("login->view as map", {}),
+            new ScopedObject("items->view as list", []));
         this.executeCommand(this.xmlEditText, this.currentUrl);
         
     }
