@@ -1,0 +1,22 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#e5db54"
+    android:orientation="vertical"
+    tools:ignore="MissingPrefix">
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        modelPojoToUi="text = email from login->view"
+        modelUiToPojo="email = text into login->view"
+        modelSyncEvents="onTextChange"
+        modelUiToPojoEventIds="label"
+        onTextChange=""/>
+    <TextView
+        android:id="@+id/label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        modelPojoToUi="text = email from login->view"/>
+</LinearLayout>
