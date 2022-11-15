@@ -86,21 +86,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_span="2"
-                android:onClick="removeCurrentItem(model=. from item->loopvar)"
+                onClick="removeCurrentItem(model=. from item->loopvar)"
                 android:text="Remove" >
             </Button>
         </TableRow>
     </TableLayout>
-	
-    <ListView
-        widget-override="LinearLayout"
-        android:id="@+id/childitems"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        listitem="@layout/modeltest_listitem2"
-        tools:listitem="@layout/modeltest_listitem2"
-        modelFor="let childitem in child from item->loopvar into loopvar as pathmap"
-        modelIdPath="id"
-        android:orientation="vertical" />
-
 </LinearLayout>

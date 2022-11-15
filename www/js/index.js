@@ -977,7 +977,8 @@ var Index = /** @class */function (_super) {
           case 2:
             xml = _a.sent();
             this.xmlEditText.setText(xml);
-            this.currentUrl.setText(url).updateModelData("login->view as map", {});
+            this.currentUrl.setText(url).updateModelData("login->view as map", {}).updateModelData("items->view as list", []);
+            ;
             this.executeCommand(this.xmlEditText, this.currentUrl);
             return [2 /*return*/];
         }
@@ -1091,7 +1092,7 @@ var Index = /** @class */function (_super) {
       return __generator(this, function (_a) {
         switch (_a.label) {
           case 0:
-            this.items.rremoveModelById(obj.model.id);
+            this.items.removeModelById(obj.model.id);
             return [4 /*yield*/, this.executeCommand(this.items)];
           case 1:
             _a.sent();

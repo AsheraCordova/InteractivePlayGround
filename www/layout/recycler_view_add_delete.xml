@@ -35,18 +35,21 @@
             android:orientation="horizontal">
 
             <Button
+                android:layout_marginHorizontal="10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:onClick="addItem"
                 android:text="Add"></Button>
 
             <Button
+                android:layout_marginHorizontal="10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:onClick="clearItem"
                 android:text="Clear"></Button>
 
             <Button
+                android:layout_marginHorizontal="10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:onClick="getData(model=. from items->view)"

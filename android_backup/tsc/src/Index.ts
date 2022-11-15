@@ -53,7 +53,7 @@ export default class Index extends Fragment {
           });
         let xml = await response.text();
         this.xmlEditText.setText(xml);
-        this.currentUrl.setText(url).updateModelData("login->view as map", {});
+        this.currentUrl.setText(url).updateModelData("login->view as map", {}).updateModelData("items->view as list", []);;
         this.executeCommand(this.xmlEditText, this.currentUrl);
         
     }
@@ -108,7 +108,7 @@ export default class Index extends Fragment {
 	}
 
 	async removeCurrentItem(obj:any) {
-		this.items.rremoveModelById(obj.model.id);
+		this.items.removeModelById(obj.model.id);
 		await this.executeCommand(this.items);	
 	}
 	
