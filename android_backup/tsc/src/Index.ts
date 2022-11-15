@@ -101,11 +101,6 @@ export default class Index extends Fragment {
         await this.executeCommand(this.items);
         this.id++;
     }
- 
-    async removeItem(obj:any) {
-		this.items.removeModelById("3");
-		await this.executeCommand(this.items);	
-	}
 
 	async removeCurrentItem(obj:any) {
 		this.items.removeModelById(obj.model.id);

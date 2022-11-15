@@ -1072,21 +1072,6 @@ var Index = /** @class */function (_super) {
     });
   };
 
-  Index.prototype.removeItem = function (obj) {
-    return __awaiter(this, void 0, void 0, function () {
-      return __generator(this, function (_a) {
-        switch (_a.label) {
-          case 0:
-            this.items.removeModelById("3");
-            return [4 /*yield*/, this.executeCommand(this.items)];
-          case 1:
-            _a.sent();
-            return [2 /*return*/];
-        }
-      });
-    });
-  };
-
   Index.prototype.removeCurrentItem = function (obj) {
     return __awaiter(this, void 0, void 0, function () {
       return __generator(this, function (_a) {
