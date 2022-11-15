@@ -962,7 +962,7 @@ var Index = /** @class */function (_super) {
           case 0:
             url = this.getQueryParams(document.location.search)["url"];
             if (url == null) {
-              url = 'https://raw.githubusercontent.com/AsheraCordova/InteractivePlayGround/main/android_backup/res/layout/login_component_with_validation.xml';
+              url = 'https://raw.githubusercontent.com/AsheraCordova/InteractivePlayGround/main/android_backup/res/layout/login_component_with_databinding.xml';
             }
             return [4 /*yield*/, fetch(url, {
               method: 'GET',
@@ -1026,6 +1026,22 @@ var Index = /** @class */function (_super) {
           case 1:
             if (_a.sent()) {
               alert("validation success");
+            }
+            return [2 /*return*/];
+        }
+      });
+    });
+  };
+
+  Index.prototype.validateLoginFormWithModel = function (obj) {
+    return __awaiter(this, void 0, void 0, function () {
+      return __generator(this, function (_a) {
+        switch (_a.label) {
+          case 0:
+            return [4 /*yield*/, this.validateForm("loginForm", this.validateButton)];
+          case 1:
+            if (_a.sent()) {
+              alert(JSON.stringify(obj.model));
             }
             return [2 /*return*/];
         }

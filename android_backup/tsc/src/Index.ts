@@ -43,7 +43,7 @@ export default class Index extends Fragment {
         let url = this.getQueryParams(document.location.search)["url"];
 
         if (url == null) {
-            url = 'https://raw.githubusercontent.com/AsheraCordova/InteractivePlayGround/main/android_backup/res/layout/login_component_with_validation.xml';
+            url = 'https://raw.githubusercontent.com/AsheraCordova/InteractivePlayGround/main/android_backup/res/layout/login_component_with_databinding.xml';
         }
 
         let response = await fetch(url, {
@@ -86,5 +86,11 @@ export default class Index extends Fragment {
          if (await this.validateForm("loginForm", this.validateButton)) {
              alert("validation success");
          }
+     }
+
+     async validateLoginFormWithModel(obj: any) {
+        if (await this.validateForm("loginForm", this.validateButton)) {
+            alert(JSON.stringify(obj.model));
+        }
      }
 }
