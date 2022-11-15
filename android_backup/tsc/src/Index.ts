@@ -43,7 +43,7 @@ export default class Index extends Fragment {
         let url = this.getQueryParams(document.location.search)["url"];
 
         if (url == null) {
-            url = 'https://raw.githubusercontent.com/AsheraCordova/InteractivePlayGround/main/android_backup/res/layout/sync_dependentwidget.xml';
+            url = 'https://raw.githubusercontent.com/AsheraCordova/InteractivePlayGround/main/android_backup/res/layout/recycler_view_add_delete.xml';
         }
 
         let response = await fetch(url, {
@@ -93,4 +93,32 @@ export default class Index extends Fragment {
             alert(JSON.stringify(obj.model));
         }
      }
+     id = 3;
+     @Inject({ id : "@+id/listView"})
+    private items!: RecyclerView;
+     async addItem(obj:any) {
+        this.items.addModel({"id":this.id, "name": "test" + (this.id - 2), "gender":"@+id/radio0"});
+        await this.executeCommand(this.items);
+        this.id++;
+    }
+ 
+    async removeItem(obj:any) {
+		this.items.removeModelById("3");
+		await this.executeCommand(this.items);	
+	}
+
+	async removeCurrentItem(obj:any) {
+		this.items.rremoveModelById(obj.model.id);
+		await this.executeCommand(this.items);	
+	}
+	
+	async getData(obj:any) {
+		alert(JSON.stringify(obj.model));
+	}
+	
+	async clearItem(obj:any) {
+		this.items.updateModelData("items->view as list", []);
+		this.items.notifyDataSetChanged(true);
+		await this.executeCommand(this.items);
+	}
 }

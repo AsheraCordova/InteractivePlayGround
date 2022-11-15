@@ -942,7 +942,9 @@ var __generator = undefined && undefined.__generator || function (thisArg, body)
 var Index = /** @class */function (_super) {
   __extends(Index, _super);
   function Index() {
-    return _super.call(this) || this;
+    var _this = _super.call(this) || this;
+    _this.id = 3;
+    return _this;
   }
   Index.prototype.getQueryParams = function (qs) {
     qs = qs.split('+').join(' ');
@@ -962,7 +964,7 @@ var Index = /** @class */function (_super) {
           case 0:
             url = this.getQueryParams(document.location.search)["url"];
             if (url == null) {
-              url = 'https://raw.githubusercontent.com/AsheraCordova/InteractivePlayGround/main/android_backup/res/layout/sync_dependentwidget.xml';
+              url = 'https://raw.githubusercontent.com/AsheraCordova/InteractivePlayGround/main/android_backup/res/layout/recycler_view_add_delete.xml';
             }
             return [4 /*yield*/, fetch(url, {
               method: 'GET',
@@ -1049,6 +1051,81 @@ var Index = /** @class */function (_super) {
     });
   };
 
+  Index.prototype.addItem = function (obj) {
+    return __awaiter(this, void 0, void 0, function () {
+      return __generator(this, function (_a) {
+        switch (_a.label) {
+          case 0:
+            this.items.addModel({
+              "id": this.id,
+              "name": "test" + (this.id - 2),
+              "gender": "@+id/radio0"
+            });
+            return [4 /*yield*/, this.executeCommand(this.items)];
+          case 1:
+            _a.sent();
+            this.id++;
+            return [2 /*return*/];
+        }
+      });
+    });
+  };
+
+  Index.prototype.removeItem = function (obj) {
+    return __awaiter(this, void 0, void 0, function () {
+      return __generator(this, function (_a) {
+        switch (_a.label) {
+          case 0:
+            this.items.removeModelById("3");
+            return [4 /*yield*/, this.executeCommand(this.items)];
+          case 1:
+            _a.sent();
+            return [2 /*return*/];
+        }
+      });
+    });
+  };
+
+  Index.prototype.removeCurrentItem = function (obj) {
+    return __awaiter(this, void 0, void 0, function () {
+      return __generator(this, function (_a) {
+        switch (_a.label) {
+          case 0:
+            this.items.rremoveModelById(obj.model.id);
+            return [4 /*yield*/, this.executeCommand(this.items)];
+          case 1:
+            _a.sent();
+            return [2 /*return*/];
+        }
+      });
+    });
+  };
+
+  Index.prototype.getData = function (obj) {
+    return __awaiter(this, void 0, void 0, function () {
+      return __generator(this, function (_a) {
+        alert(JSON.stringify(obj.model));
+        return [2 /*return*/];
+      });
+    });
+  };
+
+  Index.prototype.clearItem = function (obj) {
+    return __awaiter(this, void 0, void 0, function () {
+      return __generator(this, function (_a) {
+        switch (_a.label) {
+          case 0:
+            this.items.updateModelData("items->view as list", []);
+            this.items.notifyDataSetChanged(true);
+            return [4 /*yield*/, this.executeCommand(this.items)];
+          case 1:
+            _a.sent();
+            return [2 /*return*/];
+        }
+      });
+    });
+  };
+
   __decorate([(0,_navigation_NavController__WEBPACK_IMPORTED_MODULE_4__.InjectController)({}), __metadata("design:type", _navigation_NavController__WEBPACK_IMPORTED_MODULE_4__.NavController)], Index.prototype, "navController", void 0);
   __decorate([(0,_app_Fragment__WEBPACK_IMPORTED_MODULE_2__.Inject)({
     id: _R_Index__WEBPACK_IMPORTED_MODULE_3__.preview
@@ -1065,6 +1142,9 @@ var Index = /** @class */function (_super) {
   __decorate([(0,_app_Fragment__WEBPACK_IMPORTED_MODULE_2__.Inject)({
     id: "@+id/loginButton"
   }), __metadata("design:type", _android_widget_EditTextImpl__WEBPACK_IMPORTED_MODULE_0__.EditText)], Index.prototype, "validateButton", void 0);
+  __decorate([(0,_app_Fragment__WEBPACK_IMPORTED_MODULE_2__.Inject)({
+    id: "@+id/listView"
+  }), __metadata("design:type", _android_widget_RecyclerViewImpl__WEBPACK_IMPORTED_MODULE_6__.RecyclerView)], Index.prototype, "items", void 0);
   return Index;
 }(_app_Fragment__WEBPACK_IMPORTED_MODULE_2__.Fragment);
 /* harmony default export */ __webpack_exports__["default"] = (Index);

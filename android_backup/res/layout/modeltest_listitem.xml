@@ -1,0 +1,106 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:ignore="MissingPrefix" >
+
+    <TableLayout
+        android:id="@+id/rootView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        borderColor="black"
+        borderRadius="10dp"
+        borderWidth="2dp"
+        android:padding="20dp"
+        android:shrinkColumns="*"
+        android:stretchColumns="*" >
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="Name" />
+
+            <EditText
+                android:id="@+id/name"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                modelPojoToUi="text = name from item->loopvar"
+                modelSyncEvents="onFocusChange"
+                modelUiToPojo="name = text  into item->loopvar"
+                onFocusChange=""
+                android:gravity="center"
+                android:padding="10dp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="Gender" />
+
+            <RadioGroup
+                android:id="@+id/gender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                modelPojoToUi="checkedButton = gender from item->loopvar"
+                modelSyncEvents="onCheckedChange"
+                modelUiToPojo="gender = checkedButton  into item->loopvar"
+                onCheckedChange=""
+                android:orientation="horizontal" >
+
+                <RadioButton
+                    android:id="@+id/radio0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Male" >
+                </RadioButton>
+
+                <RadioButton
+                    android:id="@+id/radio1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Female" >
+                </RadioButton>
+            </RadioGroup>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <Button
+                android:id="@+id/removeButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_span="2"
+                android:onClick="removeCurrentItem(model=. from item->loopvar)"
+                android:text="Remove" >
+            </Button>
+        </TableRow>
+    </TableLayout>
+	
+    <ListView
+        widget-override="LinearLayout"
+        android:id="@+id/childitems"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        listitem="@layout/modeltest_listitem2"
+        tools:listitem="@layout/modeltest_listitem2"
+        modelFor="let childitem in child from item->loopvar into loopvar as pathmap"
+        modelIdPath="id"
+        android:orientation="vertical" />
+
+</LinearLayout>
