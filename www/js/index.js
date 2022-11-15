@@ -975,7 +975,7 @@ var Index = /** @class */function (_super) {
           case 2:
             xml = _a.sent();
             this.xmlEditText.setText(xml);
-            this.currentUrl.setText(url);
+            this.currentUrl.setText(url).updateModelData("login->view as map", {});
             this.executeCommand(this.xmlEditText, this.currentUrl);
             return [2 /*return*/];
         }

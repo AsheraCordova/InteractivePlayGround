@@ -53,7 +53,7 @@ export default class Index extends Fragment {
           });
         let xml = await response.text();
         this.xmlEditText.setText(xml);
-        this.currentUrl.setText(url);
+        this.currentUrl.setText(url).updateModelData("login->view as map", {});
         this.executeCommand(this.xmlEditText, this.currentUrl);
         
     }
