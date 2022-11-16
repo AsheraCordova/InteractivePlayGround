@@ -4,6 +4,8 @@ import ErrorDetailFragment from './ErrorDetailFragment';
 
 import CatHello from './CatHello';
 
+import Dialog from './Dialog';
+
 import Index from './Index';
 
 import Login from './Login';
@@ -18,6 +20,8 @@ export const fragmentMapper : any = {
   //start - body
     
      'layout/cat_hello.xml': CatHello,
+    
+     'layout/dialog.xml': Dialog,
     
      'layout/index.xml': Index,
     

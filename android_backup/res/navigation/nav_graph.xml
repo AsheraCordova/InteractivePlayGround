@@ -39,6 +39,12 @@
         tools:layout="@layout/login"></fragment>
 
     <fragment
+        android:id="@+id/dialog"
+        android:name="com.ashera.core.MyDialog"
+        android:label="Dialog"
+        tools:layout="@layout/dialog"></fragment>
+
+    <fragment
         android:id="@+id/cat_hello"
         android:name="com.ashera.core.GenericFragment"
         android:label="Cat Hello"

@@ -87,7 +87,8 @@
                 android:layout_height="wrap_content"
                 android:layout_span="2"
                 onClick="removeCurrentItem(model=. from item->loopvar)"
-                android:text="Remove" >
+                android:text="Remove"
+                tools:ignore="OnClick">
             </Button>
         </TableRow>
     </TableLayout>

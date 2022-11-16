@@ -5,7 +5,7 @@ import { currentUrl, preview, xml } from './R/Index';
 import { InjectController, NavController } from './navigation/NavController';
 import { TextView } from './android/widget/TextViewImpl';
 import { RecyclerView } from './android/widget/RecyclerViewImpl';
-import { login } from './R/NavGraph';
+import { dialog, login } from './R/NavGraph';
 import { ScopedObject } from './app/ScopedObject';
 
 declare var window: any;
@@ -44,7 +44,7 @@ export default class Index extends Fragment {
         let url = this.getQueryParams(document.location.search)["url"];
 
         if (url == null) {
-            url = 'https://raw.githubusercontent.com/AsheraCordova/InteractivePlayGround/main/android_backup/res/layout/recycler_view_add_delete.xml';
+            url = 'https://raw.githubusercontent.com/AsheraCordova/InteractivePlayGround/main/android_backup/res/layout/dialog_host.xml';
         }
 
         let response = await fetch(url, {
@@ -72,6 +72,7 @@ export default class Index extends Fragment {
      async callInlineFunction(obj: any) {
         obj["constants"] = {login : login};
         window.inlineFunction(this, this.xmlEditText, obj, this.navController);        
+        this.navController.navigateTo(login).executeCommand();
      }
 
      @Inject({ id: xml })
@@ -118,4 +119,8 @@ export default class Index extends Fragment {
 		this.items.notifyDataSetChanged(true);
 		await this.executeCommand(this.items);
 	}
+
+    async openDialog() {
+        this.navController.navigateTo(dialog).executeCommand();
+    }
 }
