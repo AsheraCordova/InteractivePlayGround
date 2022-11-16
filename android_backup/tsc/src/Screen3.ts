@@ -18,6 +18,8 @@ export default class Screen3 extends Fragment
             await this.navController.reset().popBackStack().executeCommand();
         }        
         //end - body
-
+        async goToHome() {
+            this.navController.popBackStackTo("screen1", true).executeCommand();
+        }
 }
         

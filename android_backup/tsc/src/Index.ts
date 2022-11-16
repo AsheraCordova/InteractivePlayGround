@@ -5,7 +5,7 @@ import { currentUrl, preview, xml } from './R/Index';
 import { InjectController, NavController } from './navigation/NavController';
 import { TextView } from './android/widget/TextViewImpl';
 import { RecyclerView } from './android/widget/RecyclerViewImpl';
-import { dialog, login } from './R/NavGraph';
+import { dialog, login, screen1 } from './R/NavGraph';
 import { ScopedObject } from './app/ScopedObject';
 
 declare var window: any;
@@ -121,5 +121,9 @@ export default class Index extends Fragment {
 
     async openDialog() {
         this.navController.navigateTo(dialog).executeCommand();
+    }
+
+    async goToScreen1() {
+        this.navController.navigateTo(screen1).executeCommand();
     }
 }

@@ -5,6 +5,8 @@ import { NavController, InjectController } from './navigation/NavController';
 import { ScopedObject } from './app/ScopedObject';
 
 //end - import
+import { screen2 } from './R/NavGraph';
+
 //start - className
 export default class Screen1 extends Fragment
 //end - className
@@ -18,6 +20,8 @@ export default class Screen1 extends Fragment
             await this.navController.reset().popBackStack().executeCommand();
         }        
         //end - body
-
+        async goToScreen2() {
+            this.navController.navigateTo(screen2).executeCommand();
+        }
 }
         
