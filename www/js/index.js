@@ -1330,6 +1330,15 @@ var Index = /** @class */function (_super) {
     });
   };
 
+  Index.prototype.goToScreen1 = function () {
+    return __awaiter(this, void 0, void 0, function () {
+      return __generator(this, function (_a) {
+        this.navController.navigateTo(_R_NavGraph__WEBPACK_IMPORTED_MODULE_7__.screen1).executeCommand();
+        return [2 /*return*/];
+      });
+    });
+  };
+
   __decorate([(0,_navigation_NavController__WEBPACK_IMPORTED_MODULE_4__.InjectController)({}), __metadata("design:type", _navigation_NavController__WEBPACK_IMPORTED_MODULE_4__.NavController)], Index.prototype, "navController", void 0);
   __decorate([(0,_app_Fragment__WEBPACK_IMPORTED_MODULE_2__.Inject)({
     id: _R_Index__WEBPACK_IMPORTED_MODULE_3__.preview
@@ -1633,6 +1642,7 @@ var dialog = 'dialog#dialog#layout/dialog.xml#match_parent#wrap_content#@style/M
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _app_Fragment__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./app/Fragment */ "./src/app/Fragment.ts");
 /* harmony import */ var _navigation_NavController__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./navigation/NavController */ "./src/navigation/NavController.ts");
+/* harmony import */ var _R_NavGraph__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./R/NavGraph */ "./src/R/NavGraph.ts");
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 var __extends = undefined && undefined.__extends || function () {
   var _extendStatics = function extendStatics(d, b) {
@@ -1789,6 +1799,7 @@ var __generator = undefined && undefined.__generator || function (thisArg, body)
 
 
 //end - import
+
 //start - className
 var Screen1 = /** @class */function (_super) {
   __extends(Screen1, _super);
@@ -1805,6 +1816,15 @@ var Screen1 = /** @class */function (_super) {
             _a.sent();
             return [2 /*return*/];
         }
+      });
+    });
+  };
+  //end - body
+  Screen1.prototype.goToScreen2 = function () {
+    return __awaiter(this, void 0, void 0, function () {
+      return __generator(this, function (_a) {
+        this.navController.navigateTo(_R_NavGraph__WEBPACK_IMPORTED_MODULE_2__.screen2).executeCommand();
+        return [2 /*return*/];
       });
     });
   };
@@ -1829,6 +1849,7 @@ var Screen1 = /** @class */function (_super) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _app_Fragment__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./app/Fragment */ "./src/app/Fragment.ts");
 /* harmony import */ var _navigation_NavController__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./navigation/NavController */ "./src/navigation/NavController.ts");
+/* harmony import */ var _R_NavGraph__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./R/NavGraph */ "./src/R/NavGraph.ts");
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 var __extends = undefined && undefined.__extends || function () {
   var _extendStatics = function extendStatics(d, b) {
@@ -1984,6 +2005,7 @@ var __generator = undefined && undefined.__generator || function (thisArg, body)
 //start - import
 
 
+
 //end - import
 //start - className
 var Screen2 = /** @class */function (_super) {
@@ -2001,6 +2023,15 @@ var Screen2 = /** @class */function (_super) {
             _a.sent();
             return [2 /*return*/];
         }
+      });
+    });
+  };
+  //end - body
+  Screen2.prototype.goToScreen3 = function () {
+    return __awaiter(this, void 0, void 0, function () {
+      return __generator(this, function (_a) {
+        this.navController.navigateTo(_R_NavGraph__WEBPACK_IMPORTED_MODULE_2__.screen3).executeCommand();
+        return [2 /*return*/];
       });
     });
   };
@@ -2197,6 +2228,15 @@ var Screen3 = /** @class */function (_super) {
             _a.sent();
             return [2 /*return*/];
         }
+      });
+    });
+  };
+  //end - body
+  Screen3.prototype.goToHome = function () {
+    return __awaiter(this, void 0, void 0, function () {
+      return __generator(this, function (_a) {
+        this.navController.popBackStackTo("screen1", true).executeCommand();
+        return [2 /*return*/];
       });
     });
   };
