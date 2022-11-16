@@ -41,7 +41,7 @@
     <dialog
         android:id="@+id/dialog"
         android:name="com.ashera.core.MyDialog"
-        style="@style/MyDialogStyle"
+        style="@style/MyDialogStyleCloseOnTouchOutside"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:label="Dialog"
