@@ -1598,8 +1598,8 @@ var index = 'fragment#index#layout/index.xml';
 var error = 'fragment#error#layout/error.xml';
 var error_detail = 'fragment#error_detail#layout/error_detail.xml';
 var login = 'fragment#login#layout/login.xml';
-var dialog = 'fragment#dialog#layout/dialog.xml';
 var cat_hello = 'fragment#cat_hello#layout/cat_hello.xml';
+var dialog = 'dialog#dialog#layout/dialog.xml#match_parent#wrap_content#@style/MyDialogStyle';
 
 /***/ }),
 
