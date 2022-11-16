@@ -10,6 +10,12 @@ import Index from './Index';
 
 import Login from './Login';
 
+import Screen1 from './Screen1';
+
+import Screen2 from './Screen2';
+
+import Screen3 from './Screen3';
+
 //end - import
 
 export const fragmentMapper : any = {
@@ -26,6 +32,12 @@ export const fragmentMapper : any = {
      'layout/index.xml': Index,
     
      'layout/login.xml': Login,
+    
+     'layout/screen1.xml': Screen1,
+    
+     'layout/screen2.xml': Screen2,
+    
+     'layout/screen3.xml': Screen3,
     
      //end - body
 };

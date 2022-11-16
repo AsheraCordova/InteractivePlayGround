@@ -14,6 +14,9 @@
             android:defaultValue="layout/index.xml"
             app:argType="string"
             app:nullable="false" />
+        <action
+            android:id="@+id/action_index_to_screen1"
+            app:destination="@id/screen1" />
     </fragment>
 
     <fragment
@@ -36,7 +39,7 @@
         android:id="@+id/login"
         android:name="com.ashera.core.GenericFragment"
         android:label="Login"
-        tools:layout="@layout/login"></fragment>
+        tools:layout="@layout/login"/>
 
     <dialog
         android:id="@+id/dialog"
@@ -52,4 +55,30 @@
         android:name="com.ashera.core.GenericFragment"
         android:label="Cat Hello"
         tools:layout="@layout/cat_hello"></fragment>
+
+    <fragment
+        android:id="@+id/screen1"
+        android:name="com.ashera.core.GenericFragment"
+        android:label="Screen1"
+        tools:layout="@layout/screen1">
+        <action
+            android:id="@+id/action_screen1_to_screen2"
+            app:destination="@id/screen2" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/screen2"
+        android:name="com.ashera.core.GenericFragment"
+        android:label="Screen2"
+        tools:layout="@layout/screen2">
+        <action
+            android:id="@+id/action_screen2_to_screen3"
+            app:destination="@id/screen3" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/screen3"
+        android:name="com.ashera.core.GenericFragment"
+        android:label="Screen3"
+        tools:layout="@layout/screen3"></fragment>
 </navigation>
