@@ -98,25 +98,26 @@ export default class Index extends Fragment {
      id = 3;
      @Inject({ id : "@+id/listView"})
     private items!: RecyclerView;
-     async addItem(obj:any) {
-        this.items.addModel({"id":this.id, "name": "test" + (this.id - 2), "gender":"@+id/radio0"}).refreshUiFromModel("size");
+    async addItem(obj:any) {
+        this.items.addModel({"id":this.id, "name": "test" + (this.id - 2), "gender":"@+id/radio0"});
         await this.executeCommand(this.items);
         this.id++;
     }
 
 	async removeCurrentItem(obj:any) {
-		this.items.removeModelById(obj.model.id).refreshUiFromModel("size");
+		this.items.removeModelById(obj.model.id);
 		await this.executeCommand(this.items);	
 	}
 	
-	async getData(obj:any) {
-		alert(JSON.stringify(obj.model));
-	}
-	
 	async clearItem(obj:any) {
-		this.items.updateModelData("items->view as list", []).refreshUiFromModel("size");
+		this.items.updateModelData("items->view as list", []);
 		this.items.notifyDataSetChanged(true);
 		await this.executeCommand(this.items);
+	}
+
+    	
+	async getData(obj:any) {
+		alert(JSON.stringify(obj.model));
 	}
 
     async openDialog() {
@@ -126,4 +127,21 @@ export default class Index extends Fragment {
     async goToScreen1() {
         this.navController.navigateTo(screen1).executeCommand();
     }
+
+    async addItemWithRefresh(obj:any) {
+        this.items.addModel({"id":this.id, "Price": this.id}).refreshUiFromModel("size");
+        await this.executeCommand(this.items);
+        this.id++;
+    }
+
+	async removeCurrentItemWithRefresh(obj:any) {
+		this.items.removeModelById(obj.model.id).refreshUiFromModel("size");
+		await this.executeCommand(this.items);	
+	}
+	
+	async clearItemWithRefresh(obj:any) {
+		this.items.updateModelData("items->view as list", []).refreshUiFromModel("size");
+		this.items.notifyDataSetChanged(true);
+		await this.executeCommand(this.items);
+	}
 }

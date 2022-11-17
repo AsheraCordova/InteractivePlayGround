@@ -1270,7 +1270,7 @@ var Index = /** @class */function (_super) {
               "id": this.id,
               "name": "test" + (this.id - 2),
               "gender": "@+id/radio0"
-            }).refreshUiFromModel("size");
+            });
             return [4 /*yield*/, this.executeCommand(this.items)];
           case 1:
             _a.sent();
@@ -1286,7 +1286,23 @@ var Index = /** @class */function (_super) {
       return __generator(this, function (_a) {
         switch (_a.label) {
           case 0:
-            this.items.removeModelById(obj.model.id).refreshUiFromModel("size");
+            this.items.removeModelById(obj.model.id);
+            return [4 /*yield*/, this.executeCommand(this.items)];
+          case 1:
+            _a.sent();
+            return [2 /*return*/];
+        }
+      });
+    });
+  };
+
+  Index.prototype.clearItem = function (obj) {
+    return __awaiter(this, void 0, void 0, function () {
+      return __generator(this, function (_a) {
+        switch (_a.label) {
+          case 0:
+            this.items.updateModelData("items->view as list", []);
+            this.items.notifyDataSetChanged(true);
             return [4 /*yield*/, this.executeCommand(this.items)];
           case 1:
             _a.sent();
@@ -1305,22 +1321,6 @@ var Index = /** @class */function (_super) {
     });
   };
 
-  Index.prototype.clearItem = function (obj) {
-    return __awaiter(this, void 0, void 0, function () {
-      return __generator(this, function (_a) {
-        switch (_a.label) {
-          case 0:
-            this.items.updateModelData("items->view as list", []).refreshUiFromModel("size");
-            this.items.notifyDataSetChanged(true);
-            return [4 /*yield*/, this.executeCommand(this.items)];
-          case 1:
-            _a.sent();
-            return [2 /*return*/];
-        }
-      });
-    });
-  };
-
   Index.prototype.openDialog = function () {
     return __awaiter(this, void 0, void 0, function () {
       return __generator(this, function (_a) {
@@ -1335,6 +1335,56 @@ var Index = /** @class */function (_super) {
       return __generator(this, function (_a) {
         this.navController.navigateTo(_R_NavGraph__WEBPACK_IMPORTED_MODULE_7__.screen1).executeCommand();
         return [2 /*return*/];
+      });
+    });
+  };
+
+  Index.prototype.addItemWithRefresh = function (obj) {
+    return __awaiter(this, void 0, void 0, function () {
+      return __generator(this, function (_a) {
+        switch (_a.label) {
+          case 0:
+            this.items.addModel({
+              "id": this.id,
+              "Price": this.id
+            }).refreshUiFromModel("size");
+            return [4 /*yield*/, this.executeCommand(this.items)];
+          case 1:
+            _a.sent();
+            this.id++;
+            return [2 /*return*/];
+        }
+      });
+    });
+  };
+
+  Index.prototype.removeCurrentItemWithRefresh = function (obj) {
+    return __awaiter(this, void 0, void 0, function () {
+      return __generator(this, function (_a) {
+        switch (_a.label) {
+          case 0:
+            this.items.removeModelById(obj.model.id).refreshUiFromModel("size");
+            return [4 /*yield*/, this.executeCommand(this.items)];
+          case 1:
+            _a.sent();
+            return [2 /*return*/];
+        }
+      });
+    });
+  };
+
+  Index.prototype.clearItemWithRefresh = function (obj) {
+    return __awaiter(this, void 0, void 0, function () {
+      return __generator(this, function (_a) {
+        switch (_a.label) {
+          case 0:
+            this.items.updateModelData("items->view as list", []).refreshUiFromModel("size");
+            this.items.notifyDataSetChanged(true);
+            return [4 /*yield*/, this.executeCommand(this.items)];
+          case 1:
+            _a.sent();
+            return [2 /*return*/];
+        }
       });
     });
   };

@@ -7,12 +7,29 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:ignore="MissingPrefix">
-    <TextView
-        android:id="@+id/size"
-        textFormat="Size (%s)"
 
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/size"
+            modelPojoToUi="text = size(.) from items->view"
+            textFormat="Size (%s)"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/total"
+            modelPojoToUi="text = total(.) from items->view"
+            modelPojoToUiParams="path:price;numberFormat:##.00"
+            textFormat="Size (%s)"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
     <LinearLayout
         android:id="@+id/buttonContainer"
         android:layout_width="match_parent"
@@ -28,14 +45,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="10dp"
-                android:onClick="addItem"
+                android:onClick="addItemWithRefresh"
                 android:text="Add"></Button>
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="10dp"
-                android:onClick="clearItem"
+                android:onClick="clearItemWithRefresh"
                 android:text="Clear"></Button>
 
             <Button
@@ -50,14 +67,14 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/listView"
-        listitem="@layout/modeltest_listitem"
+        listitem="@layout/modeltest_listitem1"
         modelFor="let item in . from items->view into loopvar as pathmap"
         modelIdPath="id"
-        viewHolderIds="removeButton,name,gender"
+        viewHolderIds="removeButton,name,price"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:descendantFocusability="afterDescendants"
-        tools:listitem="@layout/modeltest_listitem" />
+        tools:listitem="@layout/modeltest_listitem1" />
 
 
 </LinearLayout>
