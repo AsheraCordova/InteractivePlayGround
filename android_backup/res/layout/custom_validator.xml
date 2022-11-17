@@ -13,6 +13,7 @@
         android:padding="10dp">
 
         <EditText
+            android:id="@+id/editText"
             style="@style/normalEditText"
             errorStyle="@style/errorEditText"
             formGroupId="loginForm"
@@ -21,10 +22,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Type only lowercase letters here!!!" />
-
+        <TextView
+            android:id="@+id/editTextError"
+            style="@style/errorStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
         <Button
             android:onClick="validateLoginForm"
-            android:id="@+id/translated"
+            android:id="@+id/loginButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Validate">
