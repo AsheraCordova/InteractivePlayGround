@@ -24,6 +24,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="goToScreen3"
-            android:text="Screen3"></Button>
+            android:text="Go to Screen3"></Button>
+
+        <Button
+            android:layout_marginVertical="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="goToScreen3PopScreen2"
+            android:text="Go to Screen3 Pop Screen2"></Button>
     </LinearLayout>
 </layout>

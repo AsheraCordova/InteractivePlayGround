@@ -2005,8 +2005,8 @@ var __generator = undefined && undefined.__generator || function (thisArg, body)
 //start - import
 
 
-
 //end - import
+
 //start - className
 var Screen2 = /** @class */function (_super) {
   __extends(Screen2, _super);
@@ -2031,6 +2031,15 @@ var Screen2 = /** @class */function (_super) {
     return __awaiter(this, void 0, void 0, function () {
       return __generator(this, function (_a) {
         this.navController.navigateTo(_R_NavGraph__WEBPACK_IMPORTED_MODULE_2__.screen3).executeCommand();
+        return [2 /*return*/];
+      });
+    });
+  };
+
+  Screen2.prototype.goToScreen3PopScreen2 = function () {
+    return __awaiter(this, void 0, void 0, function () {
+      return __generator(this, function (_a) {
+        this.navController.navigateWithPopBackStackTo(_R_NavGraph__WEBPACK_IMPORTED_MODULE_2__.screen3, "screen2", true).executeCommand();
         return [2 /*return*/];
       });
     });

@@ -3,9 +3,10 @@
 import { Fragment, Inject } from './app/Fragment';
 import { NavController, InjectController } from './navigation/NavController';
 import { ScopedObject } from './app/ScopedObject';
-import { screen3 } from './R/NavGraph';
 
 //end - import
+import { screen3 } from './R/NavGraph';
+
 //start - className
 export default class Screen2 extends Fragment
 //end - className
@@ -21,6 +22,10 @@ export default class Screen2 extends Fragment
         //end - body
         async goToScreen3() {
             this.navController.navigateTo(screen3).executeCommand();
+        }
+
+        async goToScreen3PopScreen2() {
+            this.navController.navigateWithPopBackStackTo(screen3, "screen2", true).executeCommand();
         }
 }
         
