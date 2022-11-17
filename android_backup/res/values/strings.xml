@@ -26,6 +26,7 @@
     <string name="length_atmost_error_message">Number should be atmost %d.</string>
     <string name="length_atleast_error_message">Number should be atleast %d.</string>
     <string name="strongpassword_error_message">Password should contains atleast 8 characters, one uppercase letter, number and special character.</string>
+    <string name="lowercase_error_message">Only lowercases letters allowed</string>
     <string name="default_textOff">OFF</string>
     <string name="default_textOn">ON</string>
     <string name="play_ground">Play Ground</string>

@@ -1,0 +1,34 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:ignore="MissingPrefix">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp">
+
+        <EditText
+            style="@style/normalEditText"
+            errorStyle="@style/errorEditText"
+            formGroupId="loginForm"
+            validation="required,lowercaseonly"
+            validationErrorDisplayType="label|style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Type only lowercase letters here!!!" />
+
+        <Button
+            android:onClick="validateLoginForm"
+            android:id="@+id/translated"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Validate">
+        </Button>
+    </LinearLayout>
+
+</LinearLayout>

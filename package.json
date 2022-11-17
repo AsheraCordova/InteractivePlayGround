@@ -14,7 +14,7 @@
     "update-ios-plist": "cd platforms/android/app/src/main/gentool && npm run plist",
     "backup-android": "cd platforms/android/app/src/main/gentool && npm run backup",
     "restore-android": "cd platforms/android/app/src/main/gentool && npm run restore",
-	"clean-start-windows": "rmdir /s /q platforms node_modules plugins && cordova prepare && cd platforms/android/app/src/main/gentool && npm install && npm run fixIosSymLinks && npm run restore && npm run resize && cd ../tsc && npm install && cd ../gentool && npm run start skip_watch && cd ../tsc && npm run build",
+    "clean-start-windows": "rmdir /s /q platforms node_modules plugins && cordova prepare && cd platforms/android/app/src/main/gentool && npm install && npm run fixIosSymLinks && npm run restore && npm run resize && cd ../tsc && npm install && cd ../gentool && npm run start skip_watch && cd ../tsc && npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -28,6 +28,7 @@
     "com.ashera.constraintlayout": "git+https://github.com/AsheraCordova/ConstraintLayout.git",
     "com.ashera.core": "git+https://github.com/AsheraCordova/Core.git",
     "com.ashera.cssborder": "git+https://github.com/AsheraCordova/CSSBorder.git",
+    "com.ashera.custom": "file:Custom",
     "com.ashera.datetime": "git+https://github.com/AsheraCordova/DateTime.git",
     "com.ashera.drawerlayout": "git+https://github.com/AsheraCordova/Drawer.git",
     "com.ashera.glide": "git+https://github.com/AsheraCordova/Glide.git",
@@ -63,7 +64,8 @@
       "com.ashera.shutterbug": {},
       "com.ashera.glide": {},
       "com.ashera.sdwebimage.ios": {},
-      "com.filfatstudios.spinnerdialog": {}
+      "com.filfatstudios.spinnerdialog": {},
+      "com.ashera.custom": {}
     }
   }
 }

@@ -70,4 +70,8 @@
     <allow-intent href="market:*" />
     <preference name="loglevel" value="DEBUG" />
     <preference name="AndroidXEnabled" value="true" />
+    <feature name="CustomCordovaPlugin">
+        <param name="android-package" value="com.ashera.custom.CustomCordovaPlugin" />
+        <param name="onload" value="true" />
+    </feature>
 </widget>

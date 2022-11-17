@@ -1,0 +1,11 @@
+repositories {
+    mavenLocal();
+    google();
+    jcenter();
+}
+
+dependencies {
+	def project_version = '1.0.0';
+	
+	implementation "com.ashera:CustomPlugin:${project_version}"    
+}
