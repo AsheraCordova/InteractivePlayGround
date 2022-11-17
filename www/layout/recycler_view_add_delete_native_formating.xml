@@ -24,7 +24,7 @@
             android:id="@+id/total"
             modelPojoToUi="text = total(.) from items->view"
             modelPojoToUiParams="path:price;numberFormat:##.00"
-            textFormat="Size (%s)"
+            textFormat="Total (%s)"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 

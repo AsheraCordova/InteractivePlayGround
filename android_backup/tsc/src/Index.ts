@@ -129,18 +129,18 @@ export default class Index extends Fragment {
     }
 
     async addItemWithRefresh(obj:any) {
-        this.items.addModel({"id":this.id, "Price": this.id}).refreshUiFromModel("size");
+        this.items.addModel({"id":this.id, "price": this.id, "name": this.id + "test"}).refreshUiFromModel("size,total");
         await this.executeCommand(this.items);
         this.id++;
     }
 
 	async removeCurrentItemWithRefresh(obj:any) {
-		this.items.removeModelById(obj.model.id).refreshUiFromModel("size");
+		this.items.removeModelById(obj.model.id).refreshUiFromModel("size,total");
 		await this.executeCommand(this.items);	
 	}
 	
 	async clearItemWithRefresh(obj:any) {
-		this.items.updateModelData("items->view as list", []).refreshUiFromModel("size");
+		this.items.updateModelData("items->view as list", []).refreshUiFromModel("size,total");
 		this.items.notifyDataSetChanged(true);
 		await this.executeCommand(this.items);
 	}
