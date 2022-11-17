@@ -99,13 +99,13 @@ export default class Index extends Fragment {
      @Inject({ id : "@+id/listView"})
     private items!: RecyclerView;
      async addItem(obj:any) {
-        this.items.addModel({"id":this.id, "name": "test" + (this.id - 2), "gender":"@+id/radio0"});
+        this.items.addModel({"id":this.id, "name": "test" + (this.id - 2), "gender":"@+id/radio0"}).refreshUiFromModel("size");
         await this.executeCommand(this.items);
         this.id++;
     }
 
 	async removeCurrentItem(obj:any) {
-		this.items.removeModelById(obj.model.id);
+		this.items.removeModelById(obj.model.id).refreshUiFromModel("size");
 		await this.executeCommand(this.items);	
 	}
 	
@@ -114,7 +114,7 @@ export default class Index extends Fragment {
 	}
 	
 	async clearItem(obj:any) {
-		this.items.updateModelData("items->view as list", []);
+		this.items.updateModelData("items->view as list", []).refreshUiFromModel("size");
 		this.items.notifyDataSetChanged(true);
 		await this.executeCommand(this.items);
 	}

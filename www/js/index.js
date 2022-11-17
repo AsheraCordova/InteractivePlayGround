@@ -1270,7 +1270,7 @@ var Index = /** @class */function (_super) {
               "id": this.id,
               "name": "test" + (this.id - 2),
               "gender": "@+id/radio0"
-            });
+            }).refreshUiFromModel("size");
             return [4 /*yield*/, this.executeCommand(this.items)];
           case 1:
             _a.sent();
@@ -1286,7 +1286,7 @@ var Index = /** @class */function (_super) {
       return __generator(this, function (_a) {
         switch (_a.label) {
           case 0:
-            this.items.removeModelById(obj.model.id);
+            this.items.removeModelById(obj.model.id).refreshUiFromModel("size");
             return [4 /*yield*/, this.executeCommand(this.items)];
           case 1:
             _a.sent();
@@ -1310,7 +1310,7 @@ var Index = /** @class */function (_super) {
       return __generator(this, function (_a) {
         switch (_a.label) {
           case 0:
-            this.items.updateModelData("items->view as list", []);
+            this.items.updateModelData("items->view as list", []).refreshUiFromModel("size");
             this.items.notifyDataSetChanged(true);
             return [4 /*yield*/, this.executeCommand(this.items)];
           case 1:

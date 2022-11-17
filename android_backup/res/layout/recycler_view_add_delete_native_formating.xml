@@ -8,7 +8,8 @@
     android:orientation="vertical"
     tools:ignore="MissingPrefix">
     <TextView
-        textformat="Size (%s)"
+        android:id="@+id/size"
+        textFormat="Size (%s)"
         modelPojoToUi="text = size(.) from items->view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
