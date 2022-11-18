@@ -82,3 +82,9 @@
 			
                  }
         
+            .h2_black {
+					textSize:"@dimen/font_normal";
+			textColor:"@color/color_black";
+			
+                 }
+        

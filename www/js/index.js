@@ -1174,7 +1174,7 @@ var Index = /** @class */function (_super) {
           case 0:
             url = this.getQueryParams(document.location.search)["url"];
             if (url == null) {
-              url = 'https://raw.githubusercontent.com/AsheraCordova/InteractivePlayGround/main/android_backup/res/layout/custom_validator.xml';
+              url = 'https://raw.githubusercontent.com/AsheraCordova/InteractivePlayGround/main/android_backup/res/layout/custom_nativeformatter.xml';
             }
             return [4 /*yield*/, fetch(url, {
               method: 'GET',
@@ -1187,7 +1187,11 @@ var Index = /** @class */function (_super) {
           case 2:
             xml = _a.sent();
             this.xmlEditText.setText(xml);
-            this.currentUrl.setText(url).updateModelDataWithScopedObject(new _app_ScopedObject__WEBPACK_IMPORTED_MODULE_8__.ScopedObject("login->view as map", {}), new _app_ScopedObject__WEBPACK_IMPORTED_MODULE_8__.ScopedObject("items->view as list", []));
+            this.currentUrl.setText(url).updateModelDataWithScopedObject(new _app_ScopedObject__WEBPACK_IMPORTED_MODULE_8__.ScopedObject("login->view as map", {}), new _app_ScopedObject__WEBPACK_IMPORTED_MODULE_8__.ScopedObject("items->view as list", []), new _app_ScopedObject__WEBPACK_IMPORTED_MODULE_8__.ScopedObject("tradeItem->view as map", {
+              tradePrice: 0,
+              noOfItems: 0,
+              memberPrice: 100
+            }));
             this.executeCommand(this.xmlEditText, this.currentUrl);
             return [2 /*return*/];
         }

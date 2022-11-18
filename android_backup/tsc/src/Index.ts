@@ -54,8 +54,10 @@ export default class Index extends Fragment {
           });
         let xml = await response.text();
         this.xmlEditText.setText(xml);
-        this.currentUrl.setText(url).updateModelDataWithScopedObject(new ScopedObject("login->view as map", {}),
-            new ScopedObject("items->view as list", []));
+        this.currentUrl.setText(url).updateModelDataWithScopedObject(
+            new ScopedObject("login->view as map", {}),
+            new ScopedObject("items->view as list", []),
+            new ScopedObject("tradeItem->view as map", {tradePrice: 0, noOfItems: 0, memberPrice: 100}),);
         this.executeCommand(this.xmlEditText, this.currentUrl);
         
     }

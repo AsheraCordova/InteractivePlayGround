@@ -25,12 +25,8 @@
         <TextView
             android:id="@+id/editTextError"
             style="@style/errorStyle"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/loginPassword"
-            app:layout_constraintWidth_percent=".89" />
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
         <Button
             android:onClick="validateLoginForm"
             android:id="@+id/loginButton"
