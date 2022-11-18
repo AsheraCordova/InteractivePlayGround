@@ -1190,7 +1190,7 @@ var Index = /** @class */function (_super) {
             this.currentUrl.setText(url).updateModelDataWithScopedObject(new _app_ScopedObject__WEBPACK_IMPORTED_MODULE_8__.ScopedObject("login->view as map", {}), new _app_ScopedObject__WEBPACK_IMPORTED_MODULE_8__.ScopedObject("items->view as list", []), new _app_ScopedObject__WEBPACK_IMPORTED_MODULE_8__.ScopedObject("tradeItem->view as map", {
               tradePrice: 0,
               noOfItems: 0,
-              memberPrice: 100
+              memPrice: 100
             }));
             this.executeCommand(this.xmlEditText, this.currentUrl);
             return [2 /*return*/];

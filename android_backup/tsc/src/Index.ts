@@ -44,7 +44,7 @@ export default class Index extends Fragment {
         let url = this.getQueryParams(document.location.search)["url"];
 
         if (url == null) {
-            url = 'https://raw.githubusercontent.com/AsheraCordova/InteractivePlayGround/main/android_backup/res/layout/custom_validator.xml';
+            url = 'https://raw.githubusercontent.com/AsheraCordova/InteractivePlayGround/main/android_backup/res/layout/custom_nativeformatter.xml';
         }
 
         let response = await fetch(url, {
@@ -57,7 +57,7 @@ export default class Index extends Fragment {
         this.currentUrl.setText(url).updateModelDataWithScopedObject(
             new ScopedObject("login->view as map", {}),
             new ScopedObject("items->view as list", []),
-            new ScopedObject("tradeItem->view as map", {tradePrice: 0, noOfItems: 0, memberPrice: 100}),);
+            new ScopedObject("tradeItem->view as map", {tradePrice: 0, noOfItems: 0, memPrice: 100}),);
         this.executeCommand(this.xmlEditText, this.currentUrl);
         
     }

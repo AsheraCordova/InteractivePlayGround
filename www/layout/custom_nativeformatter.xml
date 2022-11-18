@@ -14,7 +14,7 @@
 
         <TextView
             style="@style/h2_black"
-            android:text="No of Items"
+            android:text="Quantity"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"></TextView>
@@ -29,7 +29,7 @@
             android:layout_height="wrap_content"></EditText>
         <TextView
             style="@style/h2_black"
-            android:text="Price"
+            android:text="Trade Price"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"></TextView>
@@ -57,6 +57,14 @@
             onTextChange=""
             android:layout_width="match_parent"
             android:layout_height="wrap_content"></EditText>
+
+        <TextView
+            android:text="points = quantity * (tradePrice - memberPrice);"
+            style="@style/h2_black"
+            modelPojoToUi="text = pointsEarned(.) from tradeItem->view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"></TextView>
         <TextView
             android:id="@+id/pointsEarned"
             style="@style/h2_black"
