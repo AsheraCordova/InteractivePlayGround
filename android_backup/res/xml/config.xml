@@ -74,4 +74,8 @@
         <param name="android-package" value="com.ashera.custom.CustomCordovaPlugin" />
         <param name="onload" value="true" />
     </feature>
+    <feature name="CordovaCustomWidgetExtension">
+        <param name="android-package" value="com.ashera.customwidgetextension.CordovaCustomWidgetExtension" />
+        <param name="onload" value="true" />
+    </feature>
 </widget>

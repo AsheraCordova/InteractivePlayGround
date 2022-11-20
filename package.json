@@ -29,6 +29,7 @@
     "com.ashera.core": "git+https://github.com/AsheraCordova/Core.git",
     "com.ashera.cssborder": "git+https://github.com/AsheraCordova/CSSBorder.git",
     "com.ashera.custom": "file:Custom",
+    "com.ashera.customwidgetextension": "git+https://github.com/AsheraCordova/CustomWidgetExtension.git",
     "com.ashera.datetime": "git+https://github.com/AsheraCordova/DateTime.git",
     "com.ashera.drawerlayout": "git+https://github.com/AsheraCordova/Drawer.git",
     "com.ashera.glide": "git+https://github.com/AsheraCordova/Glide.git",
@@ -65,7 +66,8 @@
       "com.ashera.glide": {},
       "com.ashera.sdwebimage.ios": {},
       "com.filfatstudios.spinnerdialog": {},
-      "com.ashera.custom": {}
+      "com.ashera.custom": {},
+      "com.ashera.customwidgetextension": {}
     }
   }
 }
