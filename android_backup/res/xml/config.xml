@@ -78,4 +78,8 @@
         <param name="android-package" value="com.ashera.customwidgetextension.CordovaCustomWidgetExtension" />
         <param name="onload" value="true" />
     </feature>
+    <feature name="CordovaAbsoluteLayoutPlugin">
+        <param name="android-package" value="com.ashera.absolutelayout.CordovaAbsoluteLayoutPlugin" />
+        <param name="onload" value="true" />
+    </feature>
 </widget>

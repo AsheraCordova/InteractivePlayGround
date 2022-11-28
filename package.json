@@ -24,6 +24,7 @@
   "license": "Apache-2.0",
   "devDependencies": {
     "browser": "git+https://github.com/AsheraCordova/cordova-web.git",
+    "com.ashera.absolutelayout": "git+https://github.com/AsheraCordova/AbsoluteLayout.git",
     "com.ashera.capinsets": "git+https://github.com/AsheraCordova/CapInsets.git",
     "com.ashera.constraintlayout": "git+https://github.com/AsheraCordova/ConstraintLayout.git",
     "com.ashera.core": "git+https://github.com/AsheraCordova/Core.git",
@@ -67,7 +68,8 @@
       "com.ashera.sdwebimage.ios": {},
       "com.filfatstudios.spinnerdialog": {},
       "com.ashera.custom": {},
-      "com.ashera.customwidgetextension": {}
+      "com.ashera.customwidgetextension": {},
+      "com.ashera.absolutelayout": {}
     }
   }
 }
