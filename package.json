@@ -43,6 +43,8 @@
     "com.filfatstudios.spinnerdialog": "git+https://github.com/AsheraCordova/Dialog.git",
     "cordova-android": "^10.1.2",
     "cordova-ios": "^6.2.0",
+    "cordova-plugin-splashscreen": "^6.0.2",
+    "cordova-plugin-splashscreen-ashera": "git+https://github.com/AsheraCordova/Splash.git",
     "swt": "git+https://github.com/AsheraCordova/cordova-swt.git"
   },
   "cordova": {
@@ -69,7 +71,9 @@
       "com.filfatstudios.spinnerdialog": {},
       "com.ashera.custom": {},
       "com.ashera.customwidgetextension": {},
-      "com.ashera.absolutelayout": {}
+      "com.ashera.absolutelayout": {},
+      "cordova-plugin-splashscreen-ashera": {},
+      "cordova-plugin-splashscreen": {}
     }
   }
 }

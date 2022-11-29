@@ -9,6 +9,7 @@ import { dialog, login, screen1 } from './R/NavGraph';
 import { ScopedObject } from './app/ScopedObject';
 
 declare var window: any;
+declare var navigator: any;
 
 export default class Index extends Fragment {
     @InjectController({})
@@ -44,7 +45,7 @@ export default class Index extends Fragment {
         let url = this.getQueryParams(document.location.search)["url"];
 
         if (url == null) {
-            url = 'https://raw.githubusercontent.com/AsheraCordova/InteractivePlayGround/main/android_backup/res/layout/linear_gradient.xml';
+            url = 'https://raw.githubusercontent.com/AsheraCordova/InteractivePlayGround/main/android_backup/res/layout/absolute_layout.xml';
         }
 
         let response = await fetch(url, {
@@ -59,7 +60,7 @@ export default class Index extends Fragment {
             new ScopedObject("items->view as list", []),
             new ScopedObject("tradeItem->view as map", {tradePrice: 0, noOfItems: 0, memPrice: 100}),);
         this.executeCommand(this.xmlEditText, this.currentUrl);
-        
+        navigator.splashscreen.hide();        
     }
 
 

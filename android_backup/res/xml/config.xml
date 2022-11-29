@@ -70,6 +70,7 @@
     <allow-intent href="market:*" />
     <preference name="loglevel" value="DEBUG" />
     <preference name="AndroidXEnabled" value="true" />
+    <preference name="AutoHideSplashScreen" value="false" />
     <feature name="CustomCordovaPlugin">
         <param name="android-package" value="com.ashera.custom.CustomCordovaPlugin" />
         <param name="onload" value="true" />
@@ -80,6 +81,10 @@
     </feature>
     <feature name="CordovaAbsoluteLayoutPlugin">
         <param name="android-package" value="com.ashera.absolutelayout.CordovaAbsoluteLayoutPlugin" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="SplashScreen">
+        <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen" />
         <param name="onload" value="true" />
     </feature>
 </widget>

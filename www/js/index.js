@@ -1174,7 +1174,7 @@ var Index = /** @class */function (_super) {
           case 0:
             url = this.getQueryParams(document.location.search)["url"];
             if (url == null) {
-              url = 'https://raw.githubusercontent.com/AsheraCordova/InteractivePlayGround/main/android_backup/res/layout/linear_gradient.xml';
+              url = 'https://raw.githubusercontent.com/AsheraCordova/InteractivePlayGround/main/android_backup/res/layout/absolute_layout.xml';
             }
             return [4 /*yield*/, fetch(url, {
               method: 'GET',
@@ -1193,6 +1193,7 @@ var Index = /** @class */function (_super) {
               memPrice: 100
             }));
             this.executeCommand(this.xmlEditText, this.currentUrl);
+            navigator.splashscreen.hide();
             return [2 /*return*/];
         }
       });
