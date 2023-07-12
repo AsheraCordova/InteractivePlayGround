@@ -2689,6 +2689,7 @@ var EditTextImpl = /** @class */function (_super) {
     this.editorExtras = undefined;
     this.autoText = undefined;
     this.textAllCaps = undefined;
+    this.setFocus = undefined;
     this.selectAll_ = undefined;
     this.hintTextFormat = undefined;
     this.text = undefined;
@@ -2703,6 +2704,7 @@ var EditTextImpl = /** @class */function (_super) {
     this.typeface = undefined;
     this.textStyle = undefined;
     this.fontFamily = undefined;
+    this.systemTextAppearance = undefined;
     this.textAppearance = undefined;
     this.password = undefined;
     this.enabled = undefined;
@@ -3880,6 +3882,17 @@ var EditTextImpl = /** @class */function (_super) {
     this.textAllCaps.setOrderSet(this.orderSet);
     return this.thisPointer;
   };
+  EditTextImpl.prototype.setSetFocus = function (value) {
+    this.resetIfRequired();
+    if (this.setFocus == null || this.setFocus == undefined) {
+      this.setFocus = new _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__["default"]();
+    }
+    this.setFocus.setSetter(true);
+    this.setFocus.setValue(value);
+    this.orderSet++;
+    this.setFocus.setOrderSet(this.orderSet);
+    return this.thisPointer;
+  };
   EditTextImpl.prototype.selectAll = function (value) {
     this.resetIfRequired();
     if (this.selectAll_ == null || this.selectAll_ == undefined) {
@@ -4069,6 +4082,17 @@ var EditTextImpl = /** @class */function (_super) {
     this.fontFamily.setValue(value);
     this.orderSet++;
     this.fontFamily.setOrderSet(this.orderSet);
+    return this.thisPointer;
+  };
+  EditTextImpl.prototype.setSystemTextAppearance = function (value) {
+    this.resetIfRequired();
+    if (this.systemTextAppearance == null || this.systemTextAppearance == undefined) {
+      this.systemTextAppearance = new _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__["default"]();
+    }
+    this.systemTextAppearance.setSetter(true);
+    this.systemTextAppearance.setValue(value);
+    this.orderSet++;
+    this.systemTextAppearance.setOrderSet(this.orderSet);
     return this.thisPointer;
   };
   EditTextImpl.prototype.setTextAppearance = function (value) {
@@ -4605,6 +4629,11 @@ var EditTextImpl = /** @class */function (_super) {
   __decorate([(0,class_transformer__WEBPACK_IMPORTED_MODULE_4__.Type)(function () {
     return _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__["default"];
   }), (0,class_transformer__WEBPACK_IMPORTED_MODULE_5__.Expose)({
+    name: "setFocus"
+  }), __metadata("design:type", Object)], EditTextImpl.prototype, "setFocus", void 0);
+  __decorate([(0,class_transformer__WEBPACK_IMPORTED_MODULE_4__.Type)(function () {
+    return _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__["default"];
+  }), (0,class_transformer__WEBPACK_IMPORTED_MODULE_5__.Expose)({
     name: "selectAll"
   }), __metadata("design:type", Object)], EditTextImpl.prototype, "selectAll_", void 0);
   __decorate([(0,class_transformer__WEBPACK_IMPORTED_MODULE_4__.Type)(function () {
@@ -4672,6 +4701,11 @@ var EditTextImpl = /** @class */function (_super) {
   }), (0,class_transformer__WEBPACK_IMPORTED_MODULE_5__.Expose)({
     name: "fontFamily"
   }), __metadata("design:type", Object)], EditTextImpl.prototype, "fontFamily", void 0);
+  __decorate([(0,class_transformer__WEBPACK_IMPORTED_MODULE_4__.Type)(function () {
+    return _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__["default"];
+  }), (0,class_transformer__WEBPACK_IMPORTED_MODULE_5__.Expose)({
+    name: "systemTextAppearance"
+  }), __metadata("design:type", Object)], EditTextImpl.prototype, "systemTextAppearance", void 0);
   __decorate([(0,class_transformer__WEBPACK_IMPORTED_MODULE_4__.Type)(function () {
     return _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__["default"];
   }), (0,class_transformer__WEBPACK_IMPORTED_MODULE_5__.Expose)({
@@ -5711,6 +5745,7 @@ var TextViewImpl = /** @class */function (_super) {
     this.typeface = undefined;
     this.textStyle = undefined;
     this.fontFamily = undefined;
+    this.systemTextAppearance = undefined;
     this.textAppearance = undefined;
     this.password = undefined;
     this.enabled = undefined;
@@ -7004,6 +7039,17 @@ var TextViewImpl = /** @class */function (_super) {
     this.fontFamily.setOrderSet(this.orderSet);
     return this.thisPointer;
   };
+  TextViewImpl.prototype.setSystemTextAppearance = function (value) {
+    this.resetIfRequired();
+    if (this.systemTextAppearance == null || this.systemTextAppearance == undefined) {
+      this.systemTextAppearance = new _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__["default"]();
+    }
+    this.systemTextAppearance.setSetter(true);
+    this.systemTextAppearance.setValue(value);
+    this.orderSet++;
+    this.systemTextAppearance.setOrderSet(this.orderSet);
+    return this.thisPointer;
+  };
   TextViewImpl.prototype.setTextAppearance = function (value) {
     this.resetIfRequired();
     if (this.textAppearance == null || this.textAppearance == undefined) {
@@ -7702,6 +7748,11 @@ var TextViewImpl = /** @class */function (_super) {
   }), (0,class_transformer__WEBPACK_IMPORTED_MODULE_5__.Expose)({
     name: "fontFamily"
   }), __metadata("design:type", Object)], TextViewImpl.prototype, "fontFamily", void 0);
+  __decorate([(0,class_transformer__WEBPACK_IMPORTED_MODULE_4__.Type)(function () {
+    return _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__["default"];
+  }), (0,class_transformer__WEBPACK_IMPORTED_MODULE_5__.Expose)({
+    name: "systemTextAppearance"
+  }), __metadata("design:type", Object)], TextViewImpl.prototype, "systemTextAppearance", void 0);
   __decorate([(0,class_transformer__WEBPACK_IMPORTED_MODULE_4__.Type)(function () {
     return _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__["default"];
   }), (0,class_transformer__WEBPACK_IMPORTED_MODULE_5__.Expose)({
@@ -8703,6 +8754,7 @@ var ViewGroupModelImpl = /** @class */function (_super) {
     this.removeModelById_ = undefined;
     this.modelFor = undefined;
     this.modelIdPath = undefined;
+    this.modelDescPath = undefined;
     return this.thisPointer;
   };
   ViewGroupModelImpl.prototype.addModel = function (value) {
@@ -8801,6 +8853,33 @@ var ViewGroupModelImpl = /** @class */function (_super) {
     this.modelIdPath.setOrderSet(this.orderSet);
     return this.thisPointer;
   };
+  ViewGroupModelImpl.prototype.tryGetModelDescPath = function () {
+    this.resetIfRequired();
+    if (this.modelDescPath == null || this.modelDescPath == undefined) {
+      this.modelDescPath = new _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__["default"]();
+    }
+    this.modelDescPath.setGetter(true);
+    this.orderGet++;
+    this.modelDescPath.setOrderGet(this.orderGet);
+    return this.thisPointer;
+  };
+  ViewGroupModelImpl.prototype.getModelDescPath = function () {
+    if (this.modelDescPath == null || this.modelDescPath == undefined) {
+      this.modelDescPath = new _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__["default"]();
+    }
+    return this.modelDescPath.getCommandReturnValue();
+  };
+  ViewGroupModelImpl.prototype.setModelDescPath = function (value) {
+    this.resetIfRequired();
+    if (this.modelDescPath == null || this.modelDescPath == undefined) {
+      this.modelDescPath = new _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__["default"]();
+    }
+    this.modelDescPath.setSetter(true);
+    this.modelDescPath.setValue(value);
+    this.orderSet++;
+    this.modelDescPath.setOrderSet(this.orderSet);
+    return this.thisPointer;
+  };
   __decorate([(0,class_transformer__WEBPACK_IMPORTED_MODULE_3__.Type)(function () {
     return _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__["default"];
   }), (0,class_transformer__WEBPACK_IMPORTED_MODULE_4__.Expose)({
@@ -8836,6 +8915,11 @@ var ViewGroupModelImpl = /** @class */function (_super) {
   }), (0,class_transformer__WEBPACK_IMPORTED_MODULE_4__.Expose)({
     name: "modelIdPath"
   }), __metadata("design:type", Object)], ViewGroupModelImpl.prototype, "modelIdPath", void 0);
+  __decorate([(0,class_transformer__WEBPACK_IMPORTED_MODULE_3__.Type)(function () {
+    return _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__["default"];
+  }), (0,class_transformer__WEBPACK_IMPORTED_MODULE_4__.Expose)({
+    name: "modelDescPath"
+  }), __metadata("design:type", Object)], ViewGroupModelImpl.prototype, "modelDescPath", void 0);
   __decorate([(0,class_transformer__WEBPACK_IMPORTED_MODULE_5__.Exclude)(), __metadata("design:type", Object)], ViewGroupModelImpl.prototype, "thisPointer", void 0);
   return ViewGroupModelImpl;
 }(_ViewImpl__WEBPACK_IMPORTED_MODULE_2__.ViewImpl);
@@ -9256,6 +9340,7 @@ var ViewImpl = /** @class */function () {
     this.customErrorMessageValues = undefined;
     this.customErrorMessageKeys = undefined;
     this.invalidateOnFrameChange = undefined;
+    this.onSwiped = undefined;
     this.orderGet = 0;
     this.orderSet = 0;
     this.flush = false;
@@ -12143,6 +12228,17 @@ var ViewImpl = /** @class */function () {
     this.invalidateOnFrameChange.setOrderSet(this.orderSet);
     return this.thisPointer;
   };
+  ViewImpl.prototype.setOnSwiped = function (value) {
+    this.resetIfRequired();
+    if (this.onSwiped == null || this.onSwiped == undefined) {
+      this.onSwiped = new _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__["default"]();
+    }
+    this.onSwiped.setSetter(true);
+    this.onSwiped.setValue(value);
+    this.orderSet++;
+    this.onSwiped.setOrderSet(this.orderSet);
+    return this.thisPointer;
+  };
   __decorate([(0,class_transformer__WEBPACK_IMPORTED_MODULE_6__.Type)(function () {
     return _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__["default"];
   }), (0,class_transformer__WEBPACK_IMPORTED_MODULE_4__.Expose)({
@@ -12808,6 +12904,11 @@ var ViewImpl = /** @class */function () {
   }), (0,class_transformer__WEBPACK_IMPORTED_MODULE_4__.Expose)({
     name: "invalidateOnFrameChange"
   }), __metadata("design:type", Object)], ViewImpl.prototype, "invalidateOnFrameChange", void 0);
+  __decorate([(0,class_transformer__WEBPACK_IMPORTED_MODULE_6__.Type)(function () {
+    return _widget_CommandAttr__WEBPACK_IMPORTED_MODULE_0__["default"];
+  }), (0,class_transformer__WEBPACK_IMPORTED_MODULE_4__.Expose)({
+    name: "onSwiped"
+  }), __metadata("design:type", Object)], ViewImpl.prototype, "onSwiped", void 0);
   __decorate([(0,class_transformer__WEBPACK_IMPORTED_MODULE_7__.Exclude)(), __metadata("design:type", Object)], ViewImpl.prototype, "thisPointer", void 0);
   __decorate([(0,class_transformer__WEBPACK_IMPORTED_MODULE_7__.Exclude)(), __metadata("design:type", Number)], ViewImpl.prototype, "orderGet", void 0);
   __decorate([(0,class_transformer__WEBPACK_IMPORTED_MODULE_7__.Exclude)(), __metadata("design:type", Number)], ViewImpl.prototype, "orderSet", void 0);
