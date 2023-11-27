@@ -22,6 +22,7 @@
             motion:layout_constraintStart_toStartOf="parent"
             motion:layout_constraintTop_toTopOf="parent">
             <CustomAttribute
+                background="#D81B60"
                 motion:attributeName="BackgroundColor"
                 motion:customColorValue="#D81B60" />
         </Constraint>
@@ -37,6 +38,7 @@
             motion:layout_constraintEnd_toEndOf="parent"
             motion:layout_constraintTop_toTopOf="parent">
             <CustomAttribute
+                background="#9999FF"
                 motion:attributeName="BackgroundColor"
                 motion:customColorValue="#9999FF" />
         </Constraint>
