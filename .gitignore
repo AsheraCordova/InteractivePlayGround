@@ -25,3 +25,4 @@ node_modules/
 /plugins/
 /platforms/
 .settings/
+/package-lock.json
