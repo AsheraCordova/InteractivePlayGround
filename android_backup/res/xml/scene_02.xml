@@ -7,12 +7,12 @@
         motion:duration="1000">
         <OnSwipe
             motion:dragDirection="dragRight"
-            motion:touchAnchorId="@id/button"
+            motion:touchAnchorId="@id/n__button"
             motion:touchAnchorSide="right" />
     </Transition>
 
     <ConstraintSet android:id="@+id/start">
-        <Constraint android:id="@id/button">
+        <Constraint android:id="@id/n__button">
             <Layout
                 android:layout_width="64dp"
                 android:layout_height="64dp"
@@ -27,7 +27,7 @@
         android:id="@+id/end"
         motion:deriveConstraintsFrom="@id/start">
 
-        <Constraint android:id="@id/button">
+        <Constraint android:id="@id/n__button">
             <Layout
                 android:layout_width="64dp"
                 android:layout_height="64dp"
