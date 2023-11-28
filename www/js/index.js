@@ -1174,7 +1174,7 @@ var Index = /** @class */function (_super) {
           case 0:
             url = this.getQueryParams(document.location.search)["url"];
             if (url == null) {
-              url = 'https://raw.githubusercontent.com/AsheraCordova/InteractivePlayGround/main/android_backup/res/layout/motion_03_custom_attribute.xml';
+              url = 'https://raw.githubusercontent.com/AsheraCordova/InteractivePlayGround/main/android_backup/res/layout/motion_25_keytrigger.xml';
             }
             return [4 /*yield*/, fetch(url, {
               method: 'GET',
