@@ -9,7 +9,6 @@
     <View
         android:id="@+id/n__button"
         android:background="#f00"
-        app:layout_constraintTop_toTopOf="parent"
         android:layout_width="64dp"
         android:layout_height="64dp" />
 

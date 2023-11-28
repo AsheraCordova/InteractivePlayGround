@@ -1,0 +1,23 @@
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/motionLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:layoutDescription="@xml/scene_25">
+
+    <View
+        android:id="@+id/n__button"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:background="#f00" />
+
+    <View
+        android:id="@+id/n__fab"
+        modelParam="let stateYes = . from show->constants into local as string;let stateNo = . from hide->constants into local as string;"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:background="#f00"
+        tools:ignore="MissingPrefix" />
+
+</androidx.constraintlayout.motion.widget.MotionLayout>
