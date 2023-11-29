@@ -42,6 +42,7 @@
     "com.ashera.sdwebimage.ios": "git+https://github.com/AsheraCordova/SDWebImagePlugin.git",
     "com.ashera.shutterbug": "git+https://github.com/AsheraCordova/ShutterBug.git",
     "com.ashera.toolbar": "git+https://github.com/AsheraCordova/Toolbar.git",
+    "com.ashera.viewpager": "git+https://github.com/AsheraCordova/ViewPager.git",
     "com.filfatstudios.spinnerdialog": "git+https://github.com/AsheraCordova/Dialog.git",
     "cordova-android": "^10.1.2",
     "cordova-ios": "^6.2.0",
@@ -75,7 +76,8 @@
       "com.ashera.customwidgetextension": {},
       "com.ashera.absolutelayout": {},
       "cordova-plugin-splashscreen-ashera": {},
-      "cordova-plugin-splashscreen": {}
+      "cordova-plugin-splashscreen": {},
+      "com.ashera.viewpager": {}
     }
   }
 }

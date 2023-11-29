@@ -45,7 +45,7 @@ export default class Index extends Fragment {
         let url = this.getQueryParams(document.location.search)["url"];
 
         if (url == null) {
-            url = 'http://localhost:8081/res/layout/motion_25_keytrigger.xml';
+            url = 'http://localhost:8081/res/layout/motion_16_viewpager.xml';
         }
 
         let response = await fetch(url, {
@@ -55,11 +55,13 @@ export default class Index extends Fragment {
           });
         let xml = await response.text();
         this.xmlEditText.setText(xml);
-        this.currentUrl.setText(url).updateModelDataWithScopedObject(
+        let viewPagerData = this.getViewPagerData();
+        this.currentUrl.updateModelDataWithScopedObject(
             new ScopedObject("login->view as map", {}),
             new ScopedObject("items->view as list", []),
-            new ScopedObject("tradeItem->view as map", {tradePrice: 0, noOfItems: 0, memPrice: 100}),);
-        this.executeCommand(this.xmlEditText, this.currentUrl);
+            new ScopedObject("viewpagerInfo->view as list", viewPagerData),
+            new ScopedObject("tradeItem->view as map", {tradePrice: 0, noOfItems: 0, memPrice: 100})).setText(url);
+        this.executeCommand(this.currentUrl, this.xmlEditText);
         navigator.splashscreen.hide();        
     }
 
@@ -147,4 +149,12 @@ export default class Index extends Fragment {
 		this.items.notifyDataSetChanged(true);
 		await this.executeCommand(this.items);
 	}
+
+    private getViewPagerData() {
+        let viewPagerData = [];
+        for (let i = 0; i < 10; i++) {
+            viewPagerData.push({ "id": i, "name": i + "", "background": (i % 2) == 0 ? "#ff0" : "#f00" });
+        }
+        return viewPagerData;
+    }
 }
