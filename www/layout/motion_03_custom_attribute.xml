@@ -1,15 +1,79 @@
-<androidx.constraintlayout.motion.widget.MotionLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/motionLayout"
-    app:layoutDescription="@xml/scene_03"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:ignore="MissingPrefix">
 
     <View
-        android:id="@+id/n__button"
-        android:background="#f00"
-        android:layout_width="64dp"
-        android:layout_height="64dp" />
+        name="@xml/scene_03"
+        type="resource"
+        widget-override="Inline"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        tools:ignore="ExtraText">
+        <![CDATA[
+            <MotionScene>
 
-</androidx.constraintlayout.motion.widget.MotionLayout>
+                <Transition
+                    motion:constraintSetEnd="@+id/end"
+                    motion:constraintSetStart="@+id/start"
+                    motion:duration="1000"
+                    motion:motionInterpolator="linear">
+                    <OnSwipe
+                        motion:dragDirection="dragRight"
+                        motion:touchAnchorId="@id/n__button"
+                        motion:touchAnchorSide="right" />
+                </Transition>
+
+                <ConstraintSet android:id="@+id/start">
+                    <Constraint
+                        android:id="@id/n__button"
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:layout_marginStart="8dp"
+                        motion:layout_constraintBottom_toBottomOf="parent"
+                        motion:layout_constraintStart_toStartOf="parent"
+                        motion:layout_constraintTop_toTopOf="parent">
+                        <CustomAttribute
+                            name="background"
+                            motion:attributeName="BackgroundColor"
+                            motion:customColorValue="#D81B60" />
+                    </Constraint>
+                </ConstraintSet>
+
+                <ConstraintSet android:id="@+id/end">
+                    <Constraint
+                        android:id="@id/n__button"
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:layout_marginEnd="8dp"
+                        motion:layout_constraintBottom_toBottomOf="parent"
+                        motion:layout_constraintEnd_toEndOf="parent"
+                        motion:layout_constraintTop_toTopOf="parent">
+                        <CustomAttribute
+                            name="background"
+                            motion:attributeName="BackgroundColor"
+                            motion:customColorValue="#9999FF" />
+                    </Constraint>
+                </ConstraintSet>
+
+            </MotionScene>
+            ]]>
+    </View>
+
+    <androidx.constraintlayout.motion.widget.MotionLayout
+        android:id="@+id/motionLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layoutDescription="@xml/scene_03">
+
+        <View
+            android:id="@+id/n__button"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:background="#f00" />
+
+    </androidx.constraintlayout.motion.widget.MotionLayout>
+</LinearLayout>
