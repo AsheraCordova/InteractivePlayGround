@@ -31,7 +31,7 @@
     "com.ashera.constraintlayout": "git+https://github.com/AsheraCordova/ConstraintLayout.git",
     "com.ashera.core": "git+https://github.com/AsheraCordova/Core.git",
     "com.ashera.cssborder": "git+https://github.com/AsheraCordova/CSSBorder.git",
-    "com.ashera.custom": "file:Custom",
+    "com.ashera.custom": "git+https://github.com/AsheraCordova/Custom.git",
     "com.ashera.customwidgetextension": "git+https://github.com/AsheraCordova/CustomWidgetExtension.git",
     "com.ashera.datetime": "git+https://github.com/AsheraCordova/DateTime.git",
     "com.ashera.drawerlayout": "git+https://github.com/AsheraCordova/Drawer.git",
