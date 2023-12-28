@@ -34,6 +34,7 @@
     <string name="choose_an_option_from_the_above">Choose an option from the above</string>
     <string name="android_xml_url">Android XML Url</string>
     <string name="js_url">JS Url</string>
+    <string name="dpFormat">%sdp</string>
 
     <array name="samples">
         <item></item>
