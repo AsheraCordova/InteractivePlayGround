@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:ordering="together">
+    <objectAnimator
+        android:duration="5000"
+        android:pathData="m0,0l300,0"
+        android:propertyXName="state0"
+        android:propertyYName="state1"
+        android:repeatCount="infinite"
+        android:repeatMode="reverse"
+        android:valueType="pathType"
+        tools:ignore="MissingPrefix" />
+
+</set>

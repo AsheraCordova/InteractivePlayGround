@@ -2,7 +2,7 @@
   "name": "typescript-webpack-babel-boilerplate",
   "version": "1.0.0",
   "description": "Boilerplate for a typescript project using webpack and babel",
-  "browserslist": "> 0.25%, not dead",
+  "browserslist": "> 0.25%, not dead, ie >= 11",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --mode=development --watch",

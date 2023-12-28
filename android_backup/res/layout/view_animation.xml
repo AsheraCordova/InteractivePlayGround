@@ -1,0 +1,248 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:ignore="MissingPrefix">
+
+    <View
+        name="@anim/accelerate_interpolator"
+        type="resource"
+        widget-override="Inline"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        tools:ignore="ExtraText">
+        <![CDATA[
+            <accelerateInterpolator
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:factor="2" />
+        ]]>
+    </View>
+
+    <View
+        name="@animator/color_animator"
+        type="resource"
+        widget-override="Inline"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        tools:ignore="ExtraText">
+        <![CDATA[
+            <set xmlns:tools="http://schemas.android.com/tools"
+                xmlns:android="http://schemas.android.com/apk/res/android">
+                <objectAnimator
+                    android:propertyName="backgroundColor"
+                    propertyName-swt="background"
+                    propertyName-web="background"
+                    propertyName-ios="background"
+                    android:duration="5000"
+                    android:valueFrom="#ffffff"
+                    android:valueTo="#000000"
+                    android:repeatCount="2"
+                    android:repeatMode="reverse"
+                    android:valueType="colorType"
+                    tools:ignore="MissingPrefix" />
+            </set>
+        ]]>
+    </View>
+
+    <View
+        name="@animator/path_animator"
+        type="resource"
+        widget-override="Inline"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        tools:ignore="ExtraText">
+        <![CDATA[
+            <set xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:ordering="together">
+                <objectAnimator
+                    android:duration="5000"
+                    android:pathData="m0,0l300,0"
+                    android:propertyXName="state0"
+                    android:propertyYName="state1"
+                    android:repeatCount="infinite"
+                    android:repeatMode="reverse"
+                    android:valueType="pathType"
+                    tools:ignore="MissingPrefix" />
+            </set>
+        ]]>
+    </View>
+
+    <View
+        name="@animator/translate_animator"
+        type="resource"
+        widget-override="Inline"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        tools:ignore="ExtraText">
+        <![CDATA[
+            <set xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:ordering="together">
+                <objectAnimator
+                    android:duration="5000"
+                    android:propertyName="translationX"
+                    android:repeatCount="infinite"
+                    android:repeatMode="reverse"
+                    android:valueFrom="0dp"
+                    android:valueTo="300dp"
+                    android:valueType="floatType"
+                    tools:ignore="MissingPrefix" />
+            </set>
+        ]]>
+    </View>
+
+    <View
+        name="@animator/translate_animator_interpolation"
+        type="resource"
+        widget-override="Inline"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        tools:ignore="ExtraText">
+        <![CDATA[
+            <set xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:ordering="together">
+                <objectAnimator
+                    android:interpolator="@anim/accelerate_interpolator"
+                    android:duration="5000"
+                    android:propertyName="translationX"
+                    android:repeatCount="infinite"
+                    android:repeatMode="reverse"
+                    android:valueFrom="0dp"
+                    android:valueTo="300dp"
+                    android:valueType="floatType"
+                    tools:ignore="MissingPrefix" />
+            </set>
+        ]]>
+    </View>
+
+    <View
+        name="@animator/translate_with_rotation"
+        type="resource"
+        widget-override="Inline"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        tools:ignore="ExtraText">
+        <![CDATA[
+            <set xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:ordering="together">
+                <objectAnimator
+                    android:duration="5000"
+                    android:propertyName="translationX"
+                    android:repeatCount="infinite"
+                    android:repeatMode="reverse"
+                    android:valueFrom="0dp"
+                    android:valueTo="300dp"
+                    android:valueType="floatType"
+                    tools:ignore="MissingPrefix" />
+
+                <objectAnimator
+                    android:duration="5000"
+                    android:propertyName="rotation"
+                    android:repeatCount="infinite"
+                    android:repeatMode="reverse"
+                    android:valueFrom="0"
+                    android:valueTo="90"
+                    android:valueType="floatType"
+                    tools:ignore="MissingPrefix" />
+            </set>
+        ]]>
+    </View>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/blackBg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Translation"></TextView>
+
+            <View
+                android:id="@+id/translate_animator"
+                animatorXml="@animator/translate_animator"
+                startAnimator=""
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginVertical="10dp"
+                android:background="#f00"></View>
+            
+            <TextView
+                style="@style/blackBg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Translation With Rotation"></TextView>
+
+            <View
+                android:id="@+id/translate_with_rotation"
+                animatorXml="@animator/translate_with_rotation"
+                startAnimator=""
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginVertical="10dp"
+                android:background="#f00"></View>
+
+            <TextView
+                style="@style/blackBg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Translation With Interpolation"></TextView>
+
+            <View
+                android:id="@+id/translate_animator_interpolation"
+                animatorXml="@animator/translate_animator_interpolation"
+                startAnimator=""
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginVertical="10dp"
+                android:background="#f00"></View>
+
+
+            <TextView
+                style="@style/blackBg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Color Animation"></TextView>
+
+
+            <View
+                android:id="@+id/color_animator"
+                animatorXml="@animator/color_animator"
+                onAnimationEnd="writeInConsole"
+                startAnimator="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="10dp"
+                android:background="#ff0"
+                android:minHeight="50dp"></View>
+
+            <TextView
+                style="@style/blackBg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Path Animation"></TextView>
+
+            <View
+                android:id="@+id/path_animator"
+                animatorXml="@animator/path_animator"
+                modelParam="let state0 = . from translationX->constants into local as string;let state1 = . from translationY->constants into local as string;let stateConverter0 = . from dimensionfloat->constants into local as string;let stateConverter1 = . from dimensionfloat->constants into local as string;let stateStringFormat0 = . from dpFormat->strings into local as string;let stateStringFormat1 = . from dpFormat->strings into local as string;"
+                startAnimator=""
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginVertical="10dp"
+                android:background="#f00"></View>
+
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
+

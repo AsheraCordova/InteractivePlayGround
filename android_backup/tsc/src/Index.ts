@@ -7,6 +7,7 @@ import { TextView } from './android/widget/TextViewImpl';
 import { RecyclerView } from './android/widget/RecyclerViewImpl';
 import { dialog, login, screen1 } from './R/NavGraph';
 import { ScopedObject } from './app/ScopedObject';
+import { color_animator, path_animator, translate_animator, translate_animator_interpolation, translate_with_rotation } from './R/ViewAnimation';
 
 declare var window: any;
 declare var navigator: any;
@@ -23,6 +24,30 @@ export default class Index extends Fragment {
 
     @Inject({ id: currentUrl })
     private currentUrl: TextView;
+
+    @Inject({ id: translate_animator })
+    private translateAnimator: FrameLayout;
+
+    @Inject({ id: translate_animator_interpolation })
+    private translateAnimatorInterpolation: FrameLayout;
+
+    @Inject({ id: translate_with_rotation })
+    private translateWithRotation: FrameLayout;
+
+    @Inject({ id: color_animator })
+    private colorAnimator: FrameLayout;
+
+    @Inject({ id: path_animator })
+    private pathAnimator: FrameLayout;
+    
+    endAllAnimations() {
+        this.translateAnimator.endAnimator();
+        this.colorAnimator.endAnimator();
+        this.translateAnimatorInterpolation.endAnimator();
+        this.translateWithRotation.endAnimator();
+        this.pathAnimator.endAnimator();
+    }
+    
     constructor() {
         super();
     }
@@ -45,7 +70,7 @@ export default class Index extends Fragment {
         let url = this.getQueryParams(document.location.search)["url"];
 
         if (url == null) {
-            url = 'http://localhost:8081/res/layout/motion_16_viewpager.xml';
+            url = 'http://localhost:8081/res/layout/view_animation.xml';
         }
 
         let response = await fetch(url, {
@@ -67,8 +92,10 @@ export default class Index extends Fragment {
 
 
     preview(obj: any) {
+        this.endAllAnimations();
         this.previewPane.setChildXml(obj.xml);
-        this.executeCommand(this.previewPane);
+        this.executeCommand(this.translateAnimator, this.translateAnimatorInterpolation,  
+            this.translateWithRotation, this.pathAnimator, this.colorAnimator, this.previewPane);
     }
     async showAlert() {
         alert("test");
@@ -157,4 +184,8 @@ export default class Index extends Fragment {
         }
         return viewPagerData;
     }
+
+    async writeInConsole() {
+        console.log(new Date() + " -> writeInConsole");
+     }
 }
