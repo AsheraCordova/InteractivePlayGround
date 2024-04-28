@@ -1,0 +1,72 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:ignore="MissingPrefix">
+
+    <View
+        name="@layout/recyclerview_text"
+        type="resource"
+        widget-override="Inline"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        tools:ignore="ExtraText">
+        <![CDATA[
+            <TextView
+                android:padding="10dp"
+                android:textSize="18sp"
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                modelPojoToUi="text = name from item->loopvar"
+                android:text="Name"
+                tools:ignore="MissingPrefix"></TextView>
+        ]]>
+    </View>
+
+    <View
+        type="javascript"
+        widget-override="Inline"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        tools:ignore="ExtraText">
+        <![CDATA[
+                var data =  [
+                    {name: 'D', subitems: [{name:'Devin'}, {name:'Dan'}, {name:'Dominic'}]},
+                    {name: 'J', subitems: [{name:'Jackson'}, {name:'James'}, {name:'Jillian'}, {name:'Jimmy'}, {name:'Joel'}, {name:'John'}, {name:'Julie'}]}
+                ];
+                window.inlineFunction = function(fragment, command, obj) {
+                    command.updateModelData("testObj->view as list", data).notifyDataSetChanged(true);
+		            fragment.executeCommand(command);
+                }
+            ]]>
+    </View>
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/appbarlayout_tool_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#fff"
+        app:layout_scrollFlags="scroll|enterAlways|snap"
+        app:menu="@menu/search_menu"
+        app:title="Filter example"
+        onQueryTextChange="filter" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:onClick="callInlineFunctionForRecyclerView"
+        android:text="Fill Recyclerview" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview"
+        layout="@xml/recyclerview_section"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        filterItemPath="name"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:spanCount="12"></androidx.recyclerview.widget.RecyclerView>
+
+</LinearLayout>

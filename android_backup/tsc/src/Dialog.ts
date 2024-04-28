@@ -1,10 +1,13 @@
 
 //start - import
+
+
+//start - import
+
+//end - 
 import { Fragment, Inject } from './app/Fragment';
 import { NavController, InjectController } from './navigation/NavController';
 import { ScopedObject } from './app/ScopedObject';
-
-//end - import
 //start - className
 export default class Dialog extends Fragment
 //end - className

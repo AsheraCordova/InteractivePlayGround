@@ -1,1 +1,5 @@
-export const LOCALE_MANAGER_KEYS: string[] = ["@string/loading"];
+
+    	export const LOCALE_MANAGER_KEYS: string[] = [
+    		    
+    ];
+	

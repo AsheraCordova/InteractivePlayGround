@@ -70,15 +70,17 @@ export default class Index extends Fragment {
         let url = this.getQueryParams(document.location.search)["url"];
 
         if (url == null) {
-            url = 'http://localhost:8081/res/layout/view_animation.xml';
+            url = 'http://192.168.1.34:8081/res/layout/recyclerview_filter_groupie.xml';
         }
-
+        
+        try {
         let response = await fetch(url, {
             method: 'GET',
             mode: 'cors',
             cache: 'no-cache',
           });
-        let xml = await response.text();
+        
+        let xml = await response.text();                
         this.xmlEditText.setText(xml);
         let viewPagerData = this.getViewPagerData();
         this.currentUrl.updateModelDataWithScopedObject(
@@ -87,7 +89,10 @@ export default class Index extends Fragment {
             new ScopedObject("viewpagerInfo->view as list", viewPagerData),
             new ScopedObject("tradeItem->view as map", {tradePrice: 0, noOfItems: 0, memPrice: 100})).setText(url);
         this.executeCommand(this.currentUrl, this.xmlEditText);
-        navigator.splashscreen.hide();        
+        navigator.splashscreen.hide();    
+        } catch(e) {
+            alert(e);
+        }
     }
 
 
@@ -188,4 +193,11 @@ export default class Index extends Fragment {
     async writeInConsole() {
         console.log(new Date() + " -> writeInConsole");
      }
+
+     @Inject({ id: "@+id/recyclerview" })
+     private recyclerView1: RecyclerView;
+     async filter(obj:any) {
+		this.recyclerView1.filter(obj.newText);
+		await this.executeCommand(this.recyclerView1);
+	} 	
 }

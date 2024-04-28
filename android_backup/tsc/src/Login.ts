@@ -1,14 +1,13 @@
 
 //start - import
-import { Fragment, Inject } from './app/Fragment';
-import { NavController, InjectController } from './navigation/NavController';
-import { ScopedObject } from './app/ScopedObject';
 
 import { EditText } from './android/widget/EditTextImpl';
 
 //end - import
 import BaseFragment from './BaseFragment';
-
+import { Fragment, Inject } from './app/Fragment';
+import { NavController, InjectController } from './navigation/NavController';
+import { ScopedObject } from './app/ScopedObject';
 
 export default class Login extends BaseFragment {
         //start - body

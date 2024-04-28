@@ -1,12 +1,11 @@
 
 //start - import
-import { Fragment, Inject } from './app/Fragment';
-import { NavController, InjectController } from './navigation/NavController';
-import { ScopedObject } from './app/ScopedObject';
 
 //end - import
 import { screen3 } from './R/NavGraph';
-
+import { Fragment, Inject } from './app/Fragment';
+import { NavController, InjectController } from './navigation/NavController';
+import { ScopedObject } from './app/ScopedObject';
 //start - className
 export default class Screen2 extends Fragment
 //end - className

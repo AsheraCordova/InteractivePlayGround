@@ -10,15 +10,52 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+        <View
+            name="@layout/view_animate_layout_changes_item"
+            type="resource"
+            widget-override="Inline"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            tools:ignore="ExtraText">
+            <![CDATA[
+                <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="#fff"
+                android:padding="5dp"
+                borderBottomWidth="1dp"
+                tools:ignore="MissingPrefix">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="10dp"
+                    modelPojoToUi="text = name from item->loopvar"
+                    android:text="Name" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    onClick="removeCurrentItem(model=. from item->loopvar)"
+                    android:text="Remove"
+                    tools:ignore="OnClick"/>
+
+            </LinearLayout>
+        ]]>
+        </View>
+
         <LinearLayout
             android:id="@+id/listView"
+            layoutTransitionDuration="4000"
             listitem="@layout/view_animate_layout_changes_item"
             modelFor="let item in . from items->view into loopvar as pathmap"
             modelIdPath="id"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:animateLayoutChanges="true"
-            layoutTransitionDuration="4000"
             android:orientation="vertical"></LinearLayout>
 
         <LinearLayout
