@@ -452,7 +452,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _app_Fragment__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./app/Fragment */ "./src/app/Fragment.ts");
 /* harmony import */ var _navigation_NavController__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./navigation/NavController */ "./src/navigation/NavController.ts");
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
-//start - import
 var __extends = undefined && undefined.__extends || function () {
   var _extendStatics = function extendStatics(d, b) {
     _extendStatics = Object.setPrototypeOf || {
@@ -599,7 +598,7 @@ var __generator = undefined && undefined.__generator || function (thisArg, body)
   }
 };
 //start - import
-//end - 
+//end - import
 
 
 //start - className
@@ -1141,7 +1140,7 @@ var Index = /** @class */function (_super) {
           case 0:
             url = this.getQueryParams(document.location.search)["url"];
             if (url == null) {
-              url = 'http://192.168.1.34:8081/res/layout/recyclerview_filter_groupie.xml';
+              url = 'http://192.168.1.34:8081/res/layout/recyclerview_filter_custom_groupie.xml';
             }
             _a.label = 1;
           case 1:
@@ -2282,8 +2281,7 @@ var __generator = undefined && undefined.__generator || function (thisArg, body)
     };
   }
 };
-//start - import
-//end - 
+//end - import
 
 
 //start - className

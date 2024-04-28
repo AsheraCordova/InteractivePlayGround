@@ -1,10 +1,6 @@
 
 //start - import
-
-
-//start - import
-
-//end - 
+//end - import
 import { Fragment, Inject } from './app/Fragment';
 import { NavController, InjectController } from './navigation/NavController';
 import { ScopedObject } from './app/ScopedObject';

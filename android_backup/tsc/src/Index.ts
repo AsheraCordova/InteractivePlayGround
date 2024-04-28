@@ -70,7 +70,7 @@ export default class Index extends Fragment {
         let url = this.getQueryParams(document.location.search)["url"];
 
         if (url == null) {
-            url = 'http://192.168.1.34:8081/res/layout/recyclerview_filter_groupie.xml';
+            url = 'http://192.168.1.34:8081/res/layout/recyclerview_filter_custom_groupie.xml';
         }
         
         try {
