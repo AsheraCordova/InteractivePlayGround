@@ -437,7 +437,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   LOCALE_MANAGER_KEYS: function() { return /* binding */ LOCALE_MANAGER_KEYS; }
 /* harmony export */ });
-var LOCALE_MANAGER_KEYS = [];
+var LOCALE_MANAGER_KEYS = ["@string/loading"];
 
 /***/ }),
 
@@ -452,6 +452,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _app_Fragment__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./app/Fragment */ "./src/app/Fragment.ts");
 /* harmony import */ var _navigation_NavController__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./navigation/NavController */ "./src/navigation/NavController.ts");
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+//start - import
 var __extends = undefined && undefined.__extends || function () {
   var _extendStatics = function extendStatics(d, b) {
     _extendStatics = Object.setPrototypeOf || {
@@ -597,7 +598,6 @@ var __generator = undefined && undefined.__generator || function (thisArg, body)
     };
   }
 };
-//start - import
 //end - import
 
 
