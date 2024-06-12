@@ -46,7 +46,7 @@
                     {name: 'Julie'}
                 ];
                 window.inlineFunction = function(fragment, command, obj) {
-                    command.updateModelData("testObj->view as list", data).notifyDataSetChanged(true);
+                    command.updateModelData("testObj->parentview as list", data).notifyDataSetChanged(true);
 		            fragment.executeCommand(command);
                 }
             ]]>
@@ -61,7 +61,7 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview"
-        modelFor="let item in . from testObj->view into loopvar as map"
+        modelFor="let item in . from testObj->parentview into loopvar as map"
         viewHolderIds="@+id/name"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

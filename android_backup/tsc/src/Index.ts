@@ -73,7 +73,7 @@ export default class Index extends Fragment {
             let url = this.getQueryParams(document.location.search)["url"];
 
             if (url == null) {
-                url = 'https://raw.githubusercontent.com/AsheraCordova/InteractivePlayGround/main/android_backup/res/layout/recyclerview_filter_custom_groupie.xml';
+                url = 'https://raw.githubusercontent.com/AsheraCordova/InteractivePlayGround/main/android_backup/res/layout/edittext_translate.xml';
             }
 
             try {
@@ -199,6 +199,7 @@ export default class Index extends Fragment {
      }
 
      async filter(obj:any) {
+        console.log(obj.newText);
 		this.recyclerView.filter(obj.newText);
 		await this.executeCommand(this.recyclerView);
 	} 	

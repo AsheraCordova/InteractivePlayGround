@@ -1146,7 +1146,7 @@ var Index = /** @class */function (_super) {
             if (!(obj.actionUrl == 'layout/index.xml')) return [3 /*break*/, 5];
             url = this.getQueryParams(document.location.search)["url"];
             if (url == null) {
-              url = 'https://raw.githubusercontent.com/AsheraCordova/InteractivePlayGround/main/android_backup/res/layout/recyclerview_filter_custom_groupie.xml';
+              url = 'https://raw.githubusercontent.com/AsheraCordova/InteractivePlayGround/main/android_backup/res/layout/edittext_translate.xml';
             }
             _a.label = 1;
           case 1:
@@ -1387,6 +1387,7 @@ var Index = /** @class */function (_super) {
       return __generator(this, function (_a) {
         switch (_a.label) {
           case 0:
+            console.log(obj.newText);
             this.recyclerView.filter(obj.newText);
             return [4 /*yield*/, this.executeCommand(this.recyclerView)];
           case 1:

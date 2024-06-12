@@ -51,7 +51,7 @@
             android:id="@+id/listView"
             layoutTransitionDuration="4000"
             listitem="@layout/view_animate_layout_changes_item"
-            modelFor="let item in . from items->view into loopvar as pathmap"
+            modelFor="let item in . from items->parentview into loopvar as pathmap"
             modelIdPath="id"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

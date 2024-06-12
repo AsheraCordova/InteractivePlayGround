@@ -20,9 +20,9 @@
             android:layout_gravity="center_vertical"></TextView>
         <EditText
             android:id="@+id/noOfItems"
-            modelPojoToUi="text = toString(noOfItems) from tradeItem->view"
+            modelPojoToUi="text = toString(noOfItems) from tradeItem->parentview"
             modelSyncEvents="onTextChange"
-            modelUiToPojo="noOfItems = text into tradeItem->view"
+            modelUiToPojo="noOfItems = text into tradeItem->parentview"
             modelUiToPojoEventIds="pointsEarned"
             onTextChange=""
             android:layout_width="match_parent"
@@ -35,9 +35,9 @@
             android:layout_gravity="center_vertical"></TextView>
         <EditText
             android:id="@+id/price"
-            modelPojoToUi="text = toString(tradePrice) from tradeItem->view"
+            modelPojoToUi="text = toString(tradePrice) from tradeItem->parentview"
             modelSyncEvents="onTextChange"
-            modelUiToPojo="tradePrice = text into tradeItem->view"
+            modelUiToPojo="tradePrice = text into tradeItem->parentview"
             modelUiToPojoEventIds="pointsEarned"
             onTextChange=""
             android:layout_width="match_parent"
@@ -50,9 +50,9 @@
             android:layout_gravity="center_vertical"></TextView>
         <EditText
             android:id="@+id/memPrice"
-            modelPojoToUi="text = toString(memPrice) from tradeItem->view"
+            modelPojoToUi="text = toString(memPrice) from tradeItem->parentview"
             modelSyncEvents="onTextChange"
-            modelUiToPojo="memPrice = text into tradeItem->view"
+            modelUiToPojo="memPrice = text into tradeItem->parentview"
             modelUiToPojoEventIds="pointsEarned"
             onTextChange=""
             android:layout_width="match_parent"
@@ -67,7 +67,7 @@
         <TextView
             android:id="@+id/pointsEarned"
             style="@style/h2_black"
-            modelPojoToUi="text = pointsEarned(.) from tradeItem->view"
+            modelPojoToUi="text = pointsEarned(.) from tradeItem->parentview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"></TextView>

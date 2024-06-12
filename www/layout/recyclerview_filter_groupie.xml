@@ -38,7 +38,7 @@
                     {name: 'J', subitems: [{name:'Jackson'}, {name:'James'}, {name:'Jillian'}, {name:'Jimmy'}, {name:'Joel'}, {name:'John'}, {name:'Julie'}]}
                 ];
                 window.inlineFunction = function(fragment, command, obj) {
-                    command.updateModelData("testObj->view as list", data).notifyDataSetChanged(true);
+                    command.updateModelData("testObj->parentview as list", data).notifyDataSetChanged(true);
 		            fragment.executeCommand(command);
                 }
             ]]>

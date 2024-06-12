@@ -10,8 +10,8 @@
         android:hint="Type some text in me"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        modelPojoToUi="text = email from login->view"
-        modelUiToPojo="email = text into login->view"
+        modelPojoToUi="text = email from login->parentview"
+        modelUiToPojo="email = text into login->parentview"
         modelSyncEvents="onTextChange"
         modelUiToPojoEventIds="label"
         onTextChange=""/>
@@ -19,5 +19,5 @@
         android:id="@+id/label"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        modelPojoToUi="text = email from login->view"/>
+        modelPojoToUi="text = email from login->parentview"/>
 </LinearLayout>

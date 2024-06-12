@@ -15,14 +15,14 @@
 
         <TextView
             android:id="@+id/size"
-            modelPojoToUi="text = size(.) from items->view"
+            modelPojoToUi="text = size(.) from items->parentview"
             textFormat="Size (%s)"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
         <TextView
             android:id="@+id/total"
-            modelPojoToUi="text = total(.) from items->view"
+            modelPojoToUi="text = total(.) from items->parentview"
             modelPojoToUiParams="path:price;numberFormat:##.00"
             textFormat="Total (%s)"
             android:layout_width="match_parent"
@@ -59,7 +59,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="10dp"
-                android:onClick="getData(model=. from items->view)"
+                android:onClick="getData(model=. from items->parentview)"
                 android:text="Get Data"
                 tools:ignore="OnClick"></Button>
         </LinearLayout>
@@ -68,7 +68,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/listView"
         listitem="@layout/modeltest_listitem1"
-        modelFor="let item in . from items->view into loopvar as pathmap"
+        modelFor="let item in . from items->parentview into loopvar as pathmap"
         modelIdPath="id"
         viewHolderIds="removeButton,name,price"
         android:layout_width="match_parent"

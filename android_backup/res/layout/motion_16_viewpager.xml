@@ -62,7 +62,7 @@
         </androidx.constraintlayout.motion.widget.MotionLayout>
         <androidx.viewpager.widget.ViewPager
             onPageScrolled="+custom#onPageScrolled()"
-            modelFor="let item in . from viewpagerInfo->view into loopvar as pathmap"
+            modelFor="let item in . from viewpagerInfo->parentview into loopvar as pathmap"
             modelIdPath="id"
             pageTitles="1,2,3,4,5,6,7,8,9,10"
             swtAttachEventBubbler="keyup,keydown,mousedown,mouseup,mousemove"
