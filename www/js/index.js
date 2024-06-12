@@ -1281,7 +1281,7 @@ var Index = /** @class */function (_super) {
       return __generator(this, function (_a) {
         switch (_a.label) {
           case 0:
-            this.items.updateModelData("items->view as list", []);
+            this.items.updateModelData("items->parentview as list", []);
             this.items.notifyDataSetChanged(true);
             return [4 /*yield*/, this.executeCommand(this.items)];
           case 1:
@@ -1353,7 +1353,7 @@ var Index = /** @class */function (_super) {
       return __generator(this, function (_a) {
         switch (_a.label) {
           case 0:
-            this.items.updateModelData("items->view as list", []).refreshUiFromModel("size,total");
+            this.items.updateModelData("items->parentview as list", []).refreshUiFromModel("size,total");
             this.items.notifyDataSetChanged(true);
             return [4 /*yield*/, this.executeCommand(this.items)];
           case 1:

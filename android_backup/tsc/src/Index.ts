@@ -151,7 +151,7 @@ export default class Index extends Fragment {
 	}
 	
 	async clearItem(obj:any) {
-		this.items.updateModelData("items->view as list", []);
+		this.items.updateModelData("items->parentview as list", []);
 		this.items.notifyDataSetChanged(true);
 		await this.executeCommand(this.items);
 	}
@@ -181,7 +181,7 @@ export default class Index extends Fragment {
 	}
 	
 	async clearItemWithRefresh(obj:any) {
-		this.items.updateModelData("items->view as list", []).refreshUiFromModel("size,total");
+		this.items.updateModelData("items->parentview as list", []).refreshUiFromModel("size,total");
 		this.items.notifyDataSetChanged(true);
 		await this.executeCommand(this.items);
 	}
