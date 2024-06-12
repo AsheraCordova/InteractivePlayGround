@@ -1,3 +1,4 @@
+import 'whatwg-fetch';
 import { EditText } from './android/widget/EditTextImpl';
 import { FrameLayout } from './android/widget/FrameLayoutImpl';
 import { Fragment, Inject } from './app/Fragment';
@@ -8,6 +9,7 @@ import { RecyclerView } from './android/widget/RecyclerViewImpl';
 import { dialog, login, screen1 } from './R/NavGraph';
 import { ScopedObject } from './app/ScopedObject';
 import { color_animator, path_animator, translate_animator, translate_animator_interpolation, translate_with_rotation } from './R/ViewAnimation';
+import { fragment } from './android/widget/fragmentImpl';
 
 declare var window: any;
 declare var navigator: any;
@@ -17,7 +19,7 @@ export default class Index extends Fragment {
     navController!: NavController;
 
     @Inject({ id: preview })
-    private previewPane: FrameLayout;
+    private previewPane: fragment;
 
     @Inject({ id: xml })
     private xmlEditText: EditText;
@@ -67,38 +69,40 @@ export default class Index extends Fragment {
     }
 
     public async onCreate(obj: any) {
-        let url = this.getQueryParams(document.location.search)["url"];
+        if (obj.actionUrl == 'layout/index.xml') {
+            let url = this.getQueryParams(document.location.search)["url"];
 
-        if (url == null) {
-            url = 'http://192.168.1.34:8081/res/layout/recyclerview_filter_custom_groupie.xml';
-        }
-        
-        try {
-        let response = await fetch(url, {
-            method: 'GET',
-            mode: 'cors',
-            cache: 'no-cache',
-          });
-        
-        let xml = await response.text();                
-        this.xmlEditText.setText(xml);
-        let viewPagerData = this.getViewPagerData();
-        this.currentUrl.updateModelDataWithScopedObject(
-            new ScopedObject("login->view as map", {}),
-            new ScopedObject("items->view as list", []),
-            new ScopedObject("viewpagerInfo->view as list", viewPagerData),
-            new ScopedObject("tradeItem->view as map", {tradePrice: 0, noOfItems: 0, memPrice: 100})).setText(url);
-        this.executeCommand(this.currentUrl, this.xmlEditText);
-        navigator.splashscreen.hide();    
-        } catch(e) {
-            alert(e);
+            if (url == null) {
+                url = 'https://raw.githubusercontent.com/AsheraCordova/InteractivePlayGround/main/android_backup/res/layout/recyclerview_filter_custom_groupie.xml';
+            }
+
+            try {
+            let response = await fetch(url, {
+                method: 'GET',
+                mode: 'cors',
+                cache: 'no-cache',
+            });
+            
+            let xml = await response.text();                
+            this.xmlEditText.setText(xml);
+            let viewPagerData = this.getViewPagerData();
+            this.currentUrl.updateModelDataWithScopedObject(
+                new ScopedObject("login->view as map", {}),
+                new ScopedObject("items->view as list", []),
+                new ScopedObject("viewpagerInfo->view as list", viewPagerData),
+                new ScopedObject("tradeItem->view as map", {tradePrice: 0, noOfItems: 0, memPrice: 100})).setText(url);
+            this.executeCommand(this.currentUrl, this.xmlEditText);
+            navigator.splashscreen.hide();    
+            } catch(e) {
+                alert(e);
+            }
         }
     }
 
 
     preview(obj: any) {
         this.endAllAnimations();
-        this.previewPane.setChildXml(obj.xml);
+        this.previewPane.replace(obj.xml);
         this.executeCommand(this.translateAnimator, this.translateAnimatorInterpolation,  
             this.translateWithRotation, this.pathAnimator, this.colorAnimator, this.previewPane);
     }
@@ -111,10 +115,10 @@ export default class Index extends Fragment {
         window.inlineFunction(this, this.xmlEditText, obj, this.navController);        
      }
 
-     @Inject({ id: xml })
+     @Inject({ id: "@+id/recyclerview" })
      private recyclerView: RecyclerView;
  
-     async callInlineFunctionForRecyclerView(obj: any) {
+     async callInlineFunctionForRecyclerView(obj: any) {        
         window.inlineFunction(this, this.recyclerView, obj);        
      }
 
@@ -194,10 +198,8 @@ export default class Index extends Fragment {
         console.log(new Date() + " -> writeInConsole");
      }
 
-     @Inject({ id: "@+id/recyclerview" })
-     private recyclerView1: RecyclerView;
      async filter(obj:any) {
-		this.recyclerView1.filter(obj.newText);
-		await this.executeCommand(this.recyclerView1);
+		this.recyclerView.filter(obj.newText);
+		await this.executeCommand(this.recyclerView);
 	} 	
 }

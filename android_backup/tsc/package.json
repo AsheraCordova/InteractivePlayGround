@@ -41,6 +41,7 @@
     "babel-polyfill": "^6.26.0",
     "class-transformer": "^0.5.1",
     "reflect-metadata": "^0.1.12",
-    "ts-mixer": "^5.3.0"
+    "ts-mixer": "^5.3.0",
+    "whatwg-fetch": "^3.6.20"
   }
 }

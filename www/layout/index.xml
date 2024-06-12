@@ -71,13 +71,15 @@
                         android:singleLine="false"></EditText>
                 </FrameLayout>
 
-                <FrameLayout
+                <fragment
+                    android:name="com.ashera.core.GenericFragment"
                     android:id="@+id/preview"
+                    tag="preview"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="6">
 
-                </FrameLayout>
+                </fragment>
 
             </LinearLayout>
         </LinearLayout>
