@@ -817,7 +817,7 @@ var ChildLayout1 = /** @class */function (_super) {
       });
     });
   };
-  ChildLayout1.prototype.goToChild1 = function () {
+  ChildLayout1.prototype.goToChild2 = function () {
     return __awaiter(this, void 0, void 0, function () {
       return __generator(this, function (_a) {
         this.childFragment.navigate(_R_NavGraphChild__WEBPACK_IMPORTED_MODULE_3__.child_layout2, []);
@@ -850,7 +850,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _navigation_NavController__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./navigation/NavController */ "./src/navigation/NavController.ts");
 /* harmony import */ var _R_ChildHost__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./R/ChildHost */ "./src/R/ChildHost.ts");
 /* harmony import */ var _android_widget_fragmentImpl__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./android/widget/fragmentImpl */ "./src/android/widget/fragmentImpl.ts");
-/* harmony import */ var _R_NavGraphChild__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./R/NavGraphChild */ "./src/R/NavGraphChild.ts");
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
 //start - import
 var __extends = undefined && undefined.__extends || function () {
@@ -1003,7 +1002,6 @@ var __generator = undefined && undefined.__generator || function (thisArg, body)
 
 
 
-
 //start - className
 var ChildLayout2 = /** @class */function (_super) {
   __extends(ChildLayout2, _super);
@@ -1023,10 +1021,10 @@ var ChildLayout2 = /** @class */function (_super) {
       });
     });
   };
-  ChildLayout2.prototype.goToChild1 = function () {
+  ChildLayout2.prototype.goBackHome = function () {
     return __awaiter(this, void 0, void 0, function () {
       return __generator(this, function (_a) {
-        this.childFragment.popBackStackTo(_R_NavGraphChild__WEBPACK_IMPORTED_MODULE_4__.child_index, false);
+        this.childFragment.popBackStackTo("child_index", false);
         this.executeCommand(this.childFragment);
         return [2 /*return*/];
       });

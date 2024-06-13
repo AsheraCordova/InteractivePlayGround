@@ -25,8 +25,8 @@ export default class ChildLayout2 extends Fragment
         @Inject({ id: childFragment })
         private childFragment: fragment;
 
-        async goToChild1() {
-            this.childFragment.popBackStackTo(child_index, false);
+        async goBackHome() {
+            this.childFragment.popBackStackTo("child_index", false);
             this.executeCommand(this.childFragment);
         }
 

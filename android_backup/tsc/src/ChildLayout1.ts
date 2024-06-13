@@ -25,7 +25,7 @@ export default class ChildLayout1 extends Fragment
         @Inject({ id: childFragment })
         private childFragment: fragment;
 
-        async goToChild1() {
+        async goToChild2() {
             this.childFragment.navigate(child_layout2, []);
             this.executeCommand(this.childFragment);
         }
