@@ -4,6 +4,12 @@ import ErrorDetailFragment from './ErrorDetailFragment';
 
 import CatHello from './CatHello';
 
+import ChildIndex from './ChildIndex';
+
+import ChildLayout1 from './ChildLayout1';
+
+import ChildLayout2 from './ChildLayout2';
+
 import Dialog from './Dialog';
 
 import Index from './Index';
@@ -27,6 +33,12 @@ export const fragmentMapper : any = {
   //start - body
     
      'layout/cat_hello.xml': CatHello,
+    
+     'layout/child_index.xml': ChildIndex,
+    
+     'layout/child_layout1.xml': ChildLayout1,
+    
+     'layout/child_layout2.xml': ChildLayout2,
     
      'layout/dialog.xml': Dialog,
     

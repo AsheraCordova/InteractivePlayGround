@@ -426,6 +426,624 @@ var CatHello = /** @class */function (_super) {
 
 /***/ }),
 
+/***/ "./src/ChildIndex.ts":
+/*!***************************!*\
+  !*** ./src/ChildIndex.ts ***!
+  \***************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _app_Fragment__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./app/Fragment */ "./src/app/Fragment.ts");
+/* harmony import */ var _navigation_NavController__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./navigation/NavController */ "./src/navigation/NavController.ts");
+/* harmony import */ var _R_ChildHost__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./R/ChildHost */ "./src/R/ChildHost.ts");
+/* harmony import */ var _android_widget_fragmentImpl__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./android/widget/fragmentImpl */ "./src/android/widget/fragmentImpl.ts");
+/* harmony import */ var _R_NavGraphChild__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./R/NavGraphChild */ "./src/R/NavGraphChild.ts");
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+//start - import
+var __extends = undefined && undefined.__extends || function () {
+  var _extendStatics = function extendStatics(d, b) {
+    _extendStatics = Object.setPrototypeOf || {
+      __proto__: []
+    } instanceof Array && function (d, b) {
+      d.__proto__ = b;
+    } || function (d, b) {
+      for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p];
+    };
+    return _extendStatics(d, b);
+  };
+  return function (d, b) {
+    if (typeof b !== "function" && b !== null) throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+    _extendStatics(d, b);
+    function __() {
+      this.constructor = d;
+    }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+  };
+}();
+var __decorate = undefined && undefined.__decorate || function (decorators, target, key, desc) {
+  var c = arguments.length,
+    r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc,
+    d;
+  if ((typeof Reflect === "undefined" ? "undefined" : _typeof(Reflect)) === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+  return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = undefined && undefined.__metadata || function (k, v) {
+  if ((typeof Reflect === "undefined" ? "undefined" : _typeof(Reflect)) === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __awaiter = undefined && undefined.__awaiter || function (thisArg, _arguments, P, generator) {
+  function adopt(value) {
+    return value instanceof P ? value : new P(function (resolve) {
+      resolve(value);
+    });
+  }
+  return new (P || (P = Promise))(function (resolve, reject) {
+    function fulfilled(value) {
+      try {
+        step(generator.next(value));
+      } catch (e) {
+        reject(e);
+      }
+    }
+    function rejected(value) {
+      try {
+        step(generator["throw"](value));
+      } catch (e) {
+        reject(e);
+      }
+    }
+    function step(result) {
+      result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected);
+    }
+    step((generator = generator.apply(thisArg, _arguments || [])).next());
+  });
+};
+var __generator = undefined && undefined.__generator || function (thisArg, body) {
+  var _ = {
+      label: 0,
+      sent: function sent() {
+        if (t[0] & 1) throw t[1];
+        return t[1];
+      },
+      trys: [],
+      ops: []
+    },
+    f,
+    y,
+    t,
+    g;
+  return g = {
+    next: verb(0),
+    "throw": verb(1),
+    "return": verb(2)
+  }, typeof Symbol === "function" && (g[Symbol.iterator] = function () {
+    return this;
+  }), g;
+  function verb(n) {
+    return function (v) {
+      return step([n, v]);
+    };
+  }
+  function step(op) {
+    if (f) throw new TypeError("Generator is already executing.");
+    while (g && (g = 0, op[0] && (_ = 0)), _) try {
+      if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+      if (y = 0, t) op = [op[0] & 2, t.value];
+      switch (op[0]) {
+        case 0:
+        case 1:
+          t = op;
+          break;
+        case 4:
+          _.label++;
+          return {
+            value: op[1],
+            done: false
+          };
+        case 5:
+          _.label++;
+          y = op[1];
+          op = [0];
+          continue;
+        case 7:
+          op = _.ops.pop();
+          _.trys.pop();
+          continue;
+        default:
+          if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) {
+            _ = 0;
+            continue;
+          }
+          if (op[0] === 3 && (!t || op[1] > t[0] && op[1] < t[3])) {
+            _.label = op[1];
+            break;
+          }
+          if (op[0] === 6 && _.label < t[1]) {
+            _.label = t[1];
+            t = op;
+            break;
+          }
+          if (t && _.label < t[2]) {
+            _.label = t[2];
+            _.ops.push(op);
+            break;
+          }
+          if (t[2]) _.ops.pop();
+          _.trys.pop();
+          continue;
+      }
+      op = body.call(thisArg, _);
+    } catch (e) {
+      op = [6, e];
+      y = 0;
+    } finally {
+      f = t = 0;
+    }
+    if (op[0] & 5) throw op[1];
+    return {
+      value: op[0] ? op[1] : void 0,
+      done: true
+    };
+  }
+};
+//end - import
+
+
+
+
+
+//start - className
+var ChildIndex = /** @class */function (_super) {
+  __extends(ChildIndex, _super);
+  function ChildIndex() {
+    return _super !== null && _super.apply(this, arguments) || this;
+  }
+  ChildIndex.prototype.goToPreviousScreen = function () {
+    return __awaiter(this, void 0, void 0, function () {
+      return __generator(this, function (_a) {
+        switch (_a.label) {
+          case 0:
+            return [4 /*yield*/, this.navController.reset().popBackStack().executeCommand()];
+          case 1:
+            _a.sent();
+            return [2 /*return*/];
+        }
+      });
+    });
+  };
+  ChildIndex.prototype.goToChild1 = function () {
+    return __awaiter(this, void 0, void 0, function () {
+      return __generator(this, function (_a) {
+        this.childFragment.navigate(_R_NavGraphChild__WEBPACK_IMPORTED_MODULE_4__.child_layout1, []);
+        this.executeCommand(this.childFragment);
+        return [2 /*return*/];
+      });
+    });
+  };
+  __decorate([(0,_navigation_NavController__WEBPACK_IMPORTED_MODULE_1__.InjectController)({}), __metadata("design:type", _navigation_NavController__WEBPACK_IMPORTED_MODULE_1__.NavController)], ChildIndex.prototype, "navController", void 0);
+  __decorate([(0,_app_Fragment__WEBPACK_IMPORTED_MODULE_0__.Inject)({
+    id: _R_ChildHost__WEBPACK_IMPORTED_MODULE_2__.childFragment
+  }), __metadata("design:type", _android_widget_fragmentImpl__WEBPACK_IMPORTED_MODULE_3__.fragment)], ChildIndex.prototype, "childFragment", void 0);
+  return ChildIndex;
+}(_app_Fragment__WEBPACK_IMPORTED_MODULE_0__.Fragment
+//end - className
+);
+/* harmony default export */ __webpack_exports__["default"] = (ChildIndex);
+
+/***/ }),
+
+/***/ "./src/ChildLayout1.ts":
+/*!*****************************!*\
+  !*** ./src/ChildLayout1.ts ***!
+  \*****************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _app_Fragment__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./app/Fragment */ "./src/app/Fragment.ts");
+/* harmony import */ var _navigation_NavController__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./navigation/NavController */ "./src/navigation/NavController.ts");
+/* harmony import */ var _R_ChildHost__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./R/ChildHost */ "./src/R/ChildHost.ts");
+/* harmony import */ var _R_NavGraphChild__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./R/NavGraphChild */ "./src/R/NavGraphChild.ts");
+/* harmony import */ var _android_widget_fragmentImpl__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./android/widget/fragmentImpl */ "./src/android/widget/fragmentImpl.ts");
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+//start - import
+var __extends = undefined && undefined.__extends || function () {
+  var _extendStatics = function extendStatics(d, b) {
+    _extendStatics = Object.setPrototypeOf || {
+      __proto__: []
+    } instanceof Array && function (d, b) {
+      d.__proto__ = b;
+    } || function (d, b) {
+      for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p];
+    };
+    return _extendStatics(d, b);
+  };
+  return function (d, b) {
+    if (typeof b !== "function" && b !== null) throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+    _extendStatics(d, b);
+    function __() {
+      this.constructor = d;
+    }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+  };
+}();
+var __decorate = undefined && undefined.__decorate || function (decorators, target, key, desc) {
+  var c = arguments.length,
+    r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc,
+    d;
+  if ((typeof Reflect === "undefined" ? "undefined" : _typeof(Reflect)) === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+  return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = undefined && undefined.__metadata || function (k, v) {
+  if ((typeof Reflect === "undefined" ? "undefined" : _typeof(Reflect)) === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __awaiter = undefined && undefined.__awaiter || function (thisArg, _arguments, P, generator) {
+  function adopt(value) {
+    return value instanceof P ? value : new P(function (resolve) {
+      resolve(value);
+    });
+  }
+  return new (P || (P = Promise))(function (resolve, reject) {
+    function fulfilled(value) {
+      try {
+        step(generator.next(value));
+      } catch (e) {
+        reject(e);
+      }
+    }
+    function rejected(value) {
+      try {
+        step(generator["throw"](value));
+      } catch (e) {
+        reject(e);
+      }
+    }
+    function step(result) {
+      result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected);
+    }
+    step((generator = generator.apply(thisArg, _arguments || [])).next());
+  });
+};
+var __generator = undefined && undefined.__generator || function (thisArg, body) {
+  var _ = {
+      label: 0,
+      sent: function sent() {
+        if (t[0] & 1) throw t[1];
+        return t[1];
+      },
+      trys: [],
+      ops: []
+    },
+    f,
+    y,
+    t,
+    g;
+  return g = {
+    next: verb(0),
+    "throw": verb(1),
+    "return": verb(2)
+  }, typeof Symbol === "function" && (g[Symbol.iterator] = function () {
+    return this;
+  }), g;
+  function verb(n) {
+    return function (v) {
+      return step([n, v]);
+    };
+  }
+  function step(op) {
+    if (f) throw new TypeError("Generator is already executing.");
+    while (g && (g = 0, op[0] && (_ = 0)), _) try {
+      if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+      if (y = 0, t) op = [op[0] & 2, t.value];
+      switch (op[0]) {
+        case 0:
+        case 1:
+          t = op;
+          break;
+        case 4:
+          _.label++;
+          return {
+            value: op[1],
+            done: false
+          };
+        case 5:
+          _.label++;
+          y = op[1];
+          op = [0];
+          continue;
+        case 7:
+          op = _.ops.pop();
+          _.trys.pop();
+          continue;
+        default:
+          if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) {
+            _ = 0;
+            continue;
+          }
+          if (op[0] === 3 && (!t || op[1] > t[0] && op[1] < t[3])) {
+            _.label = op[1];
+            break;
+          }
+          if (op[0] === 6 && _.label < t[1]) {
+            _.label = t[1];
+            t = op;
+            break;
+          }
+          if (t && _.label < t[2]) {
+            _.label = t[2];
+            _.ops.push(op);
+            break;
+          }
+          if (t[2]) _.ops.pop();
+          _.trys.pop();
+          continue;
+      }
+      op = body.call(thisArg, _);
+    } catch (e) {
+      op = [6, e];
+      y = 0;
+    } finally {
+      f = t = 0;
+    }
+    if (op[0] & 5) throw op[1];
+    return {
+      value: op[0] ? op[1] : void 0,
+      done: true
+    };
+  }
+};
+//end - import
+
+
+
+
+
+//start - className
+var ChildLayout1 = /** @class */function (_super) {
+  __extends(ChildLayout1, _super);
+  function ChildLayout1() {
+    return _super !== null && _super.apply(this, arguments) || this;
+  }
+  ChildLayout1.prototype.goToPreviousScreen = function () {
+    return __awaiter(this, void 0, void 0, function () {
+      return __generator(this, function (_a) {
+        switch (_a.label) {
+          case 0:
+            return [4 /*yield*/, this.navController.reset().popBackStack().executeCommand()];
+          case 1:
+            _a.sent();
+            return [2 /*return*/];
+        }
+      });
+    });
+  };
+  ChildLayout1.prototype.goToChild1 = function () {
+    return __awaiter(this, void 0, void 0, function () {
+      return __generator(this, function (_a) {
+        this.childFragment.navigate(_R_NavGraphChild__WEBPACK_IMPORTED_MODULE_3__.child_layout2, []);
+        this.executeCommand(this.childFragment);
+        return [2 /*return*/];
+      });
+    });
+  };
+  __decorate([(0,_navigation_NavController__WEBPACK_IMPORTED_MODULE_1__.InjectController)({}), __metadata("design:type", _navigation_NavController__WEBPACK_IMPORTED_MODULE_1__.NavController)], ChildLayout1.prototype, "navController", void 0);
+  __decorate([(0,_app_Fragment__WEBPACK_IMPORTED_MODULE_0__.Inject)({
+    id: _R_ChildHost__WEBPACK_IMPORTED_MODULE_2__.childFragment
+  }), __metadata("design:type", _android_widget_fragmentImpl__WEBPACK_IMPORTED_MODULE_4__.fragment)], ChildLayout1.prototype, "childFragment", void 0);
+  return ChildLayout1;
+}(_app_Fragment__WEBPACK_IMPORTED_MODULE_0__.Fragment
+//end - className
+);
+/* harmony default export */ __webpack_exports__["default"] = (ChildLayout1);
+
+/***/ }),
+
+/***/ "./src/ChildLayout2.ts":
+/*!*****************************!*\
+  !*** ./src/ChildLayout2.ts ***!
+  \*****************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _app_Fragment__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./app/Fragment */ "./src/app/Fragment.ts");
+/* harmony import */ var _navigation_NavController__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./navigation/NavController */ "./src/navigation/NavController.ts");
+/* harmony import */ var _R_ChildHost__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./R/ChildHost */ "./src/R/ChildHost.ts");
+/* harmony import */ var _android_widget_fragmentImpl__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./android/widget/fragmentImpl */ "./src/android/widget/fragmentImpl.ts");
+/* harmony import */ var _R_NavGraphChild__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./R/NavGraphChild */ "./src/R/NavGraphChild.ts");
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+//start - import
+var __extends = undefined && undefined.__extends || function () {
+  var _extendStatics = function extendStatics(d, b) {
+    _extendStatics = Object.setPrototypeOf || {
+      __proto__: []
+    } instanceof Array && function (d, b) {
+      d.__proto__ = b;
+    } || function (d, b) {
+      for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p];
+    };
+    return _extendStatics(d, b);
+  };
+  return function (d, b) {
+    if (typeof b !== "function" && b !== null) throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+    _extendStatics(d, b);
+    function __() {
+      this.constructor = d;
+    }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+  };
+}();
+var __decorate = undefined && undefined.__decorate || function (decorators, target, key, desc) {
+  var c = arguments.length,
+    r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc,
+    d;
+  if ((typeof Reflect === "undefined" ? "undefined" : _typeof(Reflect)) === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+  return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = undefined && undefined.__metadata || function (k, v) {
+  if ((typeof Reflect === "undefined" ? "undefined" : _typeof(Reflect)) === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __awaiter = undefined && undefined.__awaiter || function (thisArg, _arguments, P, generator) {
+  function adopt(value) {
+    return value instanceof P ? value : new P(function (resolve) {
+      resolve(value);
+    });
+  }
+  return new (P || (P = Promise))(function (resolve, reject) {
+    function fulfilled(value) {
+      try {
+        step(generator.next(value));
+      } catch (e) {
+        reject(e);
+      }
+    }
+    function rejected(value) {
+      try {
+        step(generator["throw"](value));
+      } catch (e) {
+        reject(e);
+      }
+    }
+    function step(result) {
+      result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected);
+    }
+    step((generator = generator.apply(thisArg, _arguments || [])).next());
+  });
+};
+var __generator = undefined && undefined.__generator || function (thisArg, body) {
+  var _ = {
+      label: 0,
+      sent: function sent() {
+        if (t[0] & 1) throw t[1];
+        return t[1];
+      },
+      trys: [],
+      ops: []
+    },
+    f,
+    y,
+    t,
+    g;
+  return g = {
+    next: verb(0),
+    "throw": verb(1),
+    "return": verb(2)
+  }, typeof Symbol === "function" && (g[Symbol.iterator] = function () {
+    return this;
+  }), g;
+  function verb(n) {
+    return function (v) {
+      return step([n, v]);
+    };
+  }
+  function step(op) {
+    if (f) throw new TypeError("Generator is already executing.");
+    while (g && (g = 0, op[0] && (_ = 0)), _) try {
+      if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+      if (y = 0, t) op = [op[0] & 2, t.value];
+      switch (op[0]) {
+        case 0:
+        case 1:
+          t = op;
+          break;
+        case 4:
+          _.label++;
+          return {
+            value: op[1],
+            done: false
+          };
+        case 5:
+          _.label++;
+          y = op[1];
+          op = [0];
+          continue;
+        case 7:
+          op = _.ops.pop();
+          _.trys.pop();
+          continue;
+        default:
+          if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) {
+            _ = 0;
+            continue;
+          }
+          if (op[0] === 3 && (!t || op[1] > t[0] && op[1] < t[3])) {
+            _.label = op[1];
+            break;
+          }
+          if (op[0] === 6 && _.label < t[1]) {
+            _.label = t[1];
+            t = op;
+            break;
+          }
+          if (t && _.label < t[2]) {
+            _.label = t[2];
+            _.ops.push(op);
+            break;
+          }
+          if (t[2]) _.ops.pop();
+          _.trys.pop();
+          continue;
+      }
+      op = body.call(thisArg, _);
+    } catch (e) {
+      op = [6, e];
+      y = 0;
+    } finally {
+      f = t = 0;
+    }
+    if (op[0] & 5) throw op[1];
+    return {
+      value: op[0] ? op[1] : void 0,
+      done: true
+    };
+  }
+};
+//end - import
+
+
+
+
+
+//start - className
+var ChildLayout2 = /** @class */function (_super) {
+  __extends(ChildLayout2, _super);
+  function ChildLayout2() {
+    return _super !== null && _super.apply(this, arguments) || this;
+  }
+  ChildLayout2.prototype.goToPreviousScreen = function () {
+    return __awaiter(this, void 0, void 0, function () {
+      return __generator(this, function (_a) {
+        switch (_a.label) {
+          case 0:
+            return [4 /*yield*/, this.navController.reset().popBackStack().executeCommand()];
+          case 1:
+            _a.sent();
+            return [2 /*return*/];
+        }
+      });
+    });
+  };
+  ChildLayout2.prototype.goToChild1 = function () {
+    return __awaiter(this, void 0, void 0, function () {
+      return __generator(this, function (_a) {
+        this.childFragment.popBackStackTo(_R_NavGraphChild__WEBPACK_IMPORTED_MODULE_4__.child_index, false);
+        this.executeCommand(this.childFragment);
+        return [2 /*return*/];
+      });
+    });
+  };
+  __decorate([(0,_navigation_NavController__WEBPACK_IMPORTED_MODULE_1__.InjectController)({}), __metadata("design:type", _navigation_NavController__WEBPACK_IMPORTED_MODULE_1__.NavController)], ChildLayout2.prototype, "navController", void 0);
+  __decorate([(0,_app_Fragment__WEBPACK_IMPORTED_MODULE_0__.Inject)({
+    id: _R_ChildHost__WEBPACK_IMPORTED_MODULE_2__.childFragment
+  }), __metadata("design:type", _android_widget_fragmentImpl__WEBPACK_IMPORTED_MODULE_3__.fragment)], ChildLayout2.prototype, "childFragment", void 0);
+  return ChildLayout2;
+}(_app_Fragment__WEBPACK_IMPORTED_MODULE_0__.Fragment
+//end - className
+);
+/* harmony default export */ __webpack_exports__["default"] = (ChildLayout2);
+
+/***/ }),
+
 /***/ "./src/Constants.ts":
 /*!**************************!*\
   !*** ./src/Constants.ts ***!
@@ -899,15 +1517,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ErrorFragment__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ErrorFragment */ "./src/ErrorFragment.ts");
 /* harmony import */ var _ErrorDetailFragment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ErrorDetailFragment */ "./src/ErrorDetailFragment.ts");
 /* harmony import */ var _CatHello__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./CatHello */ "./src/CatHello.ts");
-/* harmony import */ var _Dialog__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Dialog */ "./src/Dialog.ts");
-/* harmony import */ var _Index__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Index */ "./src/Index.ts");
-/* harmony import */ var _Login__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Login */ "./src/Login.ts");
-/* harmony import */ var _Screen1__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Screen1 */ "./src/Screen1.ts");
-/* harmony import */ var _Screen2__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Screen2 */ "./src/Screen2.ts");
-/* harmony import */ var _Screen3__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Screen3 */ "./src/Screen3.ts");
+/* harmony import */ var _ChildIndex__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./ChildIndex */ "./src/ChildIndex.ts");
+/* harmony import */ var _ChildLayout1__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./ChildLayout1 */ "./src/ChildLayout1.ts");
+/* harmony import */ var _ChildLayout2__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./ChildLayout2 */ "./src/ChildLayout2.ts");
+/* harmony import */ var _Dialog__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Dialog */ "./src/Dialog.ts");
+/* harmony import */ var _Index__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Index */ "./src/Index.ts");
+/* harmony import */ var _Login__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Login */ "./src/Login.ts");
+/* harmony import */ var _Screen1__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./Screen1 */ "./src/Screen1.ts");
+/* harmony import */ var _Screen2__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./Screen2 */ "./src/Screen2.ts");
+/* harmony import */ var _Screen3__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./Screen3 */ "./src/Screen3.ts");
 
 
 //start - import
+
+
+
 
 
 
@@ -919,17 +1543,20 @@ __webpack_require__.r(__webpack_exports__);
 var fragmentMapper = {
   'layout/error.xml': _ErrorFragment__WEBPACK_IMPORTED_MODULE_0__["default"],
   'layout/error_detail.xml': _ErrorDetailFragment__WEBPACK_IMPORTED_MODULE_1__["default"],
-  'layout/dialog_sample.xml': _Index__WEBPACK_IMPORTED_MODULE_4__["default"],
-  'layout/dialog_child.xml': _Index__WEBPACK_IMPORTED_MODULE_4__["default"],
-  '@+id/preview': _Index__WEBPACK_IMPORTED_MODULE_4__["default"],
+  'layout/dialog_sample.xml': _Index__WEBPACK_IMPORTED_MODULE_7__["default"],
+  'layout/dialog_child.xml': _Index__WEBPACK_IMPORTED_MODULE_7__["default"],
+  '@+id/preview': _Index__WEBPACK_IMPORTED_MODULE_7__["default"],
   //start - body
   'layout/cat_hello.xml': _CatHello__WEBPACK_IMPORTED_MODULE_2__["default"],
-  'layout/dialog.xml': _Dialog__WEBPACK_IMPORTED_MODULE_3__["default"],
-  'layout/index.xml': _Index__WEBPACK_IMPORTED_MODULE_4__["default"],
-  'layout/login.xml': _Login__WEBPACK_IMPORTED_MODULE_5__["default"],
-  'layout/screen1.xml': _Screen1__WEBPACK_IMPORTED_MODULE_6__["default"],
-  'layout/screen2.xml': _Screen2__WEBPACK_IMPORTED_MODULE_7__["default"],
-  'layout/screen3.xml': _Screen3__WEBPACK_IMPORTED_MODULE_8__["default"]
+  'layout/child_index.xml': _ChildIndex__WEBPACK_IMPORTED_MODULE_3__["default"],
+  'layout/child_layout1.xml': _ChildLayout1__WEBPACK_IMPORTED_MODULE_4__["default"],
+  'layout/child_layout2.xml': _ChildLayout2__WEBPACK_IMPORTED_MODULE_5__["default"],
+  'layout/dialog.xml': _Dialog__WEBPACK_IMPORTED_MODULE_6__["default"],
+  'layout/index.xml': _Index__WEBPACK_IMPORTED_MODULE_7__["default"],
+  'layout/login.xml': _Login__WEBPACK_IMPORTED_MODULE_8__["default"],
+  'layout/screen1.xml': _Screen1__WEBPACK_IMPORTED_MODULE_9__["default"],
+  'layout/screen2.xml': _Screen2__WEBPACK_IMPORTED_MODULE_10__["default"],
+  'layout/screen3.xml': _Screen3__WEBPACK_IMPORTED_MODULE_11__["default"]
   //end - body
 };
 
@@ -1146,7 +1773,7 @@ var Index = /** @class */function (_super) {
             if (!(obj.actionUrl == 'layout/index.xml')) return [3 /*break*/, 5];
             url = this.getQueryParams(document.location.search)["url"];
             if (url == null) {
-              url = 'https://raw.githubusercontent.com/AsheraCordova/InteractivePlayGround/main/android_backup/res/layout/edittext_translate.xml';
+              url = 'https://raw.githubusercontent.com/AsheraCordova/InteractivePlayGround/main/android_backup/res/layout/child_host.xml';
             }
             _a.label = 1;
           case 1:
@@ -1639,6 +2266,21 @@ var Login = /** @class */function (_super) {
 
 /***/ }),
 
+/***/ "./src/R/ChildHost.ts":
+/*!****************************!*\
+  !*** ./src/R/ChildHost.ts ***!
+  \****************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   childFragment: function() { return /* binding */ childFragment; }
+/* harmony export */ });
+var childFragment = '@+id/childFragment';
+
+/***/ }),
+
 /***/ "./src/R/Index.ts":
 /*!************************!*\
   !*** ./src/R/Index.ts ***!
@@ -1696,6 +2338,29 @@ var screen1 = 'fragment#screen1#layout/screen1.xml';
 var screen2 = 'fragment#screen2#layout/screen2.xml';
 var screen3 = 'fragment#screen3#layout/screen3.xml';
 var dialog = 'dialog#dialog#layout/dialog.xml#match_parent#wrap_content#@style/MyDialogStyleCloseOnTouchOutside';
+
+/***/ }),
+
+/***/ "./src/R/NavGraphChild.ts":
+/*!********************************!*\
+  !*** ./src/R/NavGraphChild.ts ***!
+  \********************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   action_child_index_to_child_layout1: function() { return /* binding */ action_child_index_to_child_layout1; },
+/* harmony export */   action_child_layout1_to_child_layout2: function() { return /* binding */ action_child_layout1_to_child_layout2; },
+/* harmony export */   child_index: function() { return /* binding */ child_index; },
+/* harmony export */   child_layout1: function() { return /* binding */ child_layout1; },
+/* harmony export */   child_layout2: function() { return /* binding */ child_layout2; }
+/* harmony export */ });
+var action_child_index_to_child_layout1 = 'action_child_index_to_child_layout1#@layout/child_layout1';
+var action_child_layout1_to_child_layout2 = 'action_child_layout1_to_child_layout2#@layout/child_layout2';
+var child_index = 'fragment#child_index#layout/child_index.xml';
+var child_layout1 = 'fragment#child_layout1#layout/child_layout1.xml';
+var child_layout2 = 'fragment#child_layout2#layout/child_layout2.xml';
 
 /***/ }),
 

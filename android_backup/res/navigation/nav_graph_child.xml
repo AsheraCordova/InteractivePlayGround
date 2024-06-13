@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_child"
+    app:startDestination="@id/child_index">
+    <fragment
+        android:id="@+id/child_index"
+        android:name="com.ashera.core.GenericFragment"
+        android:label="Home"
+        tools:layout="@layout/child_index">
+        <argument
+            android:name="fileName"
+            android:defaultValue="layout/child_index.xml"
+            app:argType="string"
+            app:nullable="false" />
+        <action
+            android:id="@+id/action_child_index_to_child_layout1"
+            app:destination="@id/child_layout1" />
+    </fragment>
+    <fragment
+        android:id="@+id/child_layout1"
+        android:name="com.ashera.core.GenericFragment"
+        android:label="Child 1"
+        tools:layout="@layout/child_layout1">
+        <action
+            android:id="@+id/action_child_layout1_to_child_layout2"
+            app:destination="@id/child_layout2" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/child_layout2"
+        android:name="com.ashera.core.GenericFragment"
+        android:label="Child 2"
+        tools:layout="@layout/child_layout2"></fragment>
+</navigation>
