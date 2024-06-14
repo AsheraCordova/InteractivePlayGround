@@ -1978,7 +1978,7 @@ var Index = /** @class */function (_super) {
             if (!(obj.actionUrl == 'layout/index.xml')) return [3 /*break*/, 5];
             url = this.getQueryParams(document.location.search)["url"];
             if (url == null) {
-              url = 'https://raw.githubusercontent.com/AsheraCordova/InteractivePlayGround/main/android_backup/res/layout/child_host.xml';
+              url = 'https://raw.githubusercontent.com/AsheraCordova/InteractivePlayGround/main/android_backup/res/layout/child_host_generic_fragment.xml';
             }
             _a.label = 1;
           case 1:
