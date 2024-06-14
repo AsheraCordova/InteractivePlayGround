@@ -73,7 +73,7 @@ export default class Index extends Fragment {
             let url = this.getQueryParams(document.location.search)["url"];
 
             if (url == null) {
-                url = 'https://raw.githubusercontent.com/AsheraCordova/InteractivePlayGround/main/android_backup/res/layout/child_host_generic_fragment.xml';
+                url = 'http://localhost:8081/res/layout/child_host_generic_fragment.xml';
             }
 
             try {
