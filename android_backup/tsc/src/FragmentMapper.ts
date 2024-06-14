@@ -10,6 +10,8 @@ import ChildLayout1 from './ChildLayout1';
 
 import ChildLayout2 from './ChildLayout2';
 
+import ChildLayout3 from './ChildLayout3';
+
 import Dialog from './Dialog';
 
 import Index from './Index';
@@ -39,6 +41,8 @@ export const fragmentMapper : any = {
      'layout/child_layout1.xml': ChildLayout1,
     
      'layout/child_layout2.xml': ChildLayout2,
+    
+     'layout/child_layout3.xml': ChildLayout3,
     
      'layout/dialog.xml': Dialog,
     
