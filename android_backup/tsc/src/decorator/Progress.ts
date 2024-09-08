@@ -1,5 +1,6 @@
 declare var SpinnerDialog: any;
 import LocaleManager from '../app/LocaleManager';
+import { DialogHelper } from '../helpers/DialogHelper';
 export default (config: any): any => {
     return (
         target: any,
@@ -30,7 +31,7 @@ export default (config: any): any => {
                 const result = await originalMethod.apply(this, args)
                 return result;
             } catch (e) {
-                alert(e);
+                DialogHelper.alert(e + "", () => {});
             }
             finally {
                 if (showProgress) {

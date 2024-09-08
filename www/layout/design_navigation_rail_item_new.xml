@@ -1,0 +1,57 @@
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+  <FrameLayout android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:duplicateParentState="true"
+
+      android:id="@+id/navigation_bar_fl_wrapper">
+    <ImageView
+        android:id="@+id/navigation_bar_item_icon_view"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_gravity="center_horizontal"
+        android:contentDescription="@null"
+        android:duplicateParentState="true"
+        />
+    <com.google.android.material.internal.BaselineLayout
+
+        android:id="@+id/navigation_bar_item_labels_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:paddingBottom="8dp"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:duplicateParentState="true">
+      <TextView
+          widget-override-swt="StyledLabel"
+          android:id="@+id/navigation_bar_item_small_label_view"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:duplicateParentState="true"
+          android:ellipsize="end"
+          android:maxLines="1"
+          android:layout_gravity="center_horizontal"
+          android:gravity="center_horizontal"
+          android:textColor="#fff"
+          android:paddingBottom="8dp"
+          android:typeface="sans"
+          android:textSize="12sp"/>
+      <TextView
+          widget-override-swt="StyledLabel"
+          android:textColor="#fff"
+          android:id="@+id/navigation_bar_item_large_label_view"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:duplicateParentState="true"
+          android:ellipsize="end"
+          android:maxLines="1"
+          android:layout_gravity="center_horizontal"
+          android:gravity="center_horizontal"
+          android:textSize="14sp"
+          android:typeface="sans"
+          android:visibility="invisible"/>
+    </com.google.android.material.internal.BaselineLayout>
+  </FrameLayout>
+</merge>

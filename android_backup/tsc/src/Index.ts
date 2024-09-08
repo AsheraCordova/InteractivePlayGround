@@ -10,6 +10,7 @@ import { dialog, login, screen1 } from './R/NavGraph';
 import { ScopedObject } from './app/ScopedObject';
 import { color_animator, path_animator, translate_animator, translate_animator_interpolation, translate_with_rotation } from './R/ViewAnimation';
 import { fragment } from './android/widget/fragmentImpl';
+import { DialogHelper } from './helpers/DialogHelper';
 
 declare var window: any;
 declare var navigator: any;
@@ -94,7 +95,7 @@ export default class Index extends Fragment {
             this.executeCommand(this.currentUrl, this.xmlEditText);
             navigator.splashscreen.hide();    
             } catch(e) {
-                alert(e);
+                DialogHelper.alert(e + "", () => {});
             }
         }
     }
@@ -107,7 +108,7 @@ export default class Index extends Fragment {
             this.translateWithRotation, this.pathAnimator, this.colorAnimator, this.previewPane);
     }
     async showAlert() {
-        alert("test");
+        DialogHelper.alert("test", () => {});
      }
 
      async callInlineFunction(obj: any) {
@@ -127,13 +128,13 @@ export default class Index extends Fragment {
      
      async validateLoginForm() {
          if (await this.validateForm("loginForm", this.validateButton)) {
-             alert("validation success");
+            DialogHelper.alert("validation success", () => {});
          }
      }
 
      async validateLoginFormWithModel(obj: any) {
         if (await this.validateForm("loginForm", this.validateButton)) {
-            alert(JSON.stringify(obj.model));
+            DialogHelper.alert(JSON.stringify(obj.model), () => {});
         }
      }
      id = 3;
@@ -158,7 +159,7 @@ export default class Index extends Fragment {
 
     	
 	async getData(obj:any) {
-		alert(JSON.stringify(obj.model));
+		DialogHelper.alert(JSON.stringify(obj.model), () => {});
 	}
 
     async openDialog() {

@@ -1,0 +1,14 @@
+<resources>
+	
+    <declare-styleable name="ViewOverlay">
+	 		<attr name="anchorRef" format="string"/>
+	 		<attr name="boundsType" format="string"/>
+	 		<attr name="drawable" format="string"/>
+	 		<attr name="offsetVertical" format="string"/>
+	 		<attr name="offsetHorizontal" format="string"/>
+	 		<attr name="drawableWidth" format="string"/>
+	 		<attr name="drawableHeight" format="string"/>
+	 		<attr name="boundsConverter" format="string"/>
+    </declare-styleable>
+
+</resources>

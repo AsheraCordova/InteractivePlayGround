@@ -8,6 +8,7 @@ import BaseFragment from './BaseFragment';
 import { Fragment, Inject } from './app/Fragment';
 import { NavController, InjectController } from './navigation/NavController';
 import { ScopedObject } from './app/ScopedObject';
+import { DialogHelper } from './helpers/DialogHelper';
 
 export default class Login extends BaseFragment {
         //start - body
@@ -23,7 +24,7 @@ export default class Login extends BaseFragment {
         }        
         //end - body
     showAlert() {
-        alert("Login Button clicked!!!");
+        DialogHelper.alert("Login Button clicked!!!", () => {});
     }
 
     tab(): string[] {

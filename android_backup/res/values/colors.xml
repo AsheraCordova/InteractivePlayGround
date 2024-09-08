@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="cdv_splashscreen_background">#FFFFFF</color>
     <color name="color_ashera">#e5db54</color>
     <color name="color_white">#fff</color>
     <color name="color_black">#000</color>
