@@ -16,7 +16,7 @@
     "update-ios-plist": "cd platforms/android/app/src/main/gentool && npm run plist",
     "backup-android": "cd platforms/android/app/src/main/gentool && npm run backup",
     "restore-android": "cd platforms/android/app/src/main/gentool && npm run restore",
-    "start-dev": "cd platforms/android/app/src/main/gentool && npm install --legacy-peer-deps && npm run fixIosSymLinks && npm run restore && npm run resize && cd ../tsc && npm install --legacy-peer-deps && cd ../gentool && npm run start skip_watch && cd ../tsc && npm run build",	  
+    "start-dev": "cd platforms/android/app/src/main/gentool && npm install --legacy-peer-deps && npm run fixIosSymLinks && npm run restore && npm run resize && cd ../tsc && npm install --legacy-peer-deps && cd ../gentool && npm run start skip_watch && cd ../tsc && npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -38,20 +38,21 @@
     "com.ashera.glide": "git+https://github.com/AsheraCordova/Glide.git",
     "com.ashera.gridlayout": "git+https://github.com/AsheraCordova/GridLayout.git",
     "com.ashera.iqkeyboardmanager.ios": "git+https://github.com/AsheraCordova/IQkeyboardManager.git",
+    "com.ashera.navigationview": "github:AsheraCordova/NavigationView",
     "com.ashera.recycleview": "git+https://github.com/AsheraCordova/RecycleView.git",
     "com.ashera.sdwebimage.ios": "git+https://github.com/AsheraCordova/SDWebImagePlugin.git",
     "com.ashera.shutterbug": "git+https://github.com/AsheraCordova/ShutterBug.git",
+    "com.ashera.tablayout": "github:AsheraCordova/TabLayout",
     "com.ashera.toolbar": "git+https://github.com/AsheraCordova/Toolbar.git",
     "com.ashera.viewpager": "git+https://github.com/AsheraCordova/ViewPager.git",
     "com.filfatstudios.spinnerdialog": "git+https://github.com/AsheraCordova/Dialog.git",
     "cordova-android": "^13.0.0",
-    "cordova-ios": "^7.1.1",    
-    "cordova-plugin-splashscreen": "git+https://github.com/apache/cordova-plugin-splashscreen.git",
-    "cordova-plugin-splashscreen-ashera": "git+https://github.com/AsheraCordova/Splash.git",
-    "swt": "git+https://github.com/AsheraCordova/cordova-swt.git",
+    "cordova-ios": "^7.1.1",
     "cordova-plugin-dialogs": "^2.0.2",
     "cordova-plugin-dialogs-ashera": "git+https://github.com/AsheraCordova/BrowserDialogs.git",
-    "com.ashera.navigationview": "github:AsheraCordova/NavigationView"
+    "cordova-plugin-splashscreen": "git+https://github.com/apache/cordova-plugin-splashscreen.git",
+    "cordova-plugin-splashscreen-ashera": "git+https://github.com/AsheraCordova/Splash.git",
+    "swt": "git+https://github.com/AsheraCordova/cordova-swt.git"
   },
   "cordova": {
     "platforms": [
@@ -83,7 +84,8 @@
       "com.ashera.viewpager": {},
       "cordova-plugin-dialogs": {},
       "cordova-plugin-dialogs-ashera": {},
-      "com.ashera.navigationview": {}
+      "com.ashera.navigationview": {},
+      "com.ashera.tablayout": {}
     }
   }
 }

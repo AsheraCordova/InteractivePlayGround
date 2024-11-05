@@ -1,0 +1,8 @@
+<View xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    widget-override="com.google.android.material.tabs.TabLayout.SlidingTabIndicator"
+    tools:ignore="MissingPrefix">
+
+</View>
