@@ -28,6 +28,8 @@
     "browser": "git+https://github.com/AsheraCordova/cordova-web.git",
     "com.ashera.absolutelayout": "git+https://github.com/AsheraCordova/AbsoluteLayout.git",
     "com.ashera.capinsets": "git+https://github.com/AsheraCordova/CapInsets.git",
+    "com.ashera.cardview": "github:AsheraCordova/CardView",
+    "com.ashera.chip": "github:AsheraCordova/Chip",
     "com.ashera.constraintlayout": "git+https://github.com/AsheraCordova/ConstraintLayout.git",
     "com.ashera.core": "git+https://github.com/AsheraCordova/Core.git",
     "com.ashera.cssborder": "git+https://github.com/AsheraCordova/CSSBorder.git",
@@ -85,7 +87,9 @@
       "cordova-plugin-dialogs": {},
       "cordova-plugin-dialogs-ashera": {},
       "com.ashera.navigationview": {},
-      "com.ashera.tablayout": {}
+      "com.ashera.tablayout": {},
+      "com.ashera.cardview": {},
+      "com.ashera.chip": {}
     }
   }
 }
