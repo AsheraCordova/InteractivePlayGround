@@ -15,4 +15,6 @@
 	<preference name="webScaleFactor" value="1.4" />
 	<preference name="macScaleFactor" value="1.8" />
 	<preference name="iosHidetoolbar" value="true" />
+	<allow-navigation href="https://asheracordova.github.io/*/*" />
+	<!--  allow-navigation href="http://*/*" />-->
 </widget>
