@@ -30,7 +30,8 @@ export default class ProgressdialogChildApp extends Fragment
         }        
         //end - body
     async onCreate() {
-        let baseUrl = "http://192.168.1.35:8081";
+        //let baseUrl = "http://192.168.1.35:8081";
+        let baseUrl = "https://asheracordova.github.io/apps";
     	let namespace = "ChildApp";
     
         downloader.init({ folder: namespace, unzip: true });
