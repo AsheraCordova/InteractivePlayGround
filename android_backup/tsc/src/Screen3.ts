@@ -13,7 +13,9 @@ export default class Screen3 extends Fragment
         @InjectController({})
         navController!: NavController;
         
-
+		static createInstance () {
+			return new Screen3();
+		}
         async goToPreviousScreen() {
             await this.navController.reset().popBackStack().executeCommand();
         }        

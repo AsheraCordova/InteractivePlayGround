@@ -16,7 +16,9 @@ export default class ChildIndex extends Fragment
         @InjectController({})
         navController!: NavController;
         
-
+		static createInstance () {
+			return new ChildIndex();
+		}
         async goToPreviousScreen() {
             await this.navController.reset().popBackStack().executeCommand();
         }        

@@ -13,7 +13,9 @@ export default class Dialog extends Fragment
         @InjectController({})
         navController!: NavController;
         
-
+		static createInstance () {
+			return new Dialog();
+		}
         async goToPreviousScreen() {
             await this.navController.reset().popBackStack().executeCommand();
         }        

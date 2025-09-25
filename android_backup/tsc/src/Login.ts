@@ -18,7 +18,9 @@ export default class Login extends BaseFragment {
 
         private xml!:EditText;
 
-
+		static createInstance () {
+			return new Login();
+		}
         async goToPreviousScreen() {
             await this.navController.reset().popBackStack().executeCommand();
         }        

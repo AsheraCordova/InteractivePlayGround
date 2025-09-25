@@ -24,7 +24,9 @@ export default class ProgressdialogChildApp extends Fragment
 
         private progressText!:TextView;
 
-
+		static createInstance () {
+			return new ProgressdialogChildApp();
+		}
         async goToPreviousScreen() {
             await this.navController.reset().popBackStack().executeCommand();
         }        

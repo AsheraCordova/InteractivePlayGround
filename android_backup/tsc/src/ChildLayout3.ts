@@ -15,7 +15,9 @@ export default class ChildLayout3 extends Fragment
         @InjectController({})
         navController!: NavController;
         
-
+		static createInstance () {
+			return new ChildLayout3();
+		}
         async goToPreviousScreen() {
             await this.navController.reset().popBackStack().executeCommand();
         }        

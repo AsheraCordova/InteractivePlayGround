@@ -14360,6 +14360,9 @@ var CatHello = /** @class */function (_super) {
   function CatHello() {
     return _super !== null && _super.apply(this, arguments) || this;
   }
+  CatHello.createInstance = function () {
+    return new CatHello();
+  };
   CatHello.prototype.goToPreviousScreen = function () {
     return __awaiter(this, void 0, void 0, function () {
       return __generator(this, function (_a) {
@@ -14554,6 +14557,9 @@ var ChildAppContainer = /** @class */function (_super) {
   function ChildAppContainer() {
     return _super !== null && _super.apply(this, arguments) || this;
   }
+  ChildAppContainer.createInstance = function () {
+    return new ChildAppContainer();
+  };
   ChildAppContainer.prototype.goToPreviousScreen = function () {
     return __awaiter(this, void 0, void 0, function () {
       return __generator(this, function (_a) {
@@ -14756,6 +14762,9 @@ var ChildIndex = /** @class */function (_super) {
   function ChildIndex() {
     return _super !== null && _super.apply(this, arguments) || this;
   }
+  ChildIndex.createInstance = function () {
+    return new ChildIndex();
+  };
   ChildIndex.prototype.goToPreviousScreen = function () {
     return __awaiter(this, void 0, void 0, function () {
       return __generator(this, function (_a) {
@@ -14962,6 +14971,9 @@ var ChildLayout1 = /** @class */function (_super) {
   function ChildLayout1() {
     return _super !== null && _super.apply(this, arguments) || this;
   }
+  ChildLayout1.createInstance = function () {
+    return new ChildLayout1();
+  };
   ChildLayout1.prototype.goToPreviousScreen = function () {
     return __awaiter(this, void 0, void 0, function () {
       return __generator(this, function (_a) {
@@ -15166,6 +15178,9 @@ var ChildLayout2 = /** @class */function (_super) {
   function ChildLayout2() {
     return _super !== null && _super.apply(this, arguments) || this;
   }
+  ChildLayout2.createInstance = function () {
+    return new ChildLayout2();
+  };
   ChildLayout2.prototype.goToPreviousScreen = function () {
     return __awaiter(this, void 0, void 0, function () {
       return __generator(this, function (_a) {
@@ -15370,6 +15385,9 @@ var ChildLayout3 = /** @class */function (_super) {
   function ChildLayout3() {
     return _super !== null && _super.apply(this, arguments) || this;
   }
+  ChildLayout3.createInstance = function () {
+    return new ChildLayout3();
+  };
   ChildLayout3.prototype.goToPreviousScreen = function () {
     return __awaiter(this, void 0, void 0, function () {
       return __generator(this, function (_a) {
@@ -15585,6 +15603,9 @@ var Dialog = /** @class */function (_super) {
   function Dialog() {
     return _super !== null && _super.apply(this, arguments) || this;
   }
+  Dialog.createInstance = function () {
+    return new Dialog();
+  };
   Dialog.prototype.goToPreviousScreen = function () {
     return __awaiter(this, void 0, void 0, function () {
       return __generator(this, function (_a) {
@@ -16629,6 +16650,9 @@ var Login = /** @class */function (_super) {
   function Login() {
     return _super !== null && _super.apply(this, arguments) || this;
   }
+  Login.createInstance = function () {
+    return new Login();
+  };
   Login.prototype.goToPreviousScreen = function () {
     return __awaiter(this, void 0, void 0, function () {
       return __generator(this, function (_a) {
@@ -16834,6 +16858,9 @@ var ProgressdialogChildApp = /** @class */function (_super) {
   function ProgressdialogChildApp() {
     return _super !== null && _super.apply(this, arguments) || this;
   }
+  ProgressdialogChildApp.createInstance = function () {
+    return new ProgressdialogChildApp();
+  };
   ProgressdialogChildApp.prototype.goToPreviousScreen = function () {
     return __awaiter(this, void 0, void 0, function () {
       return __generator(this, function (_a) {
@@ -16853,7 +16880,7 @@ var ProgressdialogChildApp = /** @class */function (_super) {
       var baseUrl, namespace, downloadProgress, gotFolder, unzipFileEntry, _successCallBack, _failureCallBack;
       var _this = this;
       return __generator(this, function (_a) {
-        baseUrl = "http://192.168.1.35:8081";
+        baseUrl = "https://asheracordova.github.io/apps";
         namespace = "ChildApp";
         downloader.init({
           folder: namespace,
@@ -17382,6 +17409,9 @@ var Screen1 = /** @class */function (_super) {
   function Screen1() {
     return _super !== null && _super.apply(this, arguments) || this;
   }
+  Screen1.createInstance = function () {
+    return new Screen1();
+  };
   Screen1.prototype.goToPreviousScreen = function () {
     return __awaiter(this, void 0, void 0, function () {
       return __generator(this, function (_a) {
@@ -17581,6 +17611,9 @@ var Screen2 = /** @class */function (_super) {
   function Screen2() {
     return _super !== null && _super.apply(this, arguments) || this;
   }
+  Screen2.createInstance = function () {
+    return new Screen2();
+  };
   Screen2.prototype.goToPreviousScreen = function () {
     return __awaiter(this, void 0, void 0, function () {
       return __generator(this, function (_a) {
@@ -17786,6 +17819,9 @@ var Screen3 = /** @class */function (_super) {
   function Screen3() {
     return _super !== null && _super.apply(this, arguments) || this;
   }
+  Screen3.createInstance = function () {
+    return new Screen3();
+  };
   Screen3.prototype.goToPreviousScreen = function () {
     return __awaiter(this, void 0, void 0, function () {
       return __generator(this, function (_a) {

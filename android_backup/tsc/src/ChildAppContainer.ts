@@ -17,7 +17,9 @@ export default class ChildAppContainer extends BaseFragment {
 
         private xml!:EditText;
 
-
+		static createInstance () {
+			return new ChildAppContainer();
+		}
         async goToPreviousScreen() {
             await this.navController.reset().popBackStack().executeCommand();
         }        

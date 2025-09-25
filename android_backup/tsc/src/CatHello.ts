@@ -18,7 +18,9 @@ export default class CatHello extends Fragment
 
         private cat!:TextView;
 
-
+		static createInstance () {
+			return new CatHello();
+		}
         async goToPreviousScreen() {
             await this.navController.reset().popBackStack().executeCommand();
         }        
