@@ -25,6 +25,7 @@
   "author": "Apache Cordova Team",
   "license": "Apache-2.0",
   "devDependencies": {
+    "@types/minimatch": "^6.0.0",
     "browser": "git+https://github.com/AsheraCordova/cordova-web.git",
     "com.ashera.absolutelayout": "git+https://github.com/AsheraCordova/AbsoluteLayout.git",
     "com.ashera.capinsets": "git+https://github.com/AsheraCordova/CapInsets.git",
@@ -52,8 +53,15 @@
     "cordova-ios": "^7.1.1",
     "cordova-plugin-dialogs": "^2.0.2",
     "cordova-plugin-dialogs-ashera": "git+https://github.com/AsheraCordova/BrowserDialogs.git",
+    "cordova-plugin-file": "github:AsheraCordova/cordova-plugin-file",
+    "cordova-plugin-file-downloader": "github:AsheraCordova/cordova-plugin-file-downloader",
+    "cordova-plugin-file-md5": "^0.3.3",
+    "cordova-plugin-file-transfer": "github:AsheraCordova/cordova-plugin-file-transfer",
+    "cordova-plugin-network-information": "github:AsheraCordova/cordova-plugin-network-information",
     "cordova-plugin-splashscreen": "git+https://github.com/apache/cordova-plugin-splashscreen.git",
     "cordova-plugin-splashscreen-ashera": "git+https://github.com/AsheraCordova/Splash.git",
+    "cordova-plugin-zip": "github:AsheraCordova/cordova-plugin-zip",
+    "minimatch": "^10.0.3",
     "swt": "git+https://github.com/AsheraCordova/cordova-swt.git"
   },
   "cordova": {
@@ -89,7 +97,8 @@
       "com.ashera.navigationview": {},
       "com.ashera.tablayout": {},
       "com.ashera.cardview": {},
-      "com.ashera.chip": {}
+      "com.ashera.chip": {},
+      "cordova-plugin-file-downloader": {}
     }
   }
 }

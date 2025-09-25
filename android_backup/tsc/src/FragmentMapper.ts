@@ -4,6 +4,8 @@ import ErrorDetailFragment from './ErrorDetailFragment';
 
 import CatHello from './CatHello';
 
+import ChildAppContainer from './ChildAppContainer';
+
 import ChildIndex from './ChildIndex';
 
 import ChildLayout1 from './ChildLayout1';
@@ -17,6 +19,8 @@ import Dialog from './Dialog';
 import Index from './Index';
 
 import Login from './Login';
+
+import ProgressDialogChildApp from './ProgressDialogChildApp';
 
 import Screen1 from './Screen1';
 
@@ -36,6 +40,8 @@ export const fragmentMapper : any = {
     
      'layout/cat_hello.xml': CatHello,
     
+     'layout/child_app_container.xml': ChildAppContainer,
+    
      'layout/child_index.xml': ChildIndex,
     
      'layout/child_layout1.xml': ChildLayout1,
@@ -49,6 +55,8 @@ export const fragmentMapper : any = {
      'layout/index.xml': Index,
     
      'layout/login.xml': Login,
+    
+     'layout/progress_dialog_child_app.xml': ProgressDialogChildApp,
     
      'layout/screen1.xml': Screen1,
     

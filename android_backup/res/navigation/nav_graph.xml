@@ -19,6 +19,22 @@
             app:destination="@id/screen1" />
     </fragment>
 
+    <dialog
+        android:id="@+id/progress_dialog_child_app"
+        android:name="com.ashera.core.MyDialog"
+        style="@style/MyDialogStyle"
+        tools:layout="@layout/progress_dialog_child_app"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
+
+    <fragment
+        android:id="@+id/child_app_container"
+        android:name="com.ashera.core.GenericFragment"
+        android:label="Child App"
+        tools:layout="@layout/child_app_container"></fragment>
+
     <fragment
         android:id="@+id/error"
         android:name="com.ashera.core.GenericFragment"

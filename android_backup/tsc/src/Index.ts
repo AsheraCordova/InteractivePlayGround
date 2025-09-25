@@ -6,7 +6,7 @@ import { currentUrl, preview, xml } from './R/Index';
 import { InjectController, NavController } from './navigation/NavController';
 import { TextView } from './android/widget/TextViewImpl';
 import { RecyclerView } from './android/widget/RecyclerViewImpl';
-import { dialog, login, screen1 } from './R/NavGraph';
+import { child_app_container, dialog, login, progress_dialog_child_app, screen1 } from './R/NavGraph';
 import { ScopedObject } from './app/ScopedObject';
 import { color_animator, path_animator, translate_animator, translate_animator_interpolation, translate_with_rotation } from './R/ViewAnimation';
 import { fragment } from './android/widget/fragmentImpl';
@@ -53,7 +53,7 @@ export default class Index extends Fragment {
     
     constructor() {
         super();
-    }
+    }    
 
     getQueryParams(qs: any) {
         qs = qs.split('+').join(' ');
@@ -74,7 +74,7 @@ export default class Index extends Fragment {
             let url = this.getQueryParams(document.location.search)["url"];
 
             if (url == null) {
-                url = 'http://localhost:8081/res/layout/child_host_generic_fragment.xml';
+                url = 'http://192.168.1.35:8080/res/layout/launch_child_app.xml';
             }
 
             try {
@@ -93,7 +93,9 @@ export default class Index extends Fragment {
                 new ScopedObject("viewpagerInfo->view as list", viewPagerData),
                 new ScopedObject("tradeItem->view as map", {tradePrice: 0, noOfItems: 0, memPrice: 100})).setText(url);
             this.executeCommand(this.currentUrl, this.xmlEditText);
-            navigator.splashscreen.hide();    
+            if (navigator.splashscreen) {
+                navigator.splashscreen.hide();    
+            }
             } catch(e) {
                 DialogHelper.alert(e + "", () => {});
             }
@@ -204,4 +206,16 @@ export default class Index extends Fragment {
 		this.recyclerView.filter(obj.newText);
 		await this.executeCommand(this.recyclerView);
 	} 	
+
+        static createInstance () {
+	    return new Index();
+	}
+
+    downloadChildApp() {
+        this.navController.navigate(progress_dialog_child_app, '', {}).executeCommand();
+    }
+
+    public onCloseDialog(obj: any): void {
+        this.navController.navigate(child_app_container, '', {}).executeCommand();
+    }
 }

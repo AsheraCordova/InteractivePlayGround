@@ -1,0 +1,92 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data></data>
+
+    <LinearLayout
+        fragment="ChildAppContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#e5db54"
+        android:orientation="horizontal"
+        android:weightSum="10">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="4"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/tab"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tab1"
+                    modelPojoToUi="selected = . from tab1->parentview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/tab_bg_selector"
+                    android:onClick="showTab1"
+                    android:padding="10dp"
+                    android:text="progress_dialog_child_app.xml"
+                    android:textColor="@color/color_black"
+                    android:textSize="14sp"></TextView>
+
+                <TextView
+                    android:id="@+id/tab2"
+                    modelPojoToUi="selected = . from tab2->parentview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/tab_bg_selector"
+                    android:onClick="showTab2"
+                    android:padding="10dp"
+                    android:text="ProgressdialogChildApp.ts"
+                    android:textColor="@color/color_black"
+                    android:textSize="14sp"></TextView>
+
+                <TextView
+                    android:id="@+id/tab3"
+                    modelPojoToUi="selected = . from tab3->parentview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/tab_bg_selector"
+                    android:onClick="showTab3"
+                    android:padding="10dp"
+                    android:text="nav_graph.xml"
+                    android:textColor="@color/color_black"
+                    android:textSize="14sp"></TextView>
+
+                <TextView
+                    android:id="@+id/tab4"
+                    modelPojoToUi="selected = . from tab4->parentview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/tab_bg_selector"
+                    android:onClick="showTab4"
+                    android:padding="10dp"
+                    android:text="child_app_component.xml"
+                    android:textColor="@color/color_black"
+                    android:textSize="14sp"></TextView>
+
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/xml"
+                autoInject="true"
+                modelPojoToUi="text = getFileAsset(.) from progress_dialog_child_app->strings"
+                widget-override-ios="UITextView"
+                widget-override-web="TextArea"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/color_white"
+                android:enabled="false"
+                android:singleLine="false"></EditText>
+        </LinearLayout>
+        <include layout="@layout/child_app_component" />
+
+    </LinearLayout>
+</layout>

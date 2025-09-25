@@ -92,4 +92,5 @@
         <item>www/layout/sample_camera.xml</item>
         <item>www/layout/sample_qrcode.xml</item>
     </array>
+    <string name="progress_dialog_child_app">www/layout/progress_dialog_child_app.xml</string>
 </resources>

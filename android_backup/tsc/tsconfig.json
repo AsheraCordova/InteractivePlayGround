@@ -3,7 +3,7 @@
 		"strict": true,
 		"noFallthroughCasesInSwitch": true,
 		"sourceMap": true,
-		"module": "es6",
+		"module": "esnext",
     	"target": "es5",
 		"outDir": "./dist",
 		"moduleResolution": "node",
