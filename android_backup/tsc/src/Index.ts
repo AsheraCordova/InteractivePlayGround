@@ -75,7 +75,7 @@ export default class Index extends Fragment {
             let url = this.getQueryParams(document.location.search)["url"];
 
             if (url == null) {
-                url = 'http://192.168.1.37:8081/res/layout/recyclerview_filter_simple.xml';
+                url = 'https://raw.githubusercontent.com/AsheraCordova/InteractivePlayGround/refs/heads/main/android_backup/res/layout/absolute_layout.xml';
             }
 
             try {
@@ -95,7 +95,9 @@ export default class Index extends Fragment {
                 new ScopedObject("tradeItem->view as map", {tradePrice: 0, noOfItems: 0, memPrice: 100})).setText(url);
             this.executeCommand(this.currentUrl, this.xmlEditText);
             if (navigator.splashscreen) {
-                navigator.splashscreen.hide();    
+                setTimeout(() => {
+                    navigator.splashscreen.hide();
+                }, 100);
             }
             } catch(e) {
                 DialogHelper.alert(e + "", () => {});
