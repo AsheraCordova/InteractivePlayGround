@@ -11,6 +11,7 @@
     <string name="android_xml_url">Android XML Url</string>
     <string name="js_url">JS Url</string>
     <string name="dpFormat">%sdp</string>
+    <string name="lowercase_error_message">Only lowercases letters allowed</string>
 
     <array name="samples">
         <item></item>
