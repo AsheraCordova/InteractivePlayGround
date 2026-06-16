@@ -75,7 +75,7 @@ export default class Index extends Fragment {
             let url = this.getQueryParams(document.location.search)["url"];
 
             if (url == null) {
-                url = 'https://raw.githubusercontent.com/AsheraCordova/InteractivePlayGround/refs/heads/main/android_backup/res/layout/absolute_layout.xml';
+                url = 'https://raw.githubusercontent.com/AsheraCordova/InteractivePlayGround/main/android_backup/res/layout/launch_child_app.xml';
             }
 
             try {
@@ -230,7 +230,12 @@ export default class Index extends Fragment {
     }
 
     public onCloseDialog(obj: any): void {
-        this.navController.navigate(child_app_container, '', {}).executeCommand();
+        if (obj.dialogClosed == 'layout/dialog.xml') {  
+            return;
+        }
+        if (obj.dialogClosed == 'layout/progress_dialog_child_app.xml') {  
+            this.navController.navigate(child_app_container, '', {}).executeCommand();
+        }
     }
 
     getDragAndDropData(event: any) {

@@ -70,8 +70,8 @@
     "cordova-plugin-qrscanner": "git+https://github.com/AsheraCordova/cordova-plugin-qrscanner.git",
     "cordova-plugin-qrscanner-swt": "git+https://github.com/AsheraCordova/cordova-plugin-qrscanner-swt.git",
     "cordova-plugin-splashscreen-ashera": "git+https://github.com/AsheraCordova/Splash.git",
-	"com.ashera.customwidgetextension": "git+https://github.com/AsheraCordova/CustomWidgetExtension.git",
-	"cordova-plugin-file-downloader": "github:AsheraCordova/cordova-plugin-file-downloader",
+	  "com.ashera.customwidgetextension": "git+https://github.com/AsheraCordova/CustomWidgetExtension.git",
+	  "cordova-plugin-file-downloader": "github:AsheraCordova/cordova-plugin-file-downloader",
     "minimatch": "^10.0.3",
     "swt": "git+https://github.com/AsheraCordova/cordova-swt.git"
   },
@@ -116,8 +116,8 @@
       "com.ashera.swiperefreshlayout": {},
       "com.ashera.spatialkit": {},
       "com.ashera.spatialkit.swt": {},
-	  "com.ashera.customwidgetextension": {},
-	  "cordova-plugin-file-downloader": {}
+	    "com.ashera.customwidgetextension": {},
+	    "cordova-plugin-file-downloader": {}
     },
     "platforms": [
       "android",

@@ -2220,7 +2220,7 @@ var Index = /** @class */function (_super) {
             if (!(obj.actionUrl == 'layout/index.xml')) return [3 /*break*/, 5];
             url = this.getQueryParams(document.location.search)["url"];
             if (url == null) {
-              url = 'https://raw.githubusercontent.com/AsheraCordova/InteractivePlayGround/refs/heads/main/android_backup/res/layout/absolute_layout.xml';
+              url = 'https://raw.githubusercontent.com/AsheraCordova/InteractivePlayGround/main/android_backup/res/layout/launch_child_app.xml';
             }
             _a.label = 1;
           case 1:
@@ -2247,7 +2247,6 @@ var Index = /** @class */function (_super) {
               setTimeout(function () {
                 navigator.splashscreen.hide();
               }, 100);
-              //navigator.splashscreen.hide();    
             }
             return [3 /*break*/, 5];
           case 4:
@@ -2499,7 +2498,12 @@ var Index = /** @class */function (_super) {
     this.navController.navigate(_R_NavGraph__WEBPACK_IMPORTED_MODULE_8__.progress_dialog_child_app, '', {}).executeCommand();
   };
   Index.prototype.onCloseDialog = function (obj) {
-    this.navController.navigate(_R_NavGraph__WEBPACK_IMPORTED_MODULE_8__.child_app_container, '', {}).executeCommand();
+    if (obj.dialogClosed == 'layout/dialog.xml') {
+      return;
+    }
+    if (obj.dialogClosed == 'layout/progress_dialog_child_app.xml') {
+      this.navController.navigate(_R_NavGraph__WEBPACK_IMPORTED_MODULE_8__.child_app_container, '', {}).executeCommand();
+    }
   };
   Index.prototype.getDragAndDropData = function (event) {
     console.log(JSON.stringify(event));
