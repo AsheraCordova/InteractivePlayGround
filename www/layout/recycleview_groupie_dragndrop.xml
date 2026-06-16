@@ -1,0 +1,290 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:ignore="MissingPrefix">
+
+    <View
+        name="@layout/item_header"
+        type="resource"
+        widget-override="Inline"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        tools:ignore="ExtraText">
+        <![CDATA[
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                tools:ignore="MissingPrefix"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="bottom"
+                    android:orientation="vertical"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="18dp">
+
+                    <TextView
+                        android:id="@+id/title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="20sp"
+                        modelPojoToUi="text = title from item->loopvar"
+                        android:textColor="#89000000"
+                        tools:text="What's hot" />
+
+                    <TextView
+                        android:id="@+id/subtitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        android:visibility="gone"
+                        modelPojoToUi="text = subtitle from item->loopvar;visibility = subtitlevisibility from item->loopvar"
+                        android:textColor="#89000000"
+                        tools:text="What's hot" />
+
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    modelPojoToUi="visibility = visibility from item->loopvar"
+                    android:padding="5dp"
+                    android:src="@drawable/icon_expand_collapse" />
+            </LinearLayout>
+        ]]>
+    </View>
+    <View
+        name="@layout/item_carousel"
+        type="resource"
+        widget-override="Inline"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        tools:ignore="ExtraText">
+        <![CDATA[
+                <androidx.recyclerview.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
+                    xmlns:tools="http://schemas.android.com/tools"
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/recyclerView"
+                    itemview_width="100dp"
+                    itemview_height="100dp"
+                    modelFor="let item in carousel.items from sectionInfo->view into loopvar as map"
+                    viewHolderIds="FrameLayout,text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clipToPadding="false"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    android:orientation="horizontal"
+                    tools:listitem="@layout/item_card">
+                </androidx.recyclerview.widget.RecyclerView>
+        ]]>
+    </View>
+    <View
+        name="@layout/item_card"
+        type="resource"
+        widget-override="Inline"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        tools:ignore="ExtraText">
+        <![CDATA[
+            <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:id="@+id/FrameLayout"
+                modelPojoToUi="background = background from item->loopvar"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="#fff"
+                android:elevation="2dp"
+                tools:ignore="MissingPrefix">
+
+                <TextView
+                    android:id="@+id/text"
+                    modelPojoToUi="text = name from item->loopvar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textColor="#000"
+                    tools:text="This is text here" />
+
+            </FrameLayout>
+
+        ]]>
+    </View>
+    <View
+        name="@layout/listheader_data"
+        type="resource"
+        widget-override="Inline"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        tools:ignore="ExtraText">
+        <![CDATA[
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:id="@+id/rootView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                tools:ignore="MissingPrefix">
+
+                <TextView
+                    android:id="@+id/textView"
+                    style="@style/blackBg"
+                    modelPojoToUi="text = name from item->loopvar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/android_layout_examples" />
+            </LinearLayout>
+        ]]>
+    </View>
+    <View
+        name="@layout/listview_testitem"
+        type="resource"
+        widget-override="Inline"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        tools:ignore="ExtraText">
+        <![CDATA[
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:id="@+id/rootView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                tools:ignore="MissingPrefix" >
+
+                <TextView
+                    android:id="@+id/name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    modelPojoToUi="text = a from item->loopvar;background = background from item->loopvar"
+                    android:text="Name"
+                    android:padding="10dp"/>
+
+                <View
+                    android:id="@+id/divider"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    os="ios"
+                    android:minHeight="5dp"
+                    android:background="@drawable/shape_line_drawable"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+        ]]>
+    </View>
+    <View
+        name="@layout/listheader"
+        type="resource"
+        widget-override="Inline"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        tools:ignore="ExtraText">
+        <![CDATA[
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:id="@+id/rootView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                tools:ignore="MissingPrefix">
+
+                <TextView
+                    android:id="@+id/textView"
+                    style="@style/blackBg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Header" />
+            </LinearLayout>
+        ]]>
+    </View>
+
+    <View
+        name="@layout/listfooter"
+        type="resource"
+        widget-override="Inline"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        tools:ignore="ExtraText">
+        <![CDATA[
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:id="@+id/rootView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                tools:ignore="MissingPrefix">
+
+                <TextView
+                    android:id="@+id/textView"
+                    style="@style/blackBg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Footer" />
+            </LinearLayout>
+        ]]>
+    </View>
+    <View
+        type="javascript"
+        widget-override="Inline"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        tools:ignore="ExtraText">
+        <![CDATA[
+
+                window.inlineFunctionForGroupieDragAndDrop = function(fragment, command, obj, groupieBuilder, visible, gone) {
+                    var carousel = groupieBuilder.withSection("carousel");
+                    for (var i=0; i< 10; i++) {
+                        carousel.addItem({"background" : "#0f0", "name": i + ""});
+                    }
+                    carousel.updateSection("title", "Carousel").updateSection("subtitle", "Swipe this section horizontally to scroll into the items.").updateSection("visibility",gone).updateSection("subtitlevisibility");
+
+                    var data = groupieBuilder
+                            .withSection("test").addItem({"a" : "1"}).addItem({"a" : "2"})
+                            .withSection("test1").addItem({"name" : "A", subitems: [{"a" : "Apple"}, {"a" : "Andy"}]}).addItem({"name" : "B", subitems: [{"a" : "Banana"}, {"a" : "Boy"}, {"a" : "Bat"}]})
+                            .withSection("fullbleeditem").updateSection("title", "A Full Bleed Item").updateSection("subtitle", "").updateSection("visibility", gone).updateSection("subitems", [{"background" : "#f00", "name": ""}])
+                            .withSection("grid").updateSection("title", "Multiple Columns With Even Spacing").updateSection("subtitle", "").updateSection("visibility",gone).updateSection("subitems", [{"background" : "#ff0", "name": ""}, {"background" : "#ff0", "name": ""}, {"background" : "#ff0", "name": ""}, {"background" : "#ff0", "name": ""}, {"background" : "#ff0", "name": ""}])
+                            .withSection("expand").updateSection("title", "Expand Group").updateSection("subtitle", "Tap on header to expand or contract the group").updateSection("visibility",visible).updateSection("subtitlevisibility",visible).updateSection('icon', '@drawable/icon_expand').updateSection("subitems", [{"background" : "#ff0", "name": ""}, {"background" : "#ff0", "name": ""}, {"background" : "#ff0", "name": ""}, {"background" : "#ff0", "name": ""}, {"background" : "#ff0", "name": ""}])
+                            .getSectionData();
+
+                    command.setVisibility(visible).updateModelData("sectionInfo->view as pathmap", data).notifyDataSetChanged(true);
+		            fragment.executeCommand(command);
+                }
+            ]]>
+    </View>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:onClick="callInlineFunctionForGroupieDragAndDrop"
+        android:text="Fill Recyclerview" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview"
+        background="#fff"
+        android:visibility="gone"
+        deleteOnSwipe="true"
+        dragDropMode="swaponhighlight"
+        dragStartMode="longpress"
+        dragSwapMode="notifyItemMoved"
+        itemview_width="match_parent"
+        layout="@xml/recyclerview_groupie_complex"
+        onAndroidTouch=""
+        swtAttachEventBubbler="mousedown,mouseup,mousemove"
+        widget-override="androidx.recyclerview.widget.RecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:spanCount="12" />
+
+</LinearLayout>

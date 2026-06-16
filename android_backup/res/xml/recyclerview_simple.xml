@@ -1,0 +1,5 @@
+<layout adapter="simple">
+    <header layout="@layout/listheader"></header>
+    <footer layout="@layout/listfooter"></footer>
+    <item viewHolderIds="@+id/name" layout="@layout/recyclerview_text"></item>
+</layout>

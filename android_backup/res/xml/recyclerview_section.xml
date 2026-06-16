@@ -4,7 +4,7 @@
         modelFor="let item in . from testObj->parentview into loopvar as map">
         <header
             layout="@layout/recyclerview_text"
-            viewHolderIds="@+id/name"></header>
+            viewHolderIds="@+id/name"/>
         <item
             layout="@layout/recyclerview_text"
             modelFor="let item in subitems from item->loopvar into loopvar as map"

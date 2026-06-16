@@ -24,7 +24,7 @@
                 android:layout_height="wrap_content"
                 android:background="#000"
                 app:title="@string/play_ground"
-                app:titleTextColor="@color/color_white"></androidx.appcompat.widget.Toolbar>
+                app:titleTextColor="@color/color_white"/>
 
             <LinearLayout
                 android:id="@+id/panel"
@@ -41,7 +41,7 @@
                     android:layout_marginBottom="5dp"
                     android:background="@color/color_white"
                     android:textColorHint="#aaa"
-                    android:textSize="14sp"></TextView>
+                    android:textSize="14sp"/>
             </LinearLayout>
 
             <LinearLayout
@@ -68,7 +68,7 @@
                         android:layout_height="match_parent"
                         android:background="@color/color_white"
                         android:inputType="textMultiLine"
-                        android:singleLine="false"></EditText>
+                        android:singleLine="false"/>
                 </FrameLayout>
 
                 <fragment

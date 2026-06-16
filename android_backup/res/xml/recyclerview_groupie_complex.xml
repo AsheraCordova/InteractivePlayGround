@@ -1,0 +1,42 @@
+<layout adapter="groupie" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <section id="test">
+        <header layout="@layout/listheader" swipeDirs="none" dragDirs="none" />
+        <footer layout="@layout/listfooter" swipeDirs="none" dragDirs="none"/>
+        <item layout="@layout/listview_testitem" modelFor="let item in test.items from sectionInfo->view into loopvar as map" viewHolderIds="@+id/name" dragAcrossSections="true"/>
+    </section>
+    <section id="test1">
+        <header layout="@layout/listheader" swipeDirs="none" dragDirs="none"/>
+        <footer layout="@layout/listfooter" swipeDirs="none" dragDirs="none"/>
+        <section1 id="test2" modelFor="let item in test1.items from sectionInfo->view into loopvar as map">
+            <header layout="@layout/listheader_data" viewHolderIds="@+id/textView" swipeDirs="none" dragDirs="none"/>
+            <item layout="@layout/listview_testitem" modelFor="let item in subitems from item->loopvar into loopvar as map" viewHolderIds="@+id/name"/>
+        </section1>
+    </section>
+    <section id="test3" modelFor="let item in test1.items from sectionInfo->view into loopvar as map">
+        <header layout="@layout/listheader_data" viewHolderIds="@+id/textView" swipeDirs="none" dragDirs="none"/>
+        <item layout="@layout/listview_testitem" modelFor="let item in subitems from item->loopvar into loopvar as map" viewHolderIds="@+id/name"/>
+    </section>
+
+    <section id="fullbleeditemParent" modelVar="let item = fullbleeditem from sectionInfo->view  into loopvar as map">
+        <header layout="@layout/item_header" viewHolderIds="title,subtitle,icon"  swipeDirs="none" dragDirs="none"/>
+        <item gridInsets="10dp" layout="@layout/item_card" modelFor="let item in subitems from item->loopvar into loopvar as map" viewHolderIds="FrameLayout,text"/>
+    </section>
+
+    <section id="grid" modelVar="let item = grid from sectionInfo->view into loopvar as map">
+        <header layout="@layout/item_header" viewHolderIds="title,subtitle,icon"  swipeDirs="none" dragDirs="none"/>
+        <item swipeDirs="none" dragDirs="up|down|left|right|" gridInsets="10dp" layout="@layout/item_card" modelFor="let item in subitems from item->loopvar into loopvar as map" viewHolderIds="FrameLayout,text"  numberOfColumns="3"/>
+    </section>
+
+    <section id="carousel" modelVar="let item = carousel from sectionInfo->view into loopvar as map">
+        <header layout="@layout/item_header" viewHolderIds="title,subtitle,icon"  swipeDirs="none" dragDirs="none"/>
+        <item layout="@layout/item_carousel" swipeDirs="none"/>
+    </section>
+
+    <section id="expandabletest" modelVar="let item = expand from sectionInfo->view into loopvar as map">
+        <expandable  layout="@layout/item_header" viewHolderIds="title,subtitle,icon" expand="true" onclick="icon">
+            <section1 id="expandable">
+                <item gridInsets="10dp" layout="@layout/item_card" modelFor="let item in subitems from item->loopvar into loopvar as map" viewHolderIds="FrameLayout,text"  numberOfColumns="1"/>
+            </section1>
+        </expandable>
+    </section>
+</layout>

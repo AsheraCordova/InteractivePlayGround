@@ -6,6 +6,7 @@
     android:orientation="vertical"
     tools:ignore="MissingPrefix">
 
+
     <View
         name="@layout/recyclerview_text"
         type="resource"

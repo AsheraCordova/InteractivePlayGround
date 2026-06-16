@@ -11,7 +11,8 @@ import { ScopedObject } from './app/ScopedObject';
 import { color_animator, path_animator, translate_animator, translate_animator_interpolation, translate_with_rotation } from './R/ViewAnimation';
 import { fragment } from './android/widget/fragmentImpl';
 import { DialogHelper } from './helpers/DialogHelper';
-
+import { GroupieBuilder } from './app/GroupieBuilder';
+import * as ViewConst from './android/widget/ViewImpl';
 declare var window: any;
 declare var navigator: any;
 
@@ -74,7 +75,7 @@ export default class Index extends Fragment {
             let url = this.getQueryParams(document.location.search)["url"];
 
             if (url == null) {
-                url = 'http://192.168.1.35:8080/res/layout/launch_child_app.xml';
+                url = 'http://192.168.1.37:8081/res/layout/recycleview_groupie_dragndrop.xml';
             }
 
             try {
@@ -124,6 +125,17 @@ export default class Index extends Fragment {
      async callInlineFunctionForRecyclerView(obj: any) {        
         window.inlineFunction(this, this.recyclerView, obj);        
      }
+
+     async callInlineFunctionForRecyclerViewDragNDrop(obj: any) {        
+        window.inlineFunctionDragNDrop(this, this.recyclerView, obj);        
+     }
+
+    async callInlineFunctionForGroupieDragAndDrop(obj: any) {        
+        window.inlineFunctionForGroupieDragAndDrop(this, this.recyclerView, obj, new GroupieBuilder(), ViewConst.Visibility.visible, ViewConst.Visibility.gone);
+     }
+
+     
+     
 
      @Inject({ id: "@+id/loginButton" })
      private validateButton!:EditText;
@@ -217,5 +229,9 @@ export default class Index extends Fragment {
 
     public onCloseDialog(obj: any): void {
         this.navController.navigate(child_app_container, '', {}).executeCommand();
+    }
+
+    getDragAndDropData(event: any) {
+        console.log(JSON.stringify(event));
     }
 }
