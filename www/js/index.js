@@ -2220,7 +2220,7 @@ var Index = /** @class */function (_super) {
             if (!(obj.actionUrl == 'layout/index.xml')) return [3 /*break*/, 5];
             url = this.getQueryParams(document.location.search)["url"];
             if (url == null) {
-              url = 'http://192.168.1.37:8081/res/layout/recyclerview_filter_simple.xml';
+              url = 'https://raw.githubusercontent.com/AsheraCordova/InteractivePlayGround/refs/heads/main/android_backup/res/layout/absolute_layout.xml';
             }
             _a.label = 1;
           case 1:
@@ -2244,7 +2244,10 @@ var Index = /** @class */function (_super) {
             })).setText(url);
             this.executeCommand(this.currentUrl, this.xmlEditText);
             if (navigator.splashscreen) {
-              navigator.splashscreen.hide();
+              setTimeout(function () {
+                navigator.splashscreen.hide();
+              }, 100);
+              //navigator.splashscreen.hide();    
             }
             return [3 /*break*/, 5];
           case 4:
