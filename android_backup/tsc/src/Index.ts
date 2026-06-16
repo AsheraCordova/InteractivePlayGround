@@ -75,7 +75,7 @@ export default class Index extends Fragment {
             let url = this.getQueryParams(document.location.search)["url"];
 
             if (url == null) {
-                url = 'http://192.168.1.37:8081/res/layout/recycleview_groupie_dragndrop.xml';
+                url = 'http://192.168.1.37:8081/res/layout/recyclerview_filter_simple.xml';
             }
 
             try {

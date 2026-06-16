@@ -11,5 +11,5 @@
         style="@style/blackBg"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Sample Footer" />
+        android:text="@string/copyright_ashera" />
 </LinearLayout>

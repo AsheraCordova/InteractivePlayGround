@@ -67,6 +67,6 @@
         android:layout_height="match_parent"
         filterItemPath="name"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-        app:spanCount="12"></androidx.recyclerview.widget.RecyclerView>
+        app:spanCount="12"/>
 
 </LinearLayout>

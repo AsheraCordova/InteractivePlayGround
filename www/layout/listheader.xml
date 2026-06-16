@@ -11,5 +11,5 @@
         style="@style/blackBg"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Sample Header" />
+        android:text="@string/android_layout_examples" />
 </LinearLayout>
